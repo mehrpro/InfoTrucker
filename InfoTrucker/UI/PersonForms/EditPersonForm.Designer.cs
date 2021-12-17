@@ -29,25 +29,35 @@ namespace InfoTrucker.UI.PersonForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditPersonForm));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.PersonListGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.IdColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FullName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Hoshmand = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            this.EditColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.EditRowBotton = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.PersonListGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EditRowBotton)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridControl1
+            // PersonListGridControl
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(800, 450);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.PersonListGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PersonListGridControl.Location = new System.Drawing.Point(0, 0);
+            this.PersonListGridControl.MainView = this.gridView1;
+            this.PersonListGridControl.Name = "PersonListGridControl";
+            this.PersonListGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.EditRowBotton});
+            this.PersonListGridControl.Size = new System.Drawing.Size(800, 450);
+            this.PersonListGridControl.TabIndex = 0;
+            this.PersonListGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -110,65 +120,90 @@ namespace InfoTrucker.UI.PersonForms
             this.IdColumn,
             this.FullName,
             this.Hoshmand,
-            this.gridColumn4});
-            this.gridView1.GridControl = this.gridControl1;
+            this.EditColumn});
+            this.gridView1.GridControl = this.PersonListGridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
             // 
             // IdColumn
             // 
+            this.IdColumn.Caption = "شناسه";
             this.IdColumn.FieldName = "PersonID";
+            this.IdColumn.MaxWidth = 100;
+            this.IdColumn.MinWidth = 100;
             this.IdColumn.Name = "IdColumn";
             this.IdColumn.Visible = true;
             this.IdColumn.VisibleIndex = 0;
-            this.IdColumn.Width = 111;
+            this.IdColumn.Width = 100;
             // 
             // FullName
             // 
+            this.FullName.Caption = "نام";
             this.FullName.FieldName = "FullName";
             this.FullName.Name = "FullName";
             this.FullName.Visible = true;
-            this.FullName.VisibleIndex = 1;
-            this.FullName.Width = 222;
+            this.FullName.VisibleIndex = 2;
+            this.FullName.Width = 406;
             // 
             // Hoshmand
             // 
+            this.Hoshmand.Caption = "شماره هوشمند";
             this.Hoshmand.FieldName = "Hoshmand";
+            this.Hoshmand.MaxWidth = 100;
+            this.Hoshmand.MinWidth = 100;
             this.Hoshmand.Name = "Hoshmand";
             this.Hoshmand.Visible = true;
-            this.Hoshmand.VisibleIndex = 2;
-            this.Hoshmand.Width = 222;
+            this.Hoshmand.VisibleIndex = 1;
+            this.Hoshmand.Width = 100;
             // 
-            // gridColumn4
+            // EditColumn
             // 
-            this.gridColumn4.Caption = "gridColumn4";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 227;
+            this.EditColumn.Caption = "ویرایش";
+            this.EditColumn.ColumnEdit = this.EditRowBotton;
+            this.EditColumn.MaxWidth = 65;
+            this.EditColumn.MinWidth = 65;
+            this.EditColumn.Name = "EditColumn";
+            this.EditColumn.Visible = true;
+            this.EditColumn.VisibleIndex = 3;
+            this.EditColumn.Width = 65;
+            // 
+            // EditRowBotton
+            // 
+            this.EditRowBotton.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            serializableAppearanceObject1.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject2.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject3.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject4.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.EditRowBotton.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.EditRowBotton.Name = "EditRowBotton";
+            this.EditRowBotton.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // EditPersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.PersonListGridControl);
             this.Name = "EditPersonForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "ویرایش اطلاعات";
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PersonListGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EditRowBotton)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl PersonListGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn IdColumn;
         private DevExpress.XtraGrid.Columns.GridColumn FullName;
         private DevExpress.XtraGrid.Columns.GridColumn Hoshmand;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn EditColumn;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit EditRowBotton;
     }
 }

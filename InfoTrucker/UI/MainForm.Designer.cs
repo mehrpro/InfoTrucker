@@ -64,8 +64,9 @@ namespace InfoTrucker.UI
             // 
             this.EditButtonItem.Caption = "ویرایش ";
             this.EditButtonItem.Id = 2;
-            this.EditButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("PeopleButtonItem.ImageOptions.SvgImage")));
+            this.EditButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("EditButtonItem.ImageOptions.SvgImage")));
             this.EditButtonItem.Name = "EditButtonItem";
+            this.EditButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditButtonItem_ItemClick);
             // 
             // DocumentRibbonPage
             // 
