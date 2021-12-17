@@ -28,7 +28,7 @@ namespace InfoTrucker.UI.PersonForms
             _mapper = mapper;
             InitializeComponent();
             Id1Textbox.ReadOnly = Id2Textbox.ReadOnly = Id3Textbox.ReadOnly = true;
-            BirthDatePicker.DateTime  =DateTime.Today;
+            BirthDatePicker.DateTime = DateTime.Today;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace InfoTrucker.UI.PersonForms
                 newPerson.Sh_Bimeh = Sh_BimehTextbox.Text.Trim();
                 newPerson.SerialShenasnameh = ShSerialTextbox.Text.Trim();
                 newPerson.Sh_Goyahinameh = Sh_GoyahinamehTextbox.Text.Trim();
-                newPerson.Sh_Plak = Sh_PlakTextbox.Text.Trim();
+                newPerson.Sh_Plak = $"{Plack1Textbox.Text}{Plack2Textbox.Text}|{Plack3Textbox.Text}|{Plack4Textbox.Text}|{Plack5Textbox.Text}";
                 newPerson.Sh_Sokht = Sh_SokhtTextbox.Text.Trim();
                 newPerson.Shenasnameh = ShenasnamehTextbox.Text.Trim();
                 newPerson.Takalof = Convert.ToByte(TakalofSpanEdit.EditValue);
@@ -63,15 +63,22 @@ namespace InfoTrucker.UI.PersonForms
                 resultMap.IsActive = true;
                 resultMap.IsDelete = false;
                 resultMap.DateRegister = DateTime.Today;
-                _unitofWork.Person.Insert(resultMap);
-                _unitofWork.Commit();
-
-
+                try
+                {
+                    _unitofWork.Person.Insert(resultMap);
+                    _unitofWork.Commit();
+                    PublicValue.SaveMessage();
+                }
+                catch (Exception exception)
+                {
+                    if (PublicValue.UserID == 1)
+                        PublicValue.ExseptionMessage(exception.Message);
+                    else
+                        PublicValue.ErrorSaveMessage();
+                }
             }
             else
-            {
                 PublicValue.ValidationProviderFaultMessage();
-            }
         }
     }
 }

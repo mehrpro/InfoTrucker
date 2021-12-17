@@ -44,9 +44,13 @@
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.Utils.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraBars.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
+    <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
+    <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
+    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -78,6 +82,7 @@
     <Compile Include="Configure\PublicTypeConfigure.cs" />
     <Compile Include="DTO\LoginDTO.cs" />
     <Compile Include="DTO\NewPersonDTO.cs" />
+    <Compile Include="DTO\PersonListForEditDTO.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\Cleam.cs" />
     <Compile Include="Entities\MenuGroup.cs" />
@@ -99,6 +104,10 @@
     <Compile Include="Migrations\202112171253490_db2.cs" />
     <Compile Include="Migrations\202112171253490_db2.designer.cs">
       <DependentUpon>202112171253490_db2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112171614327_db3.cs" />
+    <Compile Include="Migrations\202112171614327_db3.designer.cs">
+      <DependentUpon>202112171614327_db3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
@@ -129,6 +138,12 @@
     <Compile Include="UI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\PersonForms\EditPersonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PersonForms\EditPersonForm.Designer.cs">
+      <DependentUpon>EditPersonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\PersonForms\NewPersonForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112171253490_db2.resx">
       <DependentUpon>202112171253490_db2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112171614327_db3.resx">
+      <DependentUpon>202112171614327_db3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -161,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PersonForms\EditPersonForm.resx">
+      <DependentUpon>EditPersonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PersonForms\NewPersonForm.resx">
       <DependentUpon>NewPersonForm.cs</DependentUpon>

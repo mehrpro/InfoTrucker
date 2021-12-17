@@ -20,5 +20,23 @@ namespace InfoTrucker
             XtraMessageBox.Show($"مقادیر الزامی فرم را وارد نمائید", SoftwareName,
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+        public static void ErrorSaveMessage()
+        {
+            XtraMessageBox.Show($"اطلاعات ثبت نشد پس از بررسی دوباره تلاش کنید", SoftwareName,
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public static void SaveMessage()
+        {
+            XtraMessageBox.Show($"اطلاعاتبا موفقیت ثبت شد", SoftwareName,
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public static void ExseptionMessage(string message)
+        {
+            XtraMessageBox.Show(message, "Administrator",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
     }
 }

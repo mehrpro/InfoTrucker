@@ -32,7 +32,7 @@ namespace InfoTrucker.UI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.NewPersonButtonItem = new DevExpress.XtraBars.BarButtonItem();
-            this.PeopleButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.EditButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.DocumentRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PersonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -44,30 +44,28 @@ namespace InfoTrucker.UI
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.NewPersonButtonItem,
-            this.PeopleButtonItem});
+            this.EditButtonItem});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 3;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.DocumentRibbonPage});
-            this.ribbonControl1.Size = new System.Drawing.Size(800, 174);
+            this.ribbonControl1.Size = new System.Drawing.Size(800, 175);
             // 
             // NewPersonButtonItem
             // 
             this.NewPersonButtonItem.Caption = "عضو جدید";
             this.NewPersonButtonItem.Id = 1;
-            this.NewPersonButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("NewPersonButtonItem.ImageOptions.Image")));
-            this.NewPersonButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("NewPersonButtonItem.ImageOptions.LargeImage")));
+            this.NewPersonButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("NewPersonButtonItem.ImageOptions.SvgImage")));
             this.NewPersonButtonItem.Name = "NewPersonButtonItem";
             this.NewPersonButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewPersonButtonItem_ItemClick);
             // 
-            // PeopleButtonItem
+            // EditButtonItem
             // 
-            this.PeopleButtonItem.Caption = "لیست اعضاء";
-            this.PeopleButtonItem.Id = 2;
-            this.PeopleButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("PeopleButtonItem.ImageOptions.Image")));
-            this.PeopleButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("PeopleButtonItem.ImageOptions.LargeImage")));
-            this.PeopleButtonItem.Name = "PeopleButtonItem";
+            this.EditButtonItem.Caption = "ویرایش ";
+            this.EditButtonItem.Id = 2;
+            this.EditButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("PeopleButtonItem.ImageOptions.SvgImage")));
+            this.EditButtonItem.Name = "EditButtonItem";
             // 
             // DocumentRibbonPage
             // 
@@ -81,7 +79,7 @@ namespace InfoTrucker.UI
             // PersonPageGroup
             // 
             this.PersonPageGroup.ItemLinks.Add(this.NewPersonButtonItem);
-            this.PersonPageGroup.ItemLinks.Add(this.PeopleButtonItem);
+            this.PersonPageGroup.ItemLinks.Add(this.EditButtonItem);
             this.PersonPageGroup.Name = "PersonPageGroup";
             this.PersonPageGroup.Text = "رانندگان";
             // 
@@ -109,6 +107,6 @@ namespace InfoTrucker.UI
         private DevExpress.XtraBars.Ribbon.RibbonPage DocumentRibbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup PersonPageGroup;
         private DevExpress.XtraBars.BarButtonItem NewPersonButtonItem;
-        private DevExpress.XtraBars.BarButtonItem PeopleButtonItem;
+        private DevExpress.XtraBars.BarButtonItem EditButtonItem;
     }
 }

@@ -78,7 +78,11 @@ namespace InfoTrucker.UI.PersonForms
             this.Id2Textbox = new DevExpress.XtraEditors.TextEdit();
             this.Sh_SokhtTextbox = new DevExpress.XtraEditors.TextEdit();
             this.KamionTextbox = new DevExpress.XtraEditors.TextEdit();
-            this.Sh_PlakTextbox = new DevExpress.XtraEditors.TextEdit();
+            this.Plack5Textbox = new DevExpress.XtraEditors.TextEdit();
+            this.Plack4Textbox = new DevExpress.XtraEditors.TextEdit();
+            this.Plack3Textbox = new DevExpress.XtraEditors.TextEdit();
+            this.Plack2Textbox = new DevExpress.XtraEditors.TextEdit();
+            this.Plack1Textbox = new DevExpress.XtraEditors.TextEdit();
             this.Sh_BimehTextbox = new DevExpress.XtraEditors.TextEdit();
             this.HoshmandTextbox = new DevExpress.XtraEditors.TextEdit();
             this.Sh_GoyahinamehTextbox = new DevExpress.XtraEditors.TextEdit();
@@ -107,10 +111,6 @@ namespace InfoTrucker.UI.PersonForms
             this.SaveButton = new DevExpress.XtraEditors.SimpleButton();
             this.MainSidePanel = new DevExpress.XtraEditors.SidePanel();
             this.Person_dxProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonTabControl)).BeginInit();
             this.PersonTabControl.SuspendLayout();
             this.PersonTabPage.SuspendLayout();
@@ -131,7 +131,11 @@ namespace InfoTrucker.UI.PersonForms
             ((System.ComponentModel.ISupportInitialize)(this.Id2Textbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sh_SokhtTextbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KamionTextbox.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sh_PlakTextbox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Plack5Textbox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Plack4Textbox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Plack3Textbox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Plack2Textbox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Plack1Textbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sh_BimehTextbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HoshmandTextbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sh_GoyahinamehTextbox.Properties)).BeginInit();
@@ -151,10 +155,6 @@ namespace InfoTrucker.UI.PersonForms
             this.BottonSidePanel.SuspendLayout();
             this.MainSidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Person_dxProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // PersonTabControl
@@ -166,7 +166,6 @@ namespace InfoTrucker.UI.PersonForms
             this.PersonTabControl.HeaderOrientation = DevExpress.XtraTab.TabOrientation.Horizontal;
             this.PersonTabControl.Location = new System.Drawing.Point(0, 0);
             this.PersonTabControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.PersonTabControl.MultiLine = DevExpress.Utils.DefaultBoolean.True;
             this.PersonTabControl.Name = "PersonTabControl";
             this.PersonTabControl.SelectedTabPage = this.PersonTabPage;
             this.PersonTabControl.Size = new System.Drawing.Size(895, 432);
@@ -213,15 +212,14 @@ namespace InfoTrucker.UI.PersonForms
             this.Right1SidePanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Right1SidePanel.Name = "Right1SidePanel";
             this.Right1SidePanel.Size = new System.Drawing.Size(766, 426);
-            this.Right1SidePanel.TabIndex = 1;
+            this.Right1SidePanel.TabIndex = 0;
             this.Right1SidePanel.Text = "sidePanel3";
             // 
             // BirthDatePicker
             // 
-            this.BirthDatePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BirthDatePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BirthDatePicker.EditValue = null;
-            this.BirthDatePicker.Location = new System.Drawing.Point(338, 179);
+            this.BirthDatePicker.Location = new System.Drawing.Point(299, 179);
             this.BirthDatePicker.Name = "BirthDatePicker";
             this.BirthDatePicker.Parmida_ActivePlusMultiKeys = false;
             this.BirthDatePicker.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -230,11 +228,12 @@ namespace InfoTrucker.UI.PersonForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.BirthDatePicker.Properties.DisplayFormat.FormatString = "";
             this.BirthDatePicker.Properties.EditFormat.FormatString = "";
-            this.BirthDatePicker.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
+            this.BirthDatePicker.Properties.NullValuePrompt = "تاریخ تولد الزامی است";
+            this.BirthDatePicker.Properties.NullValuePromptShowForEmptyValue = true;
             this.BirthDatePicker.Properties.Parmida_CheckDateOnLeave = false;
             this.BirthDatePicker.Properties.Parmida_CheckEmptyFillDateOnEnter = false;
-            this.BirthDatePicker.Size = new System.Drawing.Size(261, 26);
-            this.BirthDatePicker.TabIndex = 2;
+            this.BirthDatePicker.Size = new System.Drawing.Size(300, 26);
+            this.BirthDatePicker.TabIndex = 9;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "تاریخ تولد الزامی است";
             this.Person_dxProvider.SetValidationRule(this.BirthDatePicker, conditionValidationRule1);
@@ -246,7 +245,7 @@ namespace InfoTrucker.UI.PersonForms
             this.IdLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.IdLabel.Name = "IdLabel";
             this.IdLabel.Size = new System.Drawing.Size(64, 20);
-            this.IdLabel.TabIndex = 1;
+            this.IdLabel.TabIndex = 0;
             this.IdLabel.Text = "شماره پرونده";
             // 
             // labelControl10
@@ -256,7 +255,7 @@ namespace InfoTrucker.UI.PersonForms
             this.labelControl10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(78, 20);
-            this.labelControl10.TabIndex = 1;
+            this.labelControl10.TabIndex = 18;
             this.labelControl10.Text = "افراد تحت تکلف";
             // 
             // MahalTavalodLabel
@@ -266,7 +265,7 @@ namespace InfoTrucker.UI.PersonForms
             this.MahalTavalodLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MahalTavalodLabel.Name = "MahalTavalodLabel";
             this.MahalTavalodLabel.Size = new System.Drawing.Size(44, 20);
-            this.MahalTavalodLabel.TabIndex = 1;
+            this.MahalTavalodLabel.TabIndex = 16;
             this.MahalTavalodLabel.Text = "محل تولد";
             // 
             // ShLabel
@@ -276,7 +275,7 @@ namespace InfoTrucker.UI.PersonForms
             this.ShLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ShLabel.Name = "ShLabel";
             this.ShLabel.Size = new System.Drawing.Size(76, 20);
-            this.ShLabel.TabIndex = 1;
+            this.ShLabel.TabIndex = 14;
             this.ShLabel.Text = "شماره شناسنامه";
             // 
             // SerialSHLabel
@@ -285,9 +284,9 @@ namespace InfoTrucker.UI.PersonForms
             this.SerialSHLabel.Location = new System.Drawing.Point(616, 255);
             this.SerialSHLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SerialSHLabel.Name = "SerialSHLabel";
-            this.SerialSHLabel.Size = new System.Drawing.Size(110, 20);
-            this.SerialSHLabel.TabIndex = 1;
-            this.SerialSHLabel.Text = "شماره سریال شناسنامه";
+            this.SerialSHLabel.Size = new System.Drawing.Size(78, 20);
+            this.SerialSHLabel.TabIndex = 12;
+            this.SerialSHLabel.Text = "سریال شناسنامه";
             // 
             // NationalLabel
             // 
@@ -296,7 +295,7 @@ namespace InfoTrucker.UI.PersonForms
             this.NationalLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NationalLabel.Name = "NationalLabel";
             this.NationalLabel.Size = new System.Drawing.Size(32, 20);
-            this.NationalLabel.TabIndex = 1;
+            this.NationalLabel.TabIndex = 10;
             this.NationalLabel.Text = "کد ملی";
             // 
             // BrithLabel
@@ -306,7 +305,7 @@ namespace InfoTrucker.UI.PersonForms
             this.BrithLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BrithLabel.Name = "BrithLabel";
             this.BrithLabel.Size = new System.Drawing.Size(47, 20);
-            this.BrithLabel.TabIndex = 1;
+            this.BrithLabel.TabIndex = 8;
             this.BrithLabel.Text = "تاریخ تولد";
             // 
             // FatherLabel
@@ -316,7 +315,7 @@ namespace InfoTrucker.UI.PersonForms
             this.FatherLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FatherLabel.Name = "FatherLabel";
             this.FatherLabel.Size = new System.Drawing.Size(34, 20);
-            this.FatherLabel.TabIndex = 1;
+            this.FatherLabel.TabIndex = 6;
             this.FatherLabel.Text = "نام پدر";
             // 
             // FamilyLabel
@@ -326,7 +325,7 @@ namespace InfoTrucker.UI.PersonForms
             this.FamilyLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FamilyLabel.Name = "FamilyLabel";
             this.FamilyLabel.Size = new System.Drawing.Size(60, 20);
-            this.FamilyLabel.TabIndex = 1;
+            this.FamilyLabel.TabIndex = 4;
             this.FamilyLabel.Text = "نام خانوادگی";
             // 
             // NameLabel
@@ -336,128 +335,136 @@ namespace InfoTrucker.UI.PersonForms
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(14, 20);
-            this.NameLabel.TabIndex = 1;
+            this.NameLabel.TabIndex = 2;
             this.NameLabel.Text = "نام";
             // 
             // Id1Textbox
             // 
-            this.Id1Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Id1Textbox.Location = new System.Drawing.Point(41, 37);
+            this.Id1Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Id1Textbox.Location = new System.Drawing.Point(299, 36);
             this.Id1Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Id1Textbox.Name = "Id1Textbox";
             this.Id1Textbox.Parmida_ActivePlusMultiKeys = false;
-            this.Id1Textbox.Size = new System.Drawing.Size(558, 26);
-            this.Id1Textbox.TabIndex = 0;
+            this.Id1Textbox.Size = new System.Drawing.Size(300, 26);
+            this.Id1Textbox.TabIndex = 1;
             // 
             // MahalTavalodTextbox
             // 
-            this.MahalTavalodTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.MahalTavalodTextbox.Location = new System.Drawing.Point(41, 325);
+            this.MahalTavalodTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MahalTavalodTextbox.Location = new System.Drawing.Point(299, 325);
             this.MahalTavalodTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MahalTavalodTextbox.Name = "MahalTavalodTextbox";
             this.MahalTavalodTextbox.Parmida_ActivePlusMultiKeys = false;
-            this.MahalTavalodTextbox.Size = new System.Drawing.Size(558, 26);
-            this.MahalTavalodTextbox.TabIndex = 0;
+            this.MahalTavalodTextbox.Properties.MaxLength = 100;
+            this.MahalTavalodTextbox.Properties.NullValuePrompt = "شهر محل تولد را وارد کنید";
+            this.MahalTavalodTextbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.MahalTavalodTextbox.Size = new System.Drawing.Size(300, 26);
+            this.MahalTavalodTextbox.TabIndex = 17;
             // 
             // ShenasnamehTextbox
             // 
-            this.ShenasnamehTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ShenasnamehTextbox.Location = new System.Drawing.Point(41, 289);
+            this.ShenasnamehTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ShenasnamehTextbox.Location = new System.Drawing.Point(299, 289);
             this.ShenasnamehTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ShenasnamehTextbox.Name = "ShenasnamehTextbox";
             this.ShenasnamehTextbox.Parmida_ActivePlusMultiKeys = false;
             this.ShenasnamehTextbox.Properties.Mask.EditMask = "d";
             this.ShenasnamehTextbox.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.ShenasnamehTextbox.Properties.MaxLength = 10;
-            this.ShenasnamehTextbox.Size = new System.Drawing.Size(558, 26);
-            this.ShenasnamehTextbox.TabIndex = 0;
+            this.ShenasnamehTextbox.Size = new System.Drawing.Size(300, 26);
+            this.ShenasnamehTextbox.TabIndex = 15;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "وارد کردن شماره شناسنامه الزامی است";
             this.Person_dxProvider.SetValidationRule(this.ShenasnamehTextbox, conditionValidationRule2);
             // 
             // ShSerialTextbox
             // 
-            this.ShSerialTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ShSerialTextbox.Location = new System.Drawing.Point(41, 252);
+            this.ShSerialTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ShSerialTextbox.Location = new System.Drawing.Point(299, 252);
             this.ShSerialTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ShSerialTextbox.Name = "ShSerialTextbox";
             this.ShSerialTextbox.Parmida_ActivePlusMultiKeys = false;
-            this.ShSerialTextbox.Size = new System.Drawing.Size(558, 26);
-            this.ShSerialTextbox.TabIndex = 0;
+            this.ShSerialTextbox.Properties.NullValuePrompt = "الف-78-362523";
+            this.ShSerialTextbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.ShSerialTextbox.Size = new System.Drawing.Size(300, 26);
+            this.ShSerialTextbox.TabIndex = 13;
             // 
             // NationalCodeTextbox
             // 
-            this.NationalCodeTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.NationalCodeTextbox.Location = new System.Drawing.Point(41, 217);
+            this.NationalCodeTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NationalCodeTextbox.Location = new System.Drawing.Point(299, 217);
             this.NationalCodeTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NationalCodeTextbox.Name = "NationalCodeTextbox";
             this.NationalCodeTextbox.Parmida_ActivePlusMultiKeys = false;
             this.NationalCodeTextbox.Properties.Mask.EditMask = "d";
             this.NationalCodeTextbox.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.NationalCodeTextbox.Properties.MaxLength = 10;
-            this.NationalCodeTextbox.Size = new System.Drawing.Size(558, 26);
-            this.NationalCodeTextbox.TabIndex = 0;
+            this.NationalCodeTextbox.Properties.NullValuePrompt = "کد ملی الزامی است";
+            this.NationalCodeTextbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.NationalCodeTextbox.Properties.ShowNullValuePromptWhenFocused = true;
+            this.NationalCodeTextbox.Size = new System.Drawing.Size(300, 26);
+            this.NationalCodeTextbox.TabIndex = 11;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "وارد کردن کد ملی الزامی است";
             this.Person_dxProvider.SetValidationRule(this.NationalCodeTextbox, conditionValidationRule3);
             // 
             // FatherTextbox
             // 
-            this.FatherTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FatherTextbox.Location = new System.Drawing.Point(41, 145);
+            this.FatherTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FatherTextbox.Location = new System.Drawing.Point(299, 145);
             this.FatherTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FatherTextbox.Name = "FatherTextbox";
             this.FatherTextbox.Parmida_ActivePlusMultiKeys = false;
-            this.FatherTextbox.Size = new System.Drawing.Size(558, 26);
-            this.FatherTextbox.TabIndex = 0;
+            this.FatherTextbox.Properties.MaxLength = 100;
+            this.FatherTextbox.Properties.NullValuePrompt = "وارد کردن نام پدر الزامی است";
+            this.FatherTextbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.FatherTextbox.Size = new System.Drawing.Size(300, 26);
+            this.FatherTextbox.TabIndex = 7;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule4.ErrorText = "وارد کردن نام پدر الزامی است";
             this.Person_dxProvider.SetValidationRule(this.FatherTextbox, conditionValidationRule4);
             // 
             // LNameTextbox
             // 
-            this.LNameTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LNameTextbox.Location = new System.Drawing.Point(41, 109);
+            this.LNameTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LNameTextbox.Location = new System.Drawing.Point(299, 109);
             this.LNameTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LNameTextbox.Name = "LNameTextbox";
             this.LNameTextbox.Parmida_ActivePlusMultiKeys = false;
-            this.LNameTextbox.Size = new System.Drawing.Size(558, 26);
-            this.LNameTextbox.TabIndex = 0;
+            this.LNameTextbox.Properties.MaxLength = 150;
+            this.LNameTextbox.Properties.NullValuePrompt = "وارد کردن نام خانوادگی الزامی است";
+            this.LNameTextbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.LNameTextbox.Size = new System.Drawing.Size(300, 26);
+            this.LNameTextbox.TabIndex = 5;
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule5.ErrorText = "نام خانوادگی الزامی است";
             this.Person_dxProvider.SetValidationRule(this.LNameTextbox, conditionValidationRule5);
             // 
             // FNameTextbox
             // 
-            this.FNameTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FNameTextbox.Location = new System.Drawing.Point(41, 72);
+            this.FNameTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FNameTextbox.Location = new System.Drawing.Point(299, 72);
             this.FNameTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FNameTextbox.Name = "FNameTextbox";
             this.FNameTextbox.Parmida_ActivePlusMultiKeys = false;
-            this.FNameTextbox.Size = new System.Drawing.Size(558, 26);
-            this.FNameTextbox.TabIndex = 0;
+            this.FNameTextbox.Properties.MaxLength = 100;
+            this.FNameTextbox.Properties.NullValuePrompt = "وارد کردن نام کوچک الزامی است";
+            this.FNameTextbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.FNameTextbox.Size = new System.Drawing.Size(300, 26);
+            this.FNameTextbox.TabIndex = 3;
             conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule6.ErrorText = "وارد کردن نام شخص الزامی است";
             this.Person_dxProvider.SetValidationRule(this.FNameTextbox, conditionValidationRule6);
             // 
             // TakalofSpanEdit
             // 
-            this.TakalofSpanEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TakalofSpanEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TakalofSpanEdit.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.TakalofSpanEdit.Location = new System.Drawing.Point(41, 362);
+            this.TakalofSpanEdit.Location = new System.Drawing.Point(299, 362);
             this.TakalofSpanEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TakalofSpanEdit.Name = "TakalofSpanEdit";
             this.TakalofSpanEdit.Parmida_ActivePlusMultiKeys = false;
@@ -468,8 +475,10 @@ namespace InfoTrucker.UI.PersonForms
             this.TakalofSpanEdit.Properties.Mask.EditMask = "d";
             this.TakalofSpanEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TakalofSpanEdit.Properties.MaxLength = 2;
-            this.TakalofSpanEdit.Size = new System.Drawing.Size(558, 26);
-            this.TakalofSpanEdit.TabIndex = 0;
+            this.TakalofSpanEdit.Properties.NullValuePrompt = "تعداد افراد تحت تکلف را وارد کنید";
+            this.TakalofSpanEdit.Properties.NullValuePromptShowForEmptyValue = true;
+            this.TakalofSpanEdit.Size = new System.Drawing.Size(300, 26);
+            this.TakalofSpanEdit.TabIndex = 19;
             // 
             // JobTabPage
             // 
@@ -493,11 +502,11 @@ namespace InfoTrucker.UI.PersonForms
             this.Right2SidePanel.Controls.Add(this.Id2Textbox);
             this.Right2SidePanel.Controls.Add(this.Sh_SokhtTextbox);
             this.Right2SidePanel.Controls.Add(this.KamionTextbox);
-            this.Right2SidePanel.Controls.Add(this.textEdit4);
-            this.Right2SidePanel.Controls.Add(this.textEdit3);
-            this.Right2SidePanel.Controls.Add(this.textEdit2);
-            this.Right2SidePanel.Controls.Add(this.textEdit1);
-            this.Right2SidePanel.Controls.Add(this.Sh_PlakTextbox);
+            this.Right2SidePanel.Controls.Add(this.Plack5Textbox);
+            this.Right2SidePanel.Controls.Add(this.Plack4Textbox);
+            this.Right2SidePanel.Controls.Add(this.Plack3Textbox);
+            this.Right2SidePanel.Controls.Add(this.Plack2Textbox);
+            this.Right2SidePanel.Controls.Add(this.Plack1Textbox);
             this.Right2SidePanel.Controls.Add(this.Sh_BimehTextbox);
             this.Right2SidePanel.Controls.Add(this.HoshmandTextbox);
             this.Right2SidePanel.Controls.Add(this.Sh_GoyahinamehTextbox);
@@ -516,7 +525,7 @@ namespace InfoTrucker.UI.PersonForms
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(64, 20);
-            this.labelControl1.TabIndex = 19;
+            this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "شماره پرونده";
             // 
             // labelControl2
@@ -525,9 +534,9 @@ namespace InfoTrucker.UI.PersonForms
             this.labelControl2.Location = new System.Drawing.Point(616, 292);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(92, 20);
-            this.labelControl2.TabIndex = 17;
-            this.labelControl2.Text = "شماره کارت سوخت";
+            this.labelControl2.Size = new System.Drawing.Size(60, 20);
+            this.labelControl2.TabIndex = 18;
+            this.labelControl2.Text = "کارت سوخت";
             // 
             // labelControl4
             // 
@@ -536,7 +545,7 @@ namespace InfoTrucker.UI.PersonForms
             this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(52, 20);
-            this.labelControl4.TabIndex = 15;
+            this.labelControl4.TabIndex = 16;
             this.labelControl4.Text = "نوع کامیون";
             // 
             // labelControl5
@@ -546,7 +555,7 @@ namespace InfoTrucker.UI.PersonForms
             this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(88, 20);
-            this.labelControl5.TabIndex = 14;
+            this.labelControl5.TabIndex = 10;
             this.labelControl5.Text = "شماره پلاک کامیون";
             // 
             // labelControl6
@@ -555,9 +564,9 @@ namespace InfoTrucker.UI.PersonForms
             this.labelControl6.Location = new System.Drawing.Point(616, 185);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(130, 20);
-            this.labelControl6.TabIndex = 13;
-            this.labelControl6.Text = "شماره کارت هوشمند ناوگان";
+            this.labelControl6.Size = new System.Drawing.Size(98, 20);
+            this.labelControl6.TabIndex = 8;
+            this.labelControl6.Text = "کارت هوشمند ناوگان";
             // 
             // labelControl7
             // 
@@ -565,9 +574,9 @@ namespace InfoTrucker.UI.PersonForms
             this.labelControl7.Location = new System.Drawing.Point(616, 149);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(125, 20);
-            this.labelControl7.TabIndex = 12;
-            this.labelControl7.Text = "شماره بیمه تامین اجتماعی";
+            this.labelControl7.Size = new System.Drawing.Size(93, 20);
+            this.labelControl7.TabIndex = 6;
+            this.labelControl7.Text = "بیمه تامین اجتماعی";
             // 
             // labelControl8
             // 
@@ -575,9 +584,9 @@ namespace InfoTrucker.UI.PersonForms
             this.labelControl8.Location = new System.Drawing.Point(616, 114);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(139, 20);
-            this.labelControl8.TabIndex = 18;
-            this.labelControl8.Text = "شماره کارت هوشمند رانندگی";
+            this.labelControl8.Size = new System.Drawing.Size(107, 20);
+            this.labelControl8.TabIndex = 4;
+            this.labelControl8.Text = "کارت هوشمند رانندگی";
             // 
             // labelControl9
             // 
@@ -586,101 +595,179 @@ namespace InfoTrucker.UI.PersonForms
             this.labelControl9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(78, 20);
-            this.labelControl9.TabIndex = 11;
+            this.labelControl9.TabIndex = 2;
             this.labelControl9.Text = "شماره گواهینامه";
             // 
             // Id2Textbox
             // 
-            this.Id2Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Id2Textbox.Location = new System.Drawing.Point(41, 37);
+            this.Id2Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Id2Textbox.Location = new System.Drawing.Point(299, 37);
             this.Id2Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Id2Textbox.Name = "Id2Textbox";
             this.Id2Textbox.Parmida_ActivePlusMultiKeys = false;
-            this.Id2Textbox.Size = new System.Drawing.Size(558, 26);
-            this.Id2Textbox.TabIndex = 9;
+            this.Id2Textbox.Size = new System.Drawing.Size(300, 26);
+            this.Id2Textbox.TabIndex = 1;
             // 
             // Sh_SokhtTextbox
             // 
-            this.Sh_SokhtTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Sh_SokhtTextbox.Location = new System.Drawing.Point(41, 289);
+            this.Sh_SokhtTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Sh_SokhtTextbox.Location = new System.Drawing.Point(299, 289);
             this.Sh_SokhtTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Sh_SokhtTextbox.Name = "Sh_SokhtTextbox";
             this.Sh_SokhtTextbox.Parmida_ActivePlusMultiKeys = false;
-            this.Sh_SokhtTextbox.Size = new System.Drawing.Size(558, 26);
-            this.Sh_SokhtTextbox.TabIndex = 8;
+            this.Sh_SokhtTextbox.Properties.NullValuePrompt = "شماره کارت سوخت را وارد نمائید";
+            this.Sh_SokhtTextbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.Sh_SokhtTextbox.Properties.ShowNullValuePromptWhenFocused = true;
+            this.Sh_SokhtTextbox.Size = new System.Drawing.Size(300, 26);
+            this.Sh_SokhtTextbox.TabIndex = 19;
             // 
             // KamionTextbox
             // 
-            this.KamionTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.KamionTextbox.Location = new System.Drawing.Point(41, 252);
+            this.KamionTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.KamionTextbox.Location = new System.Drawing.Point(299, 252);
             this.KamionTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.KamionTextbox.Name = "KamionTextbox";
             this.KamionTextbox.Parmida_ActivePlusMultiKeys = false;
-            this.KamionTextbox.Size = new System.Drawing.Size(558, 26);
-            this.KamionTextbox.TabIndex = 6;
+            this.KamionTextbox.Properties.NullValuePrompt = "نوع یا مدل کامیون را وارد نمائید";
+            this.KamionTextbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.KamionTextbox.Properties.ShowNullValuePromptWhenFocused = true;
+            this.KamionTextbox.Size = new System.Drawing.Size(300, 26);
+            this.KamionTextbox.TabIndex = 17;
             // 
-            // Sh_PlakTextbox
+            // Plack5Textbox
             // 
-            this.Sh_PlakTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Sh_PlakTextbox.EditValue = "ایران";
-            this.Sh_PlakTextbox.Location = new System.Drawing.Point(557, 218);
-            this.Sh_PlakTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Sh_PlakTextbox.Name = "Sh_PlakTextbox";
-            this.Sh_PlakTextbox.Parmida_ActivePlusMultiKeys = false;
-            this.Sh_PlakTextbox.Properties.Appearance.Options.UseTextOptions = true;
-            this.Sh_PlakTextbox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Sh_PlakTextbox.Properties.ReadOnly = true;
-            this.Sh_PlakTextbox.Size = new System.Drawing.Size(42, 26);
-            this.Sh_PlakTextbox.TabIndex = 5;
+            this.Plack5Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Plack5Textbox.EditValue = "23";
+            this.Plack5Textbox.Location = new System.Drawing.Point(441, 218);
+            this.Plack5Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Plack5Textbox.Name = "Plack5Textbox";
+            this.Plack5Textbox.Parmida_ActivePlusMultiKeys = false;
+            this.Plack5Textbox.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Plack5Textbox.Properties.Appearance.Options.UseBackColor = true;
+            this.Plack5Textbox.Properties.Appearance.Options.UseTextOptions = true;
+            this.Plack5Textbox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Plack5Textbox.Properties.MaxLength = 2;
+            this.Plack5Textbox.Size = new System.Drawing.Size(28, 26);
+            this.Plack5Textbox.TabIndex = 15;
+            // 
+            // Plack4Textbox
+            // 
+            this.Plack4Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Plack4Textbox.EditValue = "ع";
+            this.Plack4Textbox.Location = new System.Drawing.Point(469, 218);
+            this.Plack4Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Plack4Textbox.Name = "Plack4Textbox";
+            this.Plack4Textbox.Parmida_ActivePlusMultiKeys = false;
+            this.Plack4Textbox.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Plack4Textbox.Properties.Appearance.Options.UseBackColor = true;
+            this.Plack4Textbox.Properties.Appearance.Options.UseTextOptions = true;
+            this.Plack4Textbox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Plack4Textbox.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.Plack4Textbox.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.Plack4Textbox.Properties.ReadOnly = true;
+            this.Plack4Textbox.Size = new System.Drawing.Size(18, 26);
+            this.Plack4Textbox.TabIndex = 14;
+            // 
+            // Plack3Textbox
+            // 
+            this.Plack3Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Plack3Textbox.EditValue = "852";
+            this.Plack3Textbox.Location = new System.Drawing.Point(487, 218);
+            this.Plack3Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Plack3Textbox.Name = "Plack3Textbox";
+            this.Plack3Textbox.Parmida_ActivePlusMultiKeys = false;
+            this.Plack3Textbox.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Plack3Textbox.Properties.Appearance.Options.UseBackColor = true;
+            this.Plack3Textbox.Properties.Appearance.Options.UseTextOptions = true;
+            this.Plack3Textbox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Plack3Textbox.Properties.MaxLength = 3;
+            this.Plack3Textbox.Size = new System.Drawing.Size(39, 26);
+            this.Plack3Textbox.TabIndex = 13;
+            // 
+            // Plack2Textbox
+            // 
+            this.Plack2Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Plack2Textbox.EditValue = "51";
+            this.Plack2Textbox.Location = new System.Drawing.Point(526, 218);
+            this.Plack2Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Plack2Textbox.Name = "Plack2Textbox";
+            this.Plack2Textbox.Parmida_ActivePlusMultiKeys = false;
+            this.Plack2Textbox.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Plack2Textbox.Properties.Appearance.Options.UseBackColor = true;
+            this.Plack2Textbox.Properties.Appearance.Options.UseTextOptions = true;
+            this.Plack2Textbox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Plack2Textbox.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Plack2Textbox.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.Plack2Textbox.Properties.MaxLength = 2;
+            this.Plack2Textbox.Size = new System.Drawing.Size(31, 26);
+            this.Plack2Textbox.TabIndex = 12;
+            // 
+            // Plack1Textbox
+            // 
+            this.Plack1Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Plack1Textbox.EditValue = "ایران";
+            this.Plack1Textbox.Location = new System.Drawing.Point(557, 218);
+            this.Plack1Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Plack1Textbox.Name = "Plack1Textbox";
+            this.Plack1Textbox.Parmida_ActivePlusMultiKeys = false;
+            this.Plack1Textbox.Properties.Appearance.Options.UseTextOptions = true;
+            this.Plack1Textbox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Plack1Textbox.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.Plack1Textbox.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.Plack1Textbox.Properties.ReadOnly = true;
+            this.Plack1Textbox.Size = new System.Drawing.Size(42, 26);
+            this.Plack1Textbox.TabIndex = 11;
             // 
             // Sh_BimehTextbox
             // 
-            this.Sh_BimehTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Sh_BimehTextbox.Location = new System.Drawing.Point(41, 145);
+            this.Sh_BimehTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Sh_BimehTextbox.Location = new System.Drawing.Point(299, 145);
             this.Sh_BimehTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Sh_BimehTextbox.Name = "Sh_BimehTextbox";
             this.Sh_BimehTextbox.Parmida_ActivePlusMultiKeys = false;
-            this.Sh_BimehTextbox.Size = new System.Drawing.Size(558, 26);
-            this.Sh_BimehTextbox.TabIndex = 4;
+            this.Sh_BimehTextbox.Properties.NullValuePrompt = "شماره بیمه تامین اجتماعی الزامی است";
+            this.Sh_BimehTextbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.Sh_BimehTextbox.Properties.ShowNullValuePromptWhenFocused = true;
+            this.Sh_BimehTextbox.Size = new System.Drawing.Size(300, 26);
+            this.Sh_BimehTextbox.TabIndex = 7;
             conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule7.ErrorText = "وارد کردن شماره بیمه الزامی است";
             this.Person_dxProvider.SetValidationRule(this.Sh_BimehTextbox, conditionValidationRule7);
             // 
             // HoshmandTextbox
             // 
-            this.HoshmandTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.HoshmandTextbox.Location = new System.Drawing.Point(41, 109);
+            this.HoshmandTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.HoshmandTextbox.Location = new System.Drawing.Point(299, 109);
             this.HoshmandTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.HoshmandTextbox.Name = "HoshmandTextbox";
             this.HoshmandTextbox.Parmida_ActivePlusMultiKeys = false;
-            this.HoshmandTextbox.Size = new System.Drawing.Size(558, 26);
-            this.HoshmandTextbox.TabIndex = 3;
+            this.HoshmandTextbox.Properties.NullValuePrompt = "شماره کارت هوشمند راننده الزامی است";
+            this.HoshmandTextbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.HoshmandTextbox.Properties.ShowNullValuePromptWhenFocused = true;
+            this.HoshmandTextbox.Size = new System.Drawing.Size(300, 26);
+            this.HoshmandTextbox.TabIndex = 5;
             conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule8.ErrorText = "وارد کردن شماره هوشمند الزامی است";
             this.Person_dxProvider.SetValidationRule(this.HoshmandTextbox, conditionValidationRule8);
             // 
             // Sh_GoyahinamehTextbox
             // 
-            this.Sh_GoyahinamehTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Sh_GoyahinamehTextbox.Location = new System.Drawing.Point(41, 72);
+            this.Sh_GoyahinamehTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Sh_GoyahinamehTextbox.Location = new System.Drawing.Point(299, 72);
             this.Sh_GoyahinamehTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Sh_GoyahinamehTextbox.Name = "Sh_GoyahinamehTextbox";
             this.Sh_GoyahinamehTextbox.Parmida_ActivePlusMultiKeys = false;
-            this.Sh_GoyahinamehTextbox.Size = new System.Drawing.Size(558, 26);
-            this.Sh_GoyahinamehTextbox.TabIndex = 10;
+            this.Sh_GoyahinamehTextbox.Properties.MaxLength = 10;
+            this.Sh_GoyahinamehTextbox.Properties.NullValuePrompt = "شماره گواهینامه را وارد کنید";
+            this.Sh_GoyahinamehTextbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.Sh_GoyahinamehTextbox.Properties.ShowNullValuePromptWhenFocused = true;
+            this.Sh_GoyahinamehTextbox.Size = new System.Drawing.Size(300, 26);
+            this.Sh_GoyahinamehTextbox.TabIndex = 3;
             // 
             // HoshmandNavganTextbox
             // 
-            this.HoshmandNavganTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.HoshmandNavganTextbox.Location = new System.Drawing.Point(41, 182);
+            this.HoshmandNavganTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.HoshmandNavganTextbox.Location = new System.Drawing.Point(299, 182);
             this.HoshmandNavganTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.HoshmandNavganTextbox.Name = "HoshmandNavganTextbox";
             this.HoshmandNavganTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -691,9 +778,12 @@ namespace InfoTrucker.UI.PersonForms
             this.HoshmandNavganTextbox.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.HoshmandNavganTextbox.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.HoshmandNavganTextbox.Properties.Mask.EditMask = "d";
-            this.HoshmandNavganTextbox.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
-            this.HoshmandNavganTextbox.Size = new System.Drawing.Size(558, 26);
-            this.HoshmandNavganTextbox.TabIndex = 2;
+            this.HoshmandNavganTextbox.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.HoshmandNavganTextbox.Properties.NullValuePrompt = "شماره کارت هوشمند ناوگان را وارد نمائید";
+            this.HoshmandNavganTextbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.HoshmandNavganTextbox.Properties.ShowNullValuePromptWhenFocused = true;
+            this.HoshmandNavganTextbox.Size = new System.Drawing.Size(300, 26);
+            this.HoshmandNavganTextbox.TabIndex = 9;
             // 
             // AddressTabPage
             // 
@@ -722,7 +812,7 @@ namespace InfoTrucker.UI.PersonForms
             this.Right3SidePanel.Location = new System.Drawing.Point(0, 0);
             this.Right3SidePanel.Name = "Right3SidePanel";
             this.Right3SidePanel.Size = new System.Drawing.Size(766, 426);
-            this.Right3SidePanel.TabIndex = 1;
+            this.Right3SidePanel.TabIndex = 0;
             this.Right3SidePanel.Text = "sidePanel3";
             // 
             // labelControl11
@@ -732,7 +822,7 @@ namespace InfoTrucker.UI.PersonForms
             this.labelControl11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(64, 20);
-            this.labelControl11.TabIndex = 19;
+            this.labelControl11.TabIndex = 0;
             this.labelControl11.Text = "شماره پرونده";
             // 
             // labelControl16
@@ -742,7 +832,7 @@ namespace InfoTrucker.UI.PersonForms
             this.labelControl16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(93, 20);
-            this.labelControl16.TabIndex = 13;
+            this.labelControl16.TabIndex = 10;
             this.labelControl16.Text = "آدرس محل سکونت";
             // 
             // labelControl17
@@ -752,7 +842,7 @@ namespace InfoTrucker.UI.PersonForms
             this.labelControl17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(42, 20);
-            this.labelControl17.TabIndex = 12;
+            this.labelControl17.TabIndex = 8;
             this.labelControl17.Text = "کد پستی";
             // 
             // labelControl18
@@ -762,7 +852,7 @@ namespace InfoTrucker.UI.PersonForms
             this.labelControl18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(47, 20);
-            this.labelControl18.TabIndex = 18;
+            this.labelControl18.TabIndex = 6;
             this.labelControl18.Text = "تلفن ثابت";
             // 
             // labelControl3
@@ -772,7 +862,7 @@ namespace InfoTrucker.UI.PersonForms
             this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(53, 20);
-            this.labelControl3.TabIndex = 11;
+            this.labelControl3.TabIndex = 4;
             this.labelControl3.Text = "تلفن همراه";
             // 
             // labelControl19
@@ -782,66 +872,77 @@ namespace InfoTrucker.UI.PersonForms
             this.labelControl19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(53, 20);
-            this.labelControl19.TabIndex = 11;
+            this.labelControl19.TabIndex = 2;
             this.labelControl19.Text = "تلفن همراه";
             // 
             // Id3Textbox
             // 
-            this.Id3Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Id3Textbox.Location = new System.Drawing.Point(41, 37);
+            this.Id3Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Id3Textbox.Location = new System.Drawing.Point(299, 36);
             this.Id3Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Id3Textbox.Name = "Id3Textbox";
             this.Id3Textbox.Parmida_ActivePlusMultiKeys = false;
-            this.Id3Textbox.Size = new System.Drawing.Size(558, 26);
-            this.Id3Textbox.TabIndex = 9;
+            this.Id3Textbox.Size = new System.Drawing.Size(300, 26);
+            this.Id3Textbox.TabIndex = 1;
             // 
             // CodePostiTextbox
             // 
-            this.CodePostiTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CodePostiTextbox.Location = new System.Drawing.Point(41, 182);
+            this.CodePostiTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CodePostiTextbox.Location = new System.Drawing.Point(299, 181);
             this.CodePostiTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CodePostiTextbox.Name = "CodePostiTextbox";
             this.CodePostiTextbox.Parmida_ActivePlusMultiKeys = false;
-            this.CodePostiTextbox.Size = new System.Drawing.Size(558, 26);
-            this.CodePostiTextbox.TabIndex = 4;
+            this.CodePostiTextbox.Properties.MaxLength = 10;
+            this.CodePostiTextbox.Properties.NullValuePrompt = "کد پستی محل سکونت را وارد نمائید";
+            this.CodePostiTextbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.CodePostiTextbox.Properties.ShowNullValuePromptWhenFocused = true;
+            this.CodePostiTextbox.Size = new System.Drawing.Size(300, 26);
+            this.CodePostiTextbox.TabIndex = 9;
             conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule9.ErrorText = "وارد کردن کد پستی الزامی است";
             this.Person_dxProvider.SetValidationRule(this.CodePostiTextbox, conditionValidationRule9);
             // 
             // TelTextbox
             // 
-            this.TelTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TelTextbox.Location = new System.Drawing.Point(41, 145);
+            this.TelTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TelTextbox.Location = new System.Drawing.Point(299, 144);
             this.TelTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TelTextbox.Name = "TelTextbox";
             this.TelTextbox.Parmida_ActivePlusMultiKeys = false;
-            this.TelTextbox.Size = new System.Drawing.Size(558, 26);
-            this.TelTextbox.TabIndex = 3;
+            this.TelTextbox.Properties.MaxLength = 11;
+            this.TelTextbox.Properties.NullValuePrompt = "تلفن ثابت منزل را وارد نمائید";
+            this.TelTextbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.TelTextbox.Properties.ShowNullValuePromptWhenFocused = true;
+            this.TelTextbox.Size = new System.Drawing.Size(300, 26);
+            this.TelTextbox.TabIndex = 7;
             // 
             // Mobile2Textbox
             // 
-            this.Mobile2Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Mobile2Textbox.Location = new System.Drawing.Point(41, 109);
+            this.Mobile2Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Mobile2Textbox.Location = new System.Drawing.Point(299, 108);
             this.Mobile2Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Mobile2Textbox.Name = "Mobile2Textbox";
             this.Mobile2Textbox.Parmida_ActivePlusMultiKeys = false;
-            this.Mobile2Textbox.Size = new System.Drawing.Size(558, 26);
-            this.Mobile2Textbox.TabIndex = 10;
+            this.Mobile2Textbox.Properties.MaxLength = 11;
+            this.Mobile2Textbox.Properties.NullValuePrompt = "شماره همراه دوم را وارد کنید";
+            this.Mobile2Textbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.Mobile2Textbox.Properties.ShowNullValuePromptWhenFocused = true;
+            this.Mobile2Textbox.Size = new System.Drawing.Size(300, 26);
+            this.Mobile2Textbox.TabIndex = 5;
             // 
             // Mobile1Textbox
             // 
-            this.Mobile1Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Mobile1Textbox.Location = new System.Drawing.Point(41, 72);
+            this.Mobile1Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Mobile1Textbox.Location = new System.Drawing.Point(299, 71);
             this.Mobile1Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Mobile1Textbox.Name = "Mobile1Textbox";
             this.Mobile1Textbox.Parmida_ActivePlusMultiKeys = false;
-            this.Mobile1Textbox.Size = new System.Drawing.Size(558, 26);
-            this.Mobile1Textbox.TabIndex = 10;
+            this.Mobile1Textbox.Properties.MaxLength = 11;
+            this.Mobile1Textbox.Properties.NullValuePrompt = "شماره تلفن همراه جهت ثبت در سامانه پیام کوتاه الزامی است";
+            this.Mobile1Textbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.Mobile1Textbox.Properties.ShowNullValuePromptWhenFocused = true;
+            this.Mobile1Textbox.Size = new System.Drawing.Size(300, 26);
+            this.Mobile1Textbox.TabIndex = 3;
             conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule10.ErrorText = "تلفن همراه الزامی است";
             this.Person_dxProvider.SetValidationRule(this.Mobile1Textbox, conditionValidationRule10);
@@ -859,8 +960,12 @@ namespace InfoTrucker.UI.PersonForms
             this.AddressTextbox.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.AddressTextbox.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.AddressTextbox.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.AddressTextbox.Properties.MaxLength = 250;
+            this.AddressTextbox.Properties.NullValuePrompt = "وارد کردن آدرس کامل محل سکونت الزامی است";
+            this.AddressTextbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.AddressTextbox.Properties.ShowNullValuePromptWhenFocused = true;
             this.AddressTextbox.Size = new System.Drawing.Size(558, 148);
-            this.AddressTextbox.TabIndex = 5;
+            this.AddressTextbox.TabIndex = 11;
             conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule11.ErrorText = "وارد کردن آدرس الزامی است";
             this.Person_dxProvider.SetValidationRule(this.AddressTextbox, conditionValidationRule11);
@@ -889,7 +994,7 @@ namespace InfoTrucker.UI.PersonForms
             this.labelControl12.Location = new System.Drawing.Point(99, 235);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(52, 20);
-            this.labelControl12.TabIndex = 2;
+            this.labelControl12.TabIndex = 0;
             this.labelControl12.Text = " عکس3x4";
             // 
             // sidePanel4
@@ -957,66 +1062,6 @@ namespace InfoTrucker.UI.PersonForms
             this.MainSidePanel.TabIndex = 2;
             this.MainSidePanel.Text = "sidePanel1";
             // 
-            // textEdit1
-            // 
-            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit1.EditValue = "51";
-            this.textEdit1.Location = new System.Drawing.Point(518, 218);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Parmida_ActivePlusMultiKeys = false;
-            this.textEdit1.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textEdit1.Properties.MaxLength = 2;
-            this.textEdit1.Size = new System.Drawing.Size(31, 26);
-            this.textEdit1.TabIndex = 5;
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit2.EditValue = "852";
-            this.textEdit2.Location = new System.Drawing.Point(471, 218);
-            this.textEdit2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Parmida_ActivePlusMultiKeys = false;
-            this.textEdit2.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textEdit2.Properties.MaxLength = 3;
-            this.textEdit2.Size = new System.Drawing.Size(39, 26);
-            this.textEdit2.TabIndex = 5;
-            // 
-            // textEdit3
-            // 
-            this.textEdit3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit3.EditValue = "ع";
-            this.textEdit3.Location = new System.Drawing.Point(445, 218);
-            this.textEdit3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Parmida_ActivePlusMultiKeys = false;
-            this.textEdit3.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textEdit3.Properties.ReadOnly = true;
-            this.textEdit3.Size = new System.Drawing.Size(18, 26);
-            this.textEdit3.TabIndex = 5;
-            // 
-            // textEdit4
-            // 
-            this.textEdit4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit4.EditValue = "23";
-            this.textEdit4.Location = new System.Drawing.Point(409, 218);
-            this.textEdit4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Parmida_ActivePlusMultiKeys = false;
-            this.textEdit4.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textEdit4.Properties.MaxLength = 2;
-            this.textEdit4.Size = new System.Drawing.Size(28, 26);
-            this.textEdit4.TabIndex = 5;
-            // 
             // NewPersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1050,7 +1095,11 @@ namespace InfoTrucker.UI.PersonForms
             ((System.ComponentModel.ISupportInitialize)(this.Id2Textbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sh_SokhtTextbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KamionTextbox.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sh_PlakTextbox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Plack5Textbox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Plack4Textbox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Plack3Textbox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Plack2Textbox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Plack1Textbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sh_BimehTextbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HoshmandTextbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sh_GoyahinamehTextbox.Properties)).EndInit();
@@ -1072,10 +1121,6 @@ namespace InfoTrucker.UI.PersonForms
             this.BottonSidePanel.ResumeLayout(false);
             this.MainSidePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Person_dxProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1118,7 +1163,7 @@ namespace InfoTrucker.UI.PersonForms
         private DevExpress.XtraEditors.TextEdit Id2Textbox;
         private DevExpress.XtraEditors.TextEdit Sh_SokhtTextbox;
         private DevExpress.XtraEditors.TextEdit KamionTextbox;
-        private DevExpress.XtraEditors.TextEdit Sh_PlakTextbox;
+        private DevExpress.XtraEditors.TextEdit Plack1Textbox;
         private DevExpress.XtraEditors.TextEdit Sh_BimehTextbox;
         private DevExpress.XtraEditors.TextEdit HoshmandTextbox;
         private DevExpress.XtraEditors.TextEdit Sh_GoyahinamehTextbox;
@@ -1147,9 +1192,9 @@ namespace InfoTrucker.UI.PersonForms
         private DevExpress.XtraEditors.TextEdit TakalofSpanEdit;
         private DevExpress.XtraEditors.TextEdit HoshmandNavganTextbox;
         private DevExpress.XtraEditors.DateEdit BirthDatePicker;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit Plack5Textbox;
+        private DevExpress.XtraEditors.TextEdit Plack4Textbox;
+        private DevExpress.XtraEditors.TextEdit Plack3Textbox;
+        private DevExpress.XtraEditors.TextEdit Plack2Textbox;
     }
 }
