@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InfoTrucker.Infrastructure;
+using InfoTrucker.UI;
 
 namespace InfoTrucker
 {
@@ -18,8 +19,15 @@ namespace InfoTrucker
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var container = new StructureMap.Container(new TypeRegistery());
-
-            Application.Run(container.GetInstance<UI.LoginForm>());
+            var frmLogin = container.GetInstance<UI.LoginForm>();
+            Application.Run(frmLogin);
+            var result = frmLogin.DialogResult;
+            if (result == DialogResult.OK)
+            {
+                var frmMain = container.GetInstance<MainForm>();
+                frmMain.container = container;
+                frmMain.ShowDialog();
+            }
         }
     }
 }

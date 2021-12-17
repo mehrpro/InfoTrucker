@@ -11,7 +11,7 @@ namespace InfoTrucker.Infrastructure
     {
         //-------Definition Public Functions Models-----------//
         void Insert(TEntity entity);
-        void Update(TEntity entity);
+        void Change(TEntity entity, bool nullabl);
 
         void Delete(object Id);
         void Delete(TEntity entity);
@@ -115,11 +115,10 @@ namespace InfoTrucker.Infrastructure
             dbSet.Add(entity);
         }
 
-        public void Update(TEntity entity)
+        public void Change(TEntity entity, bool nullabl)
         {
-            //if (entity == null)
-            //    throw new ArgumentException("no entity");
-            //dbSet.Update(entity);
+            if (!nullabl) _context.Entry(entity).State = EntityState.Detached;
+            _context.Entry(entity).State = EntityState.Modified;
         }
 
         #region Dispose

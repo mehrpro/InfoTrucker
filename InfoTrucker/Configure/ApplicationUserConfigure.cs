@@ -25,6 +25,7 @@ namespace InfoTrucker.Configure
                 .WithRequired(x => x.ApplicationUser)
                 .HasForeignKey(x => x.UserID_FK)
                 .WillCascadeOnDelete(false);
+
         }
     }
 }

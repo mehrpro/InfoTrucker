@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using InfoTrucker.DTO;
+using InfoTrucker.Entities;
 
 namespace InfoTrucker.Infrastructure
 {

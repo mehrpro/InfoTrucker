@@ -9,6 +9,7 @@ namespace InfoTrucker.Infrastructure
         public TypeRegistery()
         {
             For<UnitofWork<AppDbContext>>();
+
         }
     }
 }
