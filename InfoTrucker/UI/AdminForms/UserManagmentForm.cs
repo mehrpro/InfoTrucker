@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace InfoTrucker.UI.AdminForms
 {
-    public partial class UserManagmentForm : Form
+    public partial class UserManagmentForm : XtraForm
     {
         public UserManagmentForm()
         {

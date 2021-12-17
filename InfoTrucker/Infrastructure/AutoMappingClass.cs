@@ -8,7 +8,7 @@ namespace InfoTrucker.Infrastructure
     {
         public AutoMappingClass()
         {
-
+            CreateMap<NewPersonDTO, Person>().ReverseMap();
         }
     }
 }

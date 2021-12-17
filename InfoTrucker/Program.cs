@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StructureMap;
 using InfoTrucker.Infrastructure;
 using InfoTrucker.UI;
 
@@ -16,9 +19,11 @@ namespace InfoTrucker
         [STAThread]
         static void Main()
         {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("fa-IR");
+            Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var container = new StructureMap.Container(new TypeRegistery());
+            var container = new Container(new TypeRegistery());
             var frmLogin = container.GetInstance<UI.LoginForm>();
             Application.Run(frmLogin);
             var result = frmLogin.DialogResult;
@@ -27,6 +32,10 @@ namespace InfoTrucker
                 var frmMain = container.GetInstance<MainForm>();
                 frmMain.container = container;
                 frmMain.ShowDialog();
+            }
+            else
+            {
+                Environment.Exit(0);
             }
         }
     }

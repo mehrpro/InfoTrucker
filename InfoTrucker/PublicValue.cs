@@ -15,5 +15,10 @@ namespace InfoTrucker
             XtraMessageBox.Show($"نام کاربری یا رمز عبور اشتباه است پس از بررسی مجدداً وارد شوید", SoftwareName,
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+        public static void ValidationProviderFaultMessage()
+        {
+            XtraMessageBox.Show($"مقادیر الزامی فرم را وارد نمائید", SoftwareName,
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

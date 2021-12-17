@@ -8,7 +8,7 @@ namespace InfoTrucker.Configure
         public PersonConfigure()
         {
             HasKey(x => x.PersonID);
-            Property(x => x.Address).IsRequired().HasMaxLength(250);
+            Property(x => x.Address).HasMaxLength(250);
             Property(x => x.CodeMelei).IsRequired().HasMaxLength(11).IsMaxLength();
             Property(x => x.CodePosti).HasMaxLength(10).IsFixedLength();
             Property(x => x.DateRegister).HasColumnType("datetime");

@@ -15,9 +15,9 @@ namespace InfoTrucker.UI
 {
     public partial class LoginForm : DevExpress.XtraEditors.XtraForm
     {
-        private readonly IUnitofWork<AppDbContext> _unitofWork;
+        private readonly UnitofWork<AppDbContext> _unitofWork;
 
-        public LoginForm(IUnitofWork<AppDbContext> unitofWork)
+        public LoginForm(UnitofWork<AppDbContext> unitofWork)
         {
             _unitofWork = unitofWork;
             InitializeComponent();

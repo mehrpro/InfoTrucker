@@ -12,16 +12,17 @@ using DevExpress.XtraEditors;
 using InfoTrucker.Infrastructure;
 using InfoTrucker.Models;
 using InfoTrucker.UI.AdminForms;
+using InfoTrucker.UI.PersonForms;
 
 namespace InfoTrucker.UI
 {
     public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private readonly IUnitofWork<AppDbContext> _unitofWork;
+        private readonly UnitofWork<AppDbContext> _unitofWork;
         private StructureMap.Container _container;
         public StructureMap.Container container { get => _container; set => _container = value; }
 
-        public MainForm(IUnitofWork<AppDbContext> unitofWork)
+        public MainForm(UnitofWork<AppDbContext> unitofWork)
         {
             _unitofWork = unitofWork;
             //_container = container;
@@ -35,7 +36,7 @@ namespace InfoTrucker.UI
         private void NewPersonButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            var frm = _container.GetInstance<PersonForms.NewPersonForm>();
+            var frm = _container.GetInstance<NewPersonForm>();
             frm.MdiParent = this;
             //frm.StartPosition = FormStartPosition.CenterParent;
             frm.WindowState = FormWindowState.Maximized;
