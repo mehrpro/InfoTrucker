@@ -35,7 +35,6 @@ namespace InfoTrucker.UI
             this.PeopleButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.DocumentRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PersonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +50,7 @@ namespace InfoTrucker.UI
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.DocumentRibbonPage});
-            this.ribbonControl1.Size = new System.Drawing.Size(800, 176);
+            this.ribbonControl1.Size = new System.Drawing.Size(800, 174);
             // 
             // NewPersonButtonItem
             // 
@@ -86,22 +85,14 @@ namespace InfoTrucker.UI
             this.PersonPageGroup.Name = "PersonPageGroup";
             this.PersonPageGroup.Text = "رانندگان";
             // 
-            // fluentDesignFormContainer1
-            // 
-            this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 176);
-            this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(800, 273);
-            this.fluentDesignFormContainer1.TabIndex = 3;
-            // 
             // MainForm
             // 
-            this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
+            this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 449);
-            this.Controls.Add(this.fluentDesignFormContainer1);
             this.Controls.Add(this.ribbonControl1);
+            this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Ribbon = this.ribbonControl1;
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -119,6 +110,5 @@ namespace InfoTrucker.UI
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup PersonPageGroup;
         private DevExpress.XtraBars.BarButtonItem NewPersonButtonItem;
         private DevExpress.XtraBars.BarButtonItem PeopleButtonItem;
-        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer fluentDesignFormContainer1;
     }
 }
