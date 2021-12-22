@@ -30,6 +30,7 @@ namespace InfoTrucker.UI.AdminForms
         private void InitializeComponent()
         {
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             this.SuspendLayout();
@@ -52,13 +53,21 @@ namespace InfoTrucker.UI.AdminForms
             this.dateEdit1.Size = new System.Drawing.Size(281, 26);
             this.dateEdit1.TabIndex = 0;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(244, 45);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(200, 50);
+            this.simpleButton1.TabIndex = 1;
+            this.simpleButton1.Text = "simpleButton1";
+            // 
             // UserManagmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(846, 562);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.dateEdit1);
-            this.Font = new System.Drawing.Font("B Yekan", 9.75F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UserManagmentForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -72,5 +81,6 @@ namespace InfoTrucker.UI.AdminForms
         #endregion
 
         private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

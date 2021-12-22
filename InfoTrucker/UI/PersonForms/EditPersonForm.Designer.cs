@@ -29,12 +29,12 @@ namespace InfoTrucker.UI.PersonForms
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditPersonForm));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.PersonListGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.IdColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -42,6 +42,7 @@ namespace InfoTrucker.UI.PersonForms
             this.Hoshmand = new DevExpress.XtraGrid.Columns.GridColumn();
             this.EditColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.EditRowBotton = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.PlakColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.PersonListGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EditRowBotton)).BeginInit();
@@ -120,7 +121,8 @@ namespace InfoTrucker.UI.PersonForms
             this.IdColumn,
             this.FullName,
             this.Hoshmand,
-            this.EditColumn});
+            this.EditColumn,
+            this.PlakColumn});
             this.gridView1.GridControl = this.PersonListGridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
@@ -142,8 +144,8 @@ namespace InfoTrucker.UI.PersonForms
             this.FullName.FieldName = "FullName";
             this.FullName.Name = "FullName";
             this.FullName.Visible = true;
-            this.FullName.VisibleIndex = 2;
-            this.FullName.Width = 406;
+            this.FullName.VisibleIndex = 3;
+            this.FullName.Width = 418;
             // 
             // Hoshmand
             // 
@@ -164,21 +166,32 @@ namespace InfoTrucker.UI.PersonForms
             this.EditColumn.MinWidth = 65;
             this.EditColumn.Name = "EditColumn";
             this.EditColumn.Visible = true;
-            this.EditColumn.VisibleIndex = 3;
+            this.EditColumn.VisibleIndex = 4;
             this.EditColumn.Width = 65;
             // 
             // EditRowBotton
             // 
             this.EditRowBotton.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            serializableAppearanceObject1.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject2.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject3.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject4.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            serializableAppearanceObject5.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject6.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject7.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject8.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.EditRowBotton.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.EditRowBotton.Name = "EditRowBotton";
             this.EditRowBotton.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // PlakColumn
+            // 
+            this.PlakColumn.Caption = "پلاک";
+            this.PlakColumn.FieldName = "Sh_Plak";
+            this.PlakColumn.MaxWidth = 120;
+            this.PlakColumn.MinWidth = 120;
+            this.PlakColumn.Name = "PlakColumn";
+            this.PlakColumn.Visible = true;
+            this.PlakColumn.VisibleIndex = 2;
+            this.PlakColumn.Width = 120;
             // 
             // EditPersonForm
             // 
@@ -205,5 +218,6 @@ namespace InfoTrucker.UI.PersonForms
         private DevExpress.XtraGrid.Columns.GridColumn Hoshmand;
         private DevExpress.XtraGrid.Columns.GridColumn EditColumn;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit EditRowBotton;
+        private DevExpress.XtraGrid.Columns.GridColumn PlakColumn;
     }
 }

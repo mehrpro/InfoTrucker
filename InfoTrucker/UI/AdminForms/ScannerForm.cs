@@ -5,22 +5,21 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using WIA;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using DevExpress.XtraEditors;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace InfoTrucker.UI.AdminForms
 {
-    public partial class UserManagmentForm : XtraForm
+    public partial class ScannerForm : Form
     {
-  
-
-        public UserManagmentForm()
+        public ScannerForm()
         {
             InitializeComponent();
         }
 
-
+       
     }
 }
