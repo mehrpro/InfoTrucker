@@ -93,24 +93,14 @@
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\PublicType.cs" />
     <Compile Include="Infrastructure\AutoMappingClass.cs" />
+    <Compile Include="Infrastructure\ImageResizer.cs" />
     <Compile Include="Infrastructure\IRepositoryBase.cs" />
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\TypeRegistery.cs" />
-    <Compile Include="Migrations\202112151826235_dbcreate.cs" />
-    <Compile Include="Migrations\202112151826235_dbcreate.designer.cs">
-      <DependentUpon>202112151826235_dbcreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112171239522_db.cs" />
-    <Compile Include="Migrations\202112171239522_db.designer.cs">
-      <DependentUpon>202112171239522_db.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112171253490_db2.cs" />
-    <Compile Include="Migrations\202112171253490_db2.designer.cs">
-      <DependentUpon>202112171253490_db2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112171614327_db3.cs" />
-    <Compile Include="Migrations\202112171614327_db3.designer.cs">
-      <DependentUpon>202112171614327_db3.cs</DependentUpon>
+    <Compile Include="Infrastructure\WIAScanner.cs" />
+    <Compile Include="Migrations\202112230750012_createDB.cs" />
+    <Compile Include="Migrations\202112230750012_createDB.designer.cs">
+      <DependentUpon>202112230750012_createDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
@@ -165,17 +155,8 @@
     <Compile Include="UI\PersonForms\PersonEditPageForm.Designer.cs">
       <DependentUpon>PersonEditPageForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202112151826235_dbcreate.resx">
-      <DependentUpon>202112151826235_dbcreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112171239522_db.resx">
-      <DependentUpon>202112171239522_db.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112171253490_db2.resx">
-      <DependentUpon>202112171253490_db2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112171614327_db3.resx">
-      <DependentUpon>202112171614327_db3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112230750012_createDB.resx">
+      <DependentUpon>202112230750012_createDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

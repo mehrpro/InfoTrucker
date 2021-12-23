@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Data.Entity.Migrations;
+using System.Collections.Generic;
 using InfoTrucker.Entities;
 
 namespace InfoTrucker.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+
 
     internal sealed class Configuration : DbMigrationsConfiguration<InfoTrucker.Models.AppDbContext>
     {
@@ -59,6 +58,40 @@ namespace InfoTrucker.Migrations
             cleams.Add(new Cleam() { ID = 5, GroupID_FK = 4, IsDelete = false, UserID_FK = 1, MenuItemID_FK = 5 });
             cleams.Add(new Cleam() { ID = 6, GroupID_FK = 5, IsDelete = false, UserID_FK = 1, MenuItemID_FK = 6 });
             context.Cleams.AddRange(cleams);
+
+
+            IList<Person> person = new List<Person>();
+            person.Add(new Person()
+            {
+                PersonID = 1220001,
+                IsActive = true,
+                IsDelete = false,
+                DateRegister = DateTime.Now,
+                Address = "کردستان بیجار سیمان کردستان اتحادیه صنفی رانندگان",
+                CodeMelei = "3782428218",
+                CodePosti = "6651848965",
+                FatherName = "یدالله",
+                FName = "فرشید",
+                LName = "محمدی",
+                Hoshmand = "123456789",
+                Kamion = "اپل آسترا",
+                MahelTavalod = "بیجار",
+                Mobile1 = "09186620474",
+                Mobile2 = "09186620474",
+                SerialShenasnameh = "الف-12-123456",
+                HoshmandNavgan = "123456789",
+                Shenasnameh = "1354",
+                Sh_Bimeh = "123456789",
+                Sh_Plak = "ایران22ج33261",
+                Sh_Goyahinameh = "123456789",
+                Sh_Sokht = "123456789",
+                Takalof = 2,
+                Tavalod = DateTime.Now,
+                Tel = "08738238022",
+                UserID_FK = 1,
+                ID = 1
+            });
+            context.People.AddRange(person);
         }
     }
 }

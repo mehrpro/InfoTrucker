@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class dbcreate : DbMigration
+    public partial class createDB : DbMigration
     {
         public override void Up()
         {
@@ -66,34 +66,35 @@
                 "dbo.People",
                 c => new
                     {
-                        PersonID = c.Int(nullable: false, identity: true),
+                        ID = c.Int(nullable: false, identity: true),
+                        PersonID = c.Int(nullable: false),
                         FName = c.String(nullable: false, maxLength: 150),
                         LName = c.String(nullable: false, maxLength: 250),
                         FatherName = c.String(maxLength: 100),
                         Tavalod = c.DateTime(nullable: false),
-                        CodeMelei = c.String(nullable: false),
+                        CodeMelei = c.String(nullable: false, maxLength: 11),
                         Takalof = c.Byte(nullable: false),
-                        SerialShenasnameh = c.String(maxLength: 15),
+                        SerialShenasnameh = c.String(maxLength: 20),
                         Shenasnameh = c.String(maxLength: 11),
                         MahelTavalod = c.String(maxLength: 100),
                         Hoshmand = c.String(maxLength: 20),
                         Sh_Bimeh = c.String(maxLength: 20),
                         Sh_Goyahinameh = c.String(maxLength: 20),
                         HoshmandNavgan = c.String(maxLength: 20),
-                        Sh_Plak = c.String(maxLength: 10),
-                        Kamion = c.String(maxLength: 10),
+                        Sh_Plak = c.String(maxLength: 50),
+                        Kamion = c.String(maxLength: 50),
                         Sh_Sokht = c.String(maxLength: 20),
                         Tel = c.String(maxLength: 11),
                         Mobile1 = c.String(maxLength: 11),
                         Mobile2 = c.String(maxLength: 11),
-                        CodePosti = c.String(maxLength: 10, fixedLength: true),
-                        Address = c.String(nullable: false, maxLength: 250),
+                        CodePosti = c.String(maxLength: 10),
+                        Address = c.String(maxLength: 250),
                         IsActive = c.Boolean(nullable: false),
                         IsDelete = c.Boolean(nullable: false),
                         DateRegister = c.DateTime(nullable: false),
                         UserID_FK = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.PersonID)
+                .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.ApplicationUsers", t => t.UserID_FK)
                 .Index(t => t.UserID_FK);
             

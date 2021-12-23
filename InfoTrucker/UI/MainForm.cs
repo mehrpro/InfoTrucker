@@ -36,7 +36,7 @@ namespace InfoTrucker.UI
         private void NewPersonButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            var frm = _container.GetInstance<UserManagmentForm>();
+            var frm = _container.GetInstance<NewPersonForm>();
             frm.MdiParent = this;
             //frm.StartPosition = FormStartPosition.CenterParent;
             frm.WindowState = FormWindowState.Maximized;

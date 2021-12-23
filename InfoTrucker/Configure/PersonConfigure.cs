@@ -7,7 +7,8 @@ namespace InfoTrucker.Configure
     {
         public PersonConfigure()
         {
-            HasKey(x => x.PersonID);
+            HasKey(x => x.ID);
+            Property(x => x.PersonID).IsRequired();
             Property(x => x.Address).HasMaxLength(250);
             Property(x => x.CodeMelei).IsRequired().HasMaxLength(11);
             Property(x => x.CodePosti).HasMaxLength(10);

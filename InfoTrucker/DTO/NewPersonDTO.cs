@@ -8,6 +8,7 @@ namespace InfoTrucker.DTO
 {
     public class NewPersonDTO
     {
+        public int PersonID { get; set; }
         public string FName { get; set; }
         public string LName { get; set; }
         public string FatherName { get; set; }

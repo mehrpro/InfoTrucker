@@ -31,6 +31,8 @@ namespace InfoTrucker.UI.PersonForms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonEditPageForm));
             this.Right1SidePanel = new DevExpress.XtraEditors.SidePanel();
+            this.CloseButton = new DevExpress.XtraEditors.SimpleButton();
+            this.SaveButton = new DevExpress.XtraEditors.SimpleButton();
             this.BirthDatePicker = new DevExpress.XtraEditors.DateEdit();
             this.IdLabel = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -51,8 +53,6 @@ namespace InfoTrucker.UI.PersonForms
             this.LNameTextbox = new DevExpress.XtraEditors.TextEdit();
             this.FNameTextbox = new DevExpress.XtraEditors.TextEdit();
             this.TakalofSpanEdit = new DevExpress.XtraEditors.TextEdit();
-            this.CloseButton = new DevExpress.XtraEditors.SimpleButton();
-            this.SaveButton = new DevExpress.XtraEditors.SimpleButton();
             this.Right1SidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BirthDatePicker.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthDatePicker.Properties)).BeginInit();
@@ -98,6 +98,29 @@ namespace InfoTrucker.UI.PersonForms
             this.Right1SidePanel.Size = new System.Drawing.Size(466, 491);
             this.Right1SidePanel.TabIndex = 1;
             this.Right1SidePanel.Text = "sidePanel3";
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.ImageOptions.Image")));
+            this.CloseButton.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.CloseButton.Location = new System.Drawing.Point(36, 395);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(60, 60);
+            this.CloseButton.TabIndex = 21;
+            this.CloseButton.Text = "بستن";
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.ImageOptions.Image")));
+            this.SaveButton.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.SaveButton.Location = new System.Drawing.Point(101, 395);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(60, 60);
+            this.SaveButton.TabIndex = 20;
+            this.SaveButton.Text = "ذخیره";
             // 
             // BirthDatePicker
             // 
@@ -280,7 +303,6 @@ namespace InfoTrucker.UI.PersonForms
             this.NationalCodeTextbox.Properties.MaxLength = 10;
             this.NationalCodeTextbox.Properties.NullValuePrompt = "کد ملی الزامی است";
             this.NationalCodeTextbox.Properties.NullValuePromptShowForEmptyValue = true;
-            this.NationalCodeTextbox.Properties.ReadOnly = true;
             this.NationalCodeTextbox.Properties.ShowNullValuePromptWhenFocused = true;
             this.NationalCodeTextbox.Size = new System.Drawing.Size(300, 26);
             this.NationalCodeTextbox.TabIndex = 11;
@@ -347,29 +369,6 @@ namespace InfoTrucker.UI.PersonForms
             this.TakalofSpanEdit.Properties.NullValuePromptShowForEmptyValue = true;
             this.TakalofSpanEdit.Size = new System.Drawing.Size(300, 26);
             this.TakalofSpanEdit.TabIndex = 19;
-            // 
-            // CloseButton
-            // 
-            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CloseButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.ImageOptions.Image")));
-            this.CloseButton.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.CloseButton.Location = new System.Drawing.Point(36, 395);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(60, 60);
-            this.CloseButton.TabIndex = 21;
-            this.CloseButton.Text = "بستن";
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
-            // 
-            // SaveButton
-            // 
-            this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SaveButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.ImageOptions.Image")));
-            this.SaveButton.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.SaveButton.Location = new System.Drawing.Point(101, 395);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(60, 60);
-            this.SaveButton.TabIndex = 20;
-            this.SaveButton.Text = "ذخیره";
             // 
             // PersonEditPageForm
             // 

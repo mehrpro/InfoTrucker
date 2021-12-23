@@ -4,6 +4,7 @@ namespace InfoTrucker.Entities
 {
     public class Person
     {
+        public int ID { get; set; }
         public int PersonID { get; set; }
         public string FName { get; set; }
         public string LName { get; set; }
