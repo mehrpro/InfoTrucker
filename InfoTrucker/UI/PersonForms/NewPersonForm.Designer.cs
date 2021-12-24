@@ -68,6 +68,8 @@ namespace InfoTrucker.UI.PersonForms
             this.TakalofSpanEdit = new DevExpress.XtraEditors.TextEdit();
             this.JobTabPage = new DevExpress.XtraTab.XtraTabPage();
             this.Right2SidePanel = new DevExpress.XtraEditors.SidePanel();
+            this.HoshmandErrorTextbox = new DevExpress.XtraEditors.TextEdit();
+            this.PlackErrorTextbox = new DevExpress.XtraEditors.TextEdit();
             this.PlackTextbox = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -109,7 +111,6 @@ namespace InfoTrucker.UI.PersonForms
             this.SaveButton = new DevExpress.XtraEditors.SimpleButton();
             this.MainSidePanel = new DevExpress.XtraEditors.SidePanel();
             this.Person_dxProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.PlackErrorTextbox = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonTabControl)).BeginInit();
             this.PersonTabControl.SuspendLayout();
             this.PersonTabPage.SuspendLayout();
@@ -128,6 +129,8 @@ namespace InfoTrucker.UI.PersonForms
             ((System.ComponentModel.ISupportInitialize)(this.TakalofSpanEdit.Properties)).BeginInit();
             this.JobTabPage.SuspendLayout();
             this.Right2SidePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HoshmandErrorTextbox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlackErrorTextbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlackTextbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Id2Textbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sh_SokhtTextbox.Properties)).BeginInit();
@@ -152,12 +155,12 @@ namespace InfoTrucker.UI.PersonForms
             this.BottonSidePanel.SuspendLayout();
             this.MainSidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Person_dxProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PlackErrorTextbox.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // PersonTabControl
             // 
             this.PersonTabControl.AppearancePage.Header.Options.UseTextOptions = true;
+            this.PersonTabControl.AppearancePage.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.PersonTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PersonTabControl.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Right;
             this.PersonTabControl.HeaderOrientation = DevExpress.XtraTab.TabOrientation.Horizontal;
@@ -165,7 +168,7 @@ namespace InfoTrucker.UI.PersonForms
             this.PersonTabControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PersonTabControl.Name = "PersonTabControl";
             this.PersonTabControl.SelectedTabPage = this.PersonTabPage;
-            this.PersonTabControl.Size = new System.Drawing.Size(895, 432);
+            this.PersonTabControl.Size = new System.Drawing.Size(779, 531);
             this.PersonTabControl.TabIndex = 0;
             this.PersonTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.PersonTabPage,
@@ -179,7 +182,7 @@ namespace InfoTrucker.UI.PersonForms
             this.PersonTabPage.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("PersonTabPage.ImageOptions.Image")));
             this.PersonTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PersonTabPage.Name = "PersonTabPage";
-            this.PersonTabPage.Size = new System.Drawing.Size(766, 426);
+            this.PersonTabPage.Size = new System.Drawing.Size(980, 525);
             this.PersonTabPage.Text = "مشخصات فردی";
             // 
             // Right1SidePanel
@@ -209,7 +212,7 @@ namespace InfoTrucker.UI.PersonForms
             this.Right1SidePanel.Location = new System.Drawing.Point(0, 0);
             this.Right1SidePanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Right1SidePanel.Name = "Right1SidePanel";
-            this.Right1SidePanel.Size = new System.Drawing.Size(766, 426);
+            this.Right1SidePanel.Size = new System.Drawing.Size(980, 525);
             this.Right1SidePanel.TabIndex = 0;
             this.Right1SidePanel.Text = "sidePanel3";
             // 
@@ -221,14 +224,15 @@ namespace InfoTrucker.UI.PersonForms
             this.NationalCodeErrorTextbox.Name = "NationalCodeErrorTextbox";
             this.NationalCodeErrorTextbox.Parmida_ActivePlusMultiKeys = false;
             this.NationalCodeErrorTextbox.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.NationalCodeErrorTextbox.Size = new System.Drawing.Size(282, 24);
+            this.NationalCodeErrorTextbox.Size = new System.Drawing.Size(496, 24);
             this.NationalCodeErrorTextbox.TabIndex = 20;
+            this.NationalCodeErrorTextbox.TabStop = false;
             // 
             // BirthDatePicker
             // 
             this.BirthDatePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BirthDatePicker.EditValue = null;
-            this.BirthDatePicker.Location = new System.Drawing.Point(299, 179);
+            this.BirthDatePicker.Location = new System.Drawing.Point(513, 179);
             this.BirthDatePicker.Name = "BirthDatePicker";
             this.BirthDatePicker.Parmida_ActivePlusMultiKeys = false;
             this.BirthDatePicker.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -250,7 +254,7 @@ namespace InfoTrucker.UI.PersonForms
             // IdLabel
             // 
             this.IdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.IdLabel.Location = new System.Drawing.Point(615, 40);
+            this.IdLabel.Location = new System.Drawing.Point(829, 40);
             this.IdLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.IdLabel.Name = "IdLabel";
             this.IdLabel.Size = new System.Drawing.Size(64, 20);
@@ -260,7 +264,7 @@ namespace InfoTrucker.UI.PersonForms
             // labelControl10
             // 
             this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl10.Location = new System.Drawing.Point(616, 365);
+            this.labelControl10.Location = new System.Drawing.Point(830, 365);
             this.labelControl10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(78, 20);
@@ -270,7 +274,7 @@ namespace InfoTrucker.UI.PersonForms
             // MahalTavalodLabel
             // 
             this.MahalTavalodLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MahalTavalodLabel.Location = new System.Drawing.Point(616, 329);
+            this.MahalTavalodLabel.Location = new System.Drawing.Point(830, 329);
             this.MahalTavalodLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MahalTavalodLabel.Name = "MahalTavalodLabel";
             this.MahalTavalodLabel.Size = new System.Drawing.Size(44, 20);
@@ -280,7 +284,7 @@ namespace InfoTrucker.UI.PersonForms
             // ShLabel
             // 
             this.ShLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ShLabel.Location = new System.Drawing.Point(616, 292);
+            this.ShLabel.Location = new System.Drawing.Point(830, 292);
             this.ShLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ShLabel.Name = "ShLabel";
             this.ShLabel.Size = new System.Drawing.Size(76, 20);
@@ -290,7 +294,7 @@ namespace InfoTrucker.UI.PersonForms
             // SerialSHLabel
             // 
             this.SerialSHLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SerialSHLabel.Location = new System.Drawing.Point(616, 255);
+            this.SerialSHLabel.Location = new System.Drawing.Point(830, 255);
             this.SerialSHLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SerialSHLabel.Name = "SerialSHLabel";
             this.SerialSHLabel.Size = new System.Drawing.Size(78, 20);
@@ -300,7 +304,7 @@ namespace InfoTrucker.UI.PersonForms
             // NationalLabel
             // 
             this.NationalLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.NationalLabel.Location = new System.Drawing.Point(616, 222);
+            this.NationalLabel.Location = new System.Drawing.Point(830, 222);
             this.NationalLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NationalLabel.Name = "NationalLabel";
             this.NationalLabel.Size = new System.Drawing.Size(32, 20);
@@ -310,7 +314,7 @@ namespace InfoTrucker.UI.PersonForms
             // BrithLabel
             // 
             this.BrithLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BrithLabel.Location = new System.Drawing.Point(616, 185);
+            this.BrithLabel.Location = new System.Drawing.Point(830, 185);
             this.BrithLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BrithLabel.Name = "BrithLabel";
             this.BrithLabel.Size = new System.Drawing.Size(47, 20);
@@ -320,7 +324,7 @@ namespace InfoTrucker.UI.PersonForms
             // FatherLabel
             // 
             this.FatherLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FatherLabel.Location = new System.Drawing.Point(616, 149);
+            this.FatherLabel.Location = new System.Drawing.Point(830, 149);
             this.FatherLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FatherLabel.Name = "FatherLabel";
             this.FatherLabel.Size = new System.Drawing.Size(34, 20);
@@ -330,7 +334,7 @@ namespace InfoTrucker.UI.PersonForms
             // FamilyLabel
             // 
             this.FamilyLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FamilyLabel.Location = new System.Drawing.Point(616, 114);
+            this.FamilyLabel.Location = new System.Drawing.Point(830, 114);
             this.FamilyLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FamilyLabel.Name = "FamilyLabel";
             this.FamilyLabel.Size = new System.Drawing.Size(60, 20);
@@ -340,7 +344,7 @@ namespace InfoTrucker.UI.PersonForms
             // NameLabel
             // 
             this.NameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.NameLabel.Location = new System.Drawing.Point(616, 78);
+            this.NameLabel.Location = new System.Drawing.Point(830, 78);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(14, 20);
@@ -350,7 +354,7 @@ namespace InfoTrucker.UI.PersonForms
             // Id1Textbox
             // 
             this.Id1Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Id1Textbox.Location = new System.Drawing.Point(299, 36);
+            this.Id1Textbox.Location = new System.Drawing.Point(513, 36);
             this.Id1Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Id1Textbox.Name = "Id1Textbox";
             this.Id1Textbox.Parmida_ActivePlusMultiKeys = false;
@@ -360,7 +364,7 @@ namespace InfoTrucker.UI.PersonForms
             // MahalTavalodTextbox
             // 
             this.MahalTavalodTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MahalTavalodTextbox.Location = new System.Drawing.Point(299, 325);
+            this.MahalTavalodTextbox.Location = new System.Drawing.Point(513, 325);
             this.MahalTavalodTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MahalTavalodTextbox.Name = "MahalTavalodTextbox";
             this.MahalTavalodTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -373,7 +377,7 @@ namespace InfoTrucker.UI.PersonForms
             // ShenasnamehTextbox
             // 
             this.ShenasnamehTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ShenasnamehTextbox.Location = new System.Drawing.Point(299, 289);
+            this.ShenasnamehTextbox.Location = new System.Drawing.Point(513, 289);
             this.ShenasnamehTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ShenasnamehTextbox.Name = "ShenasnamehTextbox";
             this.ShenasnamehTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -389,7 +393,7 @@ namespace InfoTrucker.UI.PersonForms
             // ShSerialTextbox
             // 
             this.ShSerialTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ShSerialTextbox.Location = new System.Drawing.Point(299, 252);
+            this.ShSerialTextbox.Location = new System.Drawing.Point(513, 252);
             this.ShSerialTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ShSerialTextbox.Name = "ShSerialTextbox";
             this.ShSerialTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -401,7 +405,7 @@ namespace InfoTrucker.UI.PersonForms
             // NationalCodeTextbox
             // 
             this.NationalCodeTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.NationalCodeTextbox.Location = new System.Drawing.Point(299, 217);
+            this.NationalCodeTextbox.Location = new System.Drawing.Point(513, 217);
             this.NationalCodeTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NationalCodeTextbox.Name = "NationalCodeTextbox";
             this.NationalCodeTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -421,7 +425,7 @@ namespace InfoTrucker.UI.PersonForms
             // FatherTextbox
             // 
             this.FatherTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FatherTextbox.Location = new System.Drawing.Point(299, 145);
+            this.FatherTextbox.Location = new System.Drawing.Point(513, 145);
             this.FatherTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FatherTextbox.Name = "FatherTextbox";
             this.FatherTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -437,7 +441,7 @@ namespace InfoTrucker.UI.PersonForms
             // LNameTextbox
             // 
             this.LNameTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LNameTextbox.Location = new System.Drawing.Point(299, 109);
+            this.LNameTextbox.Location = new System.Drawing.Point(513, 109);
             this.LNameTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LNameTextbox.Name = "LNameTextbox";
             this.LNameTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -453,7 +457,7 @@ namespace InfoTrucker.UI.PersonForms
             // FNameTextbox
             // 
             this.FNameTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FNameTextbox.Location = new System.Drawing.Point(299, 72);
+            this.FNameTextbox.Location = new System.Drawing.Point(513, 72);
             this.FNameTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FNameTextbox.Name = "FNameTextbox";
             this.FNameTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -474,7 +478,7 @@ namespace InfoTrucker.UI.PersonForms
             0,
             0,
             0});
-            this.TakalofSpanEdit.Location = new System.Drawing.Point(299, 362);
+            this.TakalofSpanEdit.Location = new System.Drawing.Point(513, 362);
             this.TakalofSpanEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TakalofSpanEdit.Name = "TakalofSpanEdit";
             this.TakalofSpanEdit.Parmida_ActivePlusMultiKeys = false;
@@ -496,11 +500,12 @@ namespace InfoTrucker.UI.PersonForms
             this.JobTabPage.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("JobTabPage.ImageOptions.Image")));
             this.JobTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.JobTabPage.Name = "JobTabPage";
-            this.JobTabPage.Size = new System.Drawing.Size(766, 426);
+            this.JobTabPage.Size = new System.Drawing.Size(650, 525);
             this.JobTabPage.Text = "مشخصات شغلی";
             // 
             // Right2SidePanel
             // 
+            this.Right2SidePanel.Controls.Add(this.HoshmandErrorTextbox);
             this.Right2SidePanel.Controls.Add(this.PlackErrorTextbox);
             this.Right2SidePanel.Controls.Add(this.PlackTextbox);
             this.Right2SidePanel.Controls.Add(this.labelControl1);
@@ -521,14 +526,42 @@ namespace InfoTrucker.UI.PersonForms
             this.Right2SidePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Right2SidePanel.Location = new System.Drawing.Point(0, 0);
             this.Right2SidePanel.Name = "Right2SidePanel";
-            this.Right2SidePanel.Size = new System.Drawing.Size(766, 426);
+            this.Right2SidePanel.Size = new System.Drawing.Size(650, 525);
             this.Right2SidePanel.TabIndex = 0;
             this.Right2SidePanel.Text = "sidePanel2";
+            // 
+            // HoshmandErrorTextbox
+            // 
+            this.HoshmandErrorTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.HoshmandErrorTextbox.Location = new System.Drawing.Point(11, 109);
+            this.HoshmandErrorTextbox.Name = "HoshmandErrorTextbox";
+            this.HoshmandErrorTextbox.Parmida_ActivePlusMultiKeys = false;
+            this.HoshmandErrorTextbox.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.HoshmandErrorTextbox.Properties.Appearance.Options.UseForeColor = true;
+            this.HoshmandErrorTextbox.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.HoshmandErrorTextbox.Size = new System.Drawing.Size(165, 24);
+            this.HoshmandErrorTextbox.TabIndex = 21;
+            this.HoshmandErrorTextbox.TabStop = false;
+            // 
+            // PlackErrorTextbox
+            // 
+            this.PlackErrorTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PlackErrorTextbox.Location = new System.Drawing.Point(11, 219);
+            this.PlackErrorTextbox.Name = "PlackErrorTextbox";
+            this.PlackErrorTextbox.Parmida_ActivePlusMultiKeys = false;
+            this.PlackErrorTextbox.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.PlackErrorTextbox.Properties.Appearance.Options.UseBackColor = true;
+            this.PlackErrorTextbox.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.PlackErrorTextbox.Size = new System.Drawing.Size(348, 24);
+            this.PlackErrorTextbox.TabIndex = 20;
+            this.PlackErrorTextbox.TabStop = false;
             // 
             // PlackTextbox
             // 
             this.PlackTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PlackTextbox.Location = new System.Drawing.Point(481, 218);
+            this.PlackTextbox.Location = new System.Drawing.Point(365, 218);
             this.PlackTextbox.Name = "PlackTextbox";
             this.PlackTextbox.Parmida_ActivePlusMultiKeys = false;
             this.PlackTextbox.Properties.Appearance.BackColor = System.Drawing.Color.Yellow;
@@ -541,7 +574,7 @@ namespace InfoTrucker.UI.PersonForms
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(614, 40);
+            this.labelControl1.Location = new System.Drawing.Point(498, 40);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(64, 20);
@@ -551,7 +584,7 @@ namespace InfoTrucker.UI.PersonForms
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(616, 292);
+            this.labelControl2.Location = new System.Drawing.Point(500, 292);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(60, 20);
@@ -561,7 +594,7 @@ namespace InfoTrucker.UI.PersonForms
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(616, 255);
+            this.labelControl4.Location = new System.Drawing.Point(500, 255);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(52, 20);
@@ -571,7 +604,7 @@ namespace InfoTrucker.UI.PersonForms
             // labelControl5
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Location = new System.Drawing.Point(616, 222);
+            this.labelControl5.Location = new System.Drawing.Point(500, 222);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(88, 20);
@@ -581,7 +614,7 @@ namespace InfoTrucker.UI.PersonForms
             // labelControl6
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Location = new System.Drawing.Point(616, 185);
+            this.labelControl6.Location = new System.Drawing.Point(500, 185);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(98, 20);
@@ -591,7 +624,7 @@ namespace InfoTrucker.UI.PersonForms
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(616, 149);
+            this.labelControl7.Location = new System.Drawing.Point(500, 149);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(93, 20);
@@ -601,7 +634,7 @@ namespace InfoTrucker.UI.PersonForms
             // labelControl8
             // 
             this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl8.Location = new System.Drawing.Point(616, 114);
+            this.labelControl8.Location = new System.Drawing.Point(500, 114);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(107, 20);
@@ -611,7 +644,7 @@ namespace InfoTrucker.UI.PersonForms
             // labelControl9
             // 
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl9.Location = new System.Drawing.Point(616, 78);
+            this.labelControl9.Location = new System.Drawing.Point(500, 78);
             this.labelControl9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(78, 20);
@@ -621,7 +654,7 @@ namespace InfoTrucker.UI.PersonForms
             // Id2Textbox
             // 
             this.Id2Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Id2Textbox.Location = new System.Drawing.Point(299, 37);
+            this.Id2Textbox.Location = new System.Drawing.Point(183, 37);
             this.Id2Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Id2Textbox.Name = "Id2Textbox";
             this.Id2Textbox.Parmida_ActivePlusMultiKeys = false;
@@ -631,7 +664,7 @@ namespace InfoTrucker.UI.PersonForms
             // Sh_SokhtTextbox
             // 
             this.Sh_SokhtTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Sh_SokhtTextbox.Location = new System.Drawing.Point(299, 289);
+            this.Sh_SokhtTextbox.Location = new System.Drawing.Point(183, 289);
             this.Sh_SokhtTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Sh_SokhtTextbox.Name = "Sh_SokhtTextbox";
             this.Sh_SokhtTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -644,7 +677,7 @@ namespace InfoTrucker.UI.PersonForms
             // KamionTextbox
             // 
             this.KamionTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.KamionTextbox.Location = new System.Drawing.Point(299, 252);
+            this.KamionTextbox.Location = new System.Drawing.Point(183, 252);
             this.KamionTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.KamionTextbox.Name = "KamionTextbox";
             this.KamionTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -657,7 +690,7 @@ namespace InfoTrucker.UI.PersonForms
             // Sh_BimehTextbox
             // 
             this.Sh_BimehTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Sh_BimehTextbox.Location = new System.Drawing.Point(299, 145);
+            this.Sh_BimehTextbox.Location = new System.Drawing.Point(183, 145);
             this.Sh_BimehTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Sh_BimehTextbox.Name = "Sh_BimehTextbox";
             this.Sh_BimehTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -673,7 +706,7 @@ namespace InfoTrucker.UI.PersonForms
             // HoshmandTextbox
             // 
             this.HoshmandTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.HoshmandTextbox.Location = new System.Drawing.Point(299, 109);
+            this.HoshmandTextbox.Location = new System.Drawing.Point(183, 109);
             this.HoshmandTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.HoshmandTextbox.Name = "HoshmandTextbox";
             this.HoshmandTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -689,7 +722,7 @@ namespace InfoTrucker.UI.PersonForms
             // Sh_GoyahinamehTextbox
             // 
             this.Sh_GoyahinamehTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Sh_GoyahinamehTextbox.Location = new System.Drawing.Point(299, 72);
+            this.Sh_GoyahinamehTextbox.Location = new System.Drawing.Point(183, 72);
             this.Sh_GoyahinamehTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Sh_GoyahinamehTextbox.Name = "Sh_GoyahinamehTextbox";
             this.Sh_GoyahinamehTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -703,7 +736,7 @@ namespace InfoTrucker.UI.PersonForms
             // HoshmandNavganTextbox
             // 
             this.HoshmandNavganTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.HoshmandNavganTextbox.Location = new System.Drawing.Point(299, 182);
+            this.HoshmandNavganTextbox.Location = new System.Drawing.Point(183, 182);
             this.HoshmandNavganTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.HoshmandNavganTextbox.Name = "HoshmandNavganTextbox";
             this.HoshmandNavganTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -727,7 +760,7 @@ namespace InfoTrucker.UI.PersonForms
             this.AddressTabPage.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("AddressTabPage.ImageOptions.Image")));
             this.AddressTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AddressTabPage.Name = "AddressTabPage";
-            this.AddressTabPage.Size = new System.Drawing.Size(766, 426);
+            this.AddressTabPage.Size = new System.Drawing.Size(650, 525);
             this.AddressTabPage.Text = "اطلاعات تماس";
             // 
             // Right3SidePanel
@@ -748,7 +781,7 @@ namespace InfoTrucker.UI.PersonForms
             this.Right3SidePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Right3SidePanel.Location = new System.Drawing.Point(0, 0);
             this.Right3SidePanel.Name = "Right3SidePanel";
-            this.Right3SidePanel.Size = new System.Drawing.Size(766, 426);
+            this.Right3SidePanel.Size = new System.Drawing.Size(650, 525);
             this.Right3SidePanel.TabIndex = 0;
             this.Right3SidePanel.Text = "sidePanel3";
             // 
@@ -765,13 +798,14 @@ namespace InfoTrucker.UI.PersonForms
             this.MobileErrorTextbox.Properties.Appearance.Options.UseBackColor = true;
             this.MobileErrorTextbox.Properties.Appearance.Options.UseBorderColor = true;
             this.MobileErrorTextbox.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.MobileErrorTextbox.Size = new System.Drawing.Size(281, 24);
+            this.MobileErrorTextbox.Size = new System.Drawing.Size(165, 24);
             this.MobileErrorTextbox.TabIndex = 12;
+            this.MobileErrorTextbox.TabStop = false;
             // 
             // labelControl11
             // 
             this.labelControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl11.Location = new System.Drawing.Point(614, 40);
+            this.labelControl11.Location = new System.Drawing.Point(498, 40);
             this.labelControl11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(64, 20);
@@ -781,7 +815,7 @@ namespace InfoTrucker.UI.PersonForms
             // labelControl16
             // 
             this.labelControl16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl16.Location = new System.Drawing.Point(614, 218);
+            this.labelControl16.Location = new System.Drawing.Point(498, 218);
             this.labelControl16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(93, 20);
@@ -791,7 +825,7 @@ namespace InfoTrucker.UI.PersonForms
             // labelControl17
             // 
             this.labelControl17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl17.Location = new System.Drawing.Point(616, 185);
+            this.labelControl17.Location = new System.Drawing.Point(500, 185);
             this.labelControl17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(42, 20);
@@ -801,7 +835,7 @@ namespace InfoTrucker.UI.PersonForms
             // labelControl18
             // 
             this.labelControl18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl18.Location = new System.Drawing.Point(616, 149);
+            this.labelControl18.Location = new System.Drawing.Point(500, 149);
             this.labelControl18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(47, 20);
@@ -811,7 +845,7 @@ namespace InfoTrucker.UI.PersonForms
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(616, 114);
+            this.labelControl3.Location = new System.Drawing.Point(500, 114);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(53, 20);
@@ -821,7 +855,7 @@ namespace InfoTrucker.UI.PersonForms
             // labelControl19
             // 
             this.labelControl19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl19.Location = new System.Drawing.Point(616, 78);
+            this.labelControl19.Location = new System.Drawing.Point(500, 78);
             this.labelControl19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(53, 20);
@@ -831,7 +865,7 @@ namespace InfoTrucker.UI.PersonForms
             // Id3Textbox
             // 
             this.Id3Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Id3Textbox.Location = new System.Drawing.Point(299, 36);
+            this.Id3Textbox.Location = new System.Drawing.Point(183, 36);
             this.Id3Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Id3Textbox.Name = "Id3Textbox";
             this.Id3Textbox.Parmida_ActivePlusMultiKeys = false;
@@ -841,7 +875,7 @@ namespace InfoTrucker.UI.PersonForms
             // CodePostiTextbox
             // 
             this.CodePostiTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CodePostiTextbox.Location = new System.Drawing.Point(299, 181);
+            this.CodePostiTextbox.Location = new System.Drawing.Point(183, 181);
             this.CodePostiTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CodePostiTextbox.Name = "CodePostiTextbox";
             this.CodePostiTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -858,7 +892,7 @@ namespace InfoTrucker.UI.PersonForms
             // TelTextbox
             // 
             this.TelTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TelTextbox.Location = new System.Drawing.Point(299, 144);
+            this.TelTextbox.Location = new System.Drawing.Point(183, 144);
             this.TelTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TelTextbox.Name = "TelTextbox";
             this.TelTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -872,7 +906,7 @@ namespace InfoTrucker.UI.PersonForms
             // Mobile2Textbox
             // 
             this.Mobile2Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Mobile2Textbox.Location = new System.Drawing.Point(299, 108);
+            this.Mobile2Textbox.Location = new System.Drawing.Point(183, 108);
             this.Mobile2Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Mobile2Textbox.Name = "Mobile2Textbox";
             this.Mobile2Textbox.Parmida_ActivePlusMultiKeys = false;
@@ -886,7 +920,7 @@ namespace InfoTrucker.UI.PersonForms
             // Mobile1Textbox
             // 
             this.Mobile1Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Mobile1Textbox.Location = new System.Drawing.Point(299, 71);
+            this.Mobile1Textbox.Location = new System.Drawing.Point(183, 71);
             this.Mobile1Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Mobile1Textbox.Name = "Mobile1Textbox";
             this.Mobile1Textbox.Parmida_ActivePlusMultiKeys = false;
@@ -917,7 +951,7 @@ namespace InfoTrucker.UI.PersonForms
             this.AddressTextbox.Properties.NullValuePrompt = "وارد کردن آدرس کامل محل سکونت الزامی است";
             this.AddressTextbox.Properties.NullValuePromptShowForEmptyValue = true;
             this.AddressTextbox.Properties.ShowNullValuePromptWhenFocused = true;
-            this.AddressTextbox.Size = new System.Drawing.Size(558, 148);
+            this.AddressTextbox.Size = new System.Drawing.Size(442, 247);
             this.AddressTextbox.TabIndex = 11;
             conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule11.ErrorText = "وارد کردن آدرس الزامی است";
@@ -928,7 +962,7 @@ namespace InfoTrucker.UI.PersonForms
             this.ScanTabPage.Controls.Add(this.PictureSidePanel);
             this.ScanTabPage.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ScanTabPage.ImageOptions.Image")));
             this.ScanTabPage.Name = "ScanTabPage";
-            this.ScanTabPage.Size = new System.Drawing.Size(766, 426);
+            this.ScanTabPage.Size = new System.Drawing.Size(980, 525);
             this.ScanTabPage.Text = "اسکن مدارک";
             // 
             // PictureSidePanel
@@ -936,9 +970,9 @@ namespace InfoTrucker.UI.PersonForms
             this.PictureSidePanel.Controls.Add(this.ScanButton);
             this.PictureSidePanel.Controls.Add(this.sidePanel4);
             this.PictureSidePanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PictureSidePanel.Location = new System.Drawing.Point(515, 0);
+            this.PictureSidePanel.Location = new System.Drawing.Point(729, 0);
             this.PictureSidePanel.Name = "PictureSidePanel";
-            this.PictureSidePanel.Size = new System.Drawing.Size(251, 426);
+            this.PictureSidePanel.Size = new System.Drawing.Size(251, 525);
             this.PictureSidePanel.TabIndex = 0;
             this.PictureSidePanel.Text = "sidePanel1";
             // 
@@ -978,10 +1012,10 @@ namespace InfoTrucker.UI.PersonForms
             this.BottonSidePanel.Controls.Add(this.CloseButton);
             this.BottonSidePanel.Controls.Add(this.SaveButton);
             this.BottonSidePanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BottonSidePanel.Location = new System.Drawing.Point(0, 432);
+            this.BottonSidePanel.Location = new System.Drawing.Point(0, 531);
             this.BottonSidePanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BottonSidePanel.Name = "BottonSidePanel";
-            this.BottonSidePanel.Size = new System.Drawing.Size(895, 77);
+            this.BottonSidePanel.Size = new System.Drawing.Size(779, 77);
             this.BottonSidePanel.TabIndex = 1;
             this.BottonSidePanel.Text = "sidePanel1";
             // 
@@ -994,6 +1028,7 @@ namespace InfoTrucker.UI.PersonForms
             this.CloseButton.Size = new System.Drawing.Size(60, 60);
             this.CloseButton.TabIndex = 1;
             this.CloseButton.Text = "بستن";
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // SaveButton
             // 
@@ -1013,28 +1048,15 @@ namespace InfoTrucker.UI.PersonForms
             this.MainSidePanel.Location = new System.Drawing.Point(0, 0);
             this.MainSidePanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MainSidePanel.Name = "MainSidePanel";
-            this.MainSidePanel.Size = new System.Drawing.Size(895, 432);
+            this.MainSidePanel.Size = new System.Drawing.Size(779, 531);
             this.MainSidePanel.TabIndex = 2;
             this.MainSidePanel.Text = "sidePanel1";
-            // 
-            // PlackErrorTextbox
-            // 
-            this.PlackErrorTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PlackErrorTextbox.Location = new System.Drawing.Point(11, 219);
-            this.PlackErrorTextbox.Name = "PlackErrorTextbox";
-            this.PlackErrorTextbox.Parmida_ActivePlusMultiKeys = false;
-            this.PlackErrorTextbox.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.PlackErrorTextbox.Properties.Appearance.Options.UseBackColor = true;
-            this.PlackErrorTextbox.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.PlackErrorTextbox.Size = new System.Drawing.Size(464, 24);
-            this.PlackErrorTextbox.TabIndex = 20;
             // 
             // NewPersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 509);
+            this.ClientSize = new System.Drawing.Size(779, 608);
             this.Controls.Add(this.MainSidePanel);
             this.Controls.Add(this.BottonSidePanel);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -1061,6 +1083,8 @@ namespace InfoTrucker.UI.PersonForms
             this.JobTabPage.ResumeLayout(false);
             this.Right2SidePanel.ResumeLayout(false);
             this.Right2SidePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HoshmandErrorTextbox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlackErrorTextbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlackTextbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Id2Textbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sh_SokhtTextbox.Properties)).EndInit();
@@ -1086,7 +1110,6 @@ namespace InfoTrucker.UI.PersonForms
             this.BottonSidePanel.ResumeLayout(false);
             this.MainSidePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Person_dxProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PlackErrorTextbox.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1161,5 +1184,6 @@ namespace InfoTrucker.UI.PersonForms
         private DevExpress.XtraEditors.TextEdit NationalCodeErrorTextbox;
         private DevExpress.XtraEditors.TextEdit PlackTextbox;
         private DevExpress.XtraEditors.TextEdit PlackErrorTextbox;
+        private DevExpress.XtraEditors.TextEdit HoshmandErrorTextbox;
     }
 }

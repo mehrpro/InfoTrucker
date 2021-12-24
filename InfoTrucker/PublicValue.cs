@@ -28,7 +28,7 @@ namespace InfoTrucker
 
         public static void SaveMessage()
         {
-            XtraMessageBox.Show($"اطلاعاتبا موفقیت ثبت شد", SoftwareName,
+            XtraMessageBox.Show($"اطلاعات با موفقیت ثبت شد", SoftwareName,
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

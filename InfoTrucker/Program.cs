@@ -30,7 +30,7 @@ namespace InfoTrucker
             if (result == DialogResult.OK)
             {
                 var frmMain = container.GetInstance<MainForm>();
-                frmMain.container = container;
+                frmMain.Container = container;
                 frmMain.ShowDialog();
             }
             else

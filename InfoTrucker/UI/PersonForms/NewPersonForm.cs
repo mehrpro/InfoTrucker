@@ -3,14 +3,7 @@ using InfoTrucker.DTO;
 using InfoTrucker.Infrastructure;
 using InfoTrucker.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using AutoMapper;
 using InfoTrucker.Entities;
 using WIA;
@@ -23,7 +16,11 @@ namespace InfoTrucker.UI.PersonForms
 
         private readonly UnitofWork<AppDbContext> _unitofWork;
         private readonly IMapper _mapper;
-        private bool mobileValidate, codeMelieiValidate;
+        private bool _mobileValidate;
+        private bool _codeMelieiValidate;
+        private bool _hoshmandValidate;
+        private bool _plackValidate;
+
         public NewPersonForm(UnitofWork<AppDbContext> unitofWork, IMapper mapper)
         {
             _unitofWork = unitofWork;
@@ -31,7 +28,7 @@ namespace InfoTrucker.UI.PersonForms
             InitializeComponent();
             Id1Textbox.ReadOnly = Id2Textbox.ReadOnly = Id3Textbox.ReadOnly = true;
             BirthDatePicker.DateTime = DateTime.Today;
-            LastID();
+            LastId();
             NationalCodeTextbox.LostFocus += NationalCodeTextbox_LostFocus;
             HoshmandTextbox.TextChanged += HoshmandTextbox_TextChanged;
             Mobile1Textbox.TextChanged += Mobile1Textbox_TextChanged;
@@ -47,17 +44,20 @@ namespace InfoTrucker.UI.PersonForms
             if (obj.Text.Length < 19)
             {
                 PlackErrorTextbox.Text = null;
+                _plackValidate = false;
                 return;
             }
             var result = _unitofWork.Person.Get(x => x.Sh_Plak == obj.Text.Trim());
             if (result != null)
             {
-                PlackErrorTextbox.Text = $"این پلاک برای راننده {result.FName} {result.LName} ثبت شده است";
+                PlackErrorTextbox.Text = $@"این پلاک برای راننده {result.FName} {result.LName} ثبت شده است";
                 PlackErrorTextbox.ForeColor = Color.Red;
+                _plackValidate = false;
             }
             else
             {
                 PlackErrorTextbox.Text = null;
+                _plackValidate = true;
 
             }
 
@@ -68,13 +68,13 @@ namespace InfoTrucker.UI.PersonForms
             var mobile = (TextEdit)sender;
             if (mobile.Text.Length < 11)
             {
-                MobileErrorTextbox.Text = "شماره تلفن را صحیح وارد کنید 09126620474";
+                MobileErrorTextbox.Text = @"شماره تلفن را صحیح وارد کنید 09126620474";
                 MobileErrorTextbox.ForeColor = Color.Red;
-                mobileValidate = false;
+                _mobileValidate = false;
             }
             else
             {
-                mobileValidate = true;
+                _mobileValidate = true;
             }
 
         }
@@ -85,7 +85,7 @@ namespace InfoTrucker.UI.PersonForms
             var result = _unitofWork.Person.Get(x => x.Mobile1 == mobile.Text.Trim());
             if (result != null)
             {
-                MobileErrorTextbox.Text = $"این شماره تلفن قبلاً برای {result.FName} {result.LName} ثبت شده است";
+                MobileErrorTextbox.Text = $@"این شماره تلفن قبلاً برای {result.FName} {result.LName} ثبت شده است";
                 MobileErrorTextbox.ForeColor = Color.Red;
                 mobile.BackColor = Color.MistyRose;
 
@@ -103,7 +103,17 @@ namespace InfoTrucker.UI.PersonForms
         {
             var hosmandText = (TextEdit)sender;
             var result = _unitofWork.Person.Get(x => x.Hoshmand == hosmandText.Text);
-            HoshmandTextbox.BackColor = result != null ? Color.MistyRose : Color.White;
+            if (result == null)
+            {
+                HoshmandErrorTextbox.Text = null;
+                _hoshmandValidate = true;
+            }
+            else
+            {
+                HoshmandErrorTextbox.Text = $@"این شماره هوشمند قبلاً برای {result.FName} {result.LName} ثبت شده است";
+                _hoshmandValidate = false;
+
+            }
         }
 
         private void NationalCodeTextbox_LostFocus(object sender, EventArgs e)
@@ -111,12 +121,17 @@ namespace InfoTrucker.UI.PersonForms
             var obj = (TextEdit)sender;
             if (obj.Text.Length != 10)
             {
-                NationalCodeErrorTextbox.Text = "کارت ملی 10 رقمی است";
+                NationalCodeErrorTextbox.Text = @"کارت ملی 10 رقمی است";
+                _codeMelieiValidate = false;
+            }
+            else
+            {
+                _codeMelieiValidate = true;
             }
 
         }
 
-        private async void LastID()
+        private async void LastId()
         {
             var result = await _unitofWork.Person.LastPersonID();
             Id1Textbox.Text = Id2Textbox.Text = Id3Textbox.Text = result.ToString();
@@ -125,7 +140,7 @@ namespace InfoTrucker.UI.PersonForms
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            if (Person_dxProvider.Validate())
+            if (Person_dxProvider.Validate() && _mobileValidate && _codeMelieiValidate && _plackValidate && _hoshmandValidate)
             {
                 var newPerson = new NewPersonDTO();
                 newPerson.FName = FNameTextbox.Text.Trim();
@@ -202,7 +217,7 @@ namespace InfoTrucker.UI.PersonForms
             var result = _unitofWork.Person.Get(x => x.CodeMelei == obj.Text);
             if (result != null)
             {
-                NationalCodeErrorTextbox.Text = $"این کد ملی قبلاً برای {result.FName} {result.LName} ثبت شده است";
+                NationalCodeErrorTextbox.Text = $@"این کد ملی قبلاً برای {result.FName} {result.LName} ثبت شده است";
                 NationalCodeErrorTextbox.ForeColor = Color.Red;
                 obj.BackColor = Color.MistyRose;
 
@@ -214,6 +229,11 @@ namespace InfoTrucker.UI.PersonForms
 
             }
 
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
