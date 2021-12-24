@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InfoTrucker.Services
 {
-    public   interface ISmsRepository
+    public interface ISmsRepository
     {
 
     }

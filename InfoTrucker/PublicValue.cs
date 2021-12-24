@@ -5,6 +5,10 @@ namespace InfoTrucker
 {
     public static class PublicValue
     {
+        public static string SmsUsername => @"iaubijar";
+        public static string SmsPassword => @"M4228056";
+        public static string SmsNumber => @"30007227001374";
+
         public static string Fullname { get; set; }
         public static int UserID { get; set; }
 

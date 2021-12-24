@@ -62,5 +62,21 @@ namespace InfoTrucker.UI
 
             frm.Show();
         }
+
+        private void SendSmsButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+                       var frm = _container.GetInstance<UI.SmsForms.SendSmsForm>();
+            //frm.MdiParent = this;
+            //frm.StartPosition = FormStartPosition.CenterParent;
+            //frm.WindowState = FormWindowState.Maximized;
+            //frm.Dock = DockStyle.Fill;
+            frm.ControlBox = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            //frm.Container = _container;
+
+
+            frm.ShowDialog();
+        }
     }
 }

@@ -33,25 +33,25 @@ namespace InfoTrucker.UI
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.NewPersonButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.EditButtonItem = new DevExpress.XtraBars.BarButtonItem();
-            this.DocumentRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.PersonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ReportRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ReportsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PersonReportBottonItem = new DevExpress.XtraBars.BarButtonItem();
             this.HoshmandReportButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.MonthReportButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.ThreeMonthReportButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.SixMonthReportButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.YearReportButtonItem = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.SmsRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.SendSmsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.SendSmsButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.SendGroupSmsButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.InboxButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.DocumentRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.PersonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ReportRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ReportsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.BillReportsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.SmsRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.SendSmsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,6 +99,82 @@ namespace InfoTrucker.UI
             this.EditButtonItem.Name = "EditButtonItem";
             this.EditButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditButtonItem_ItemClick);
             // 
+            // PersonReportBottonItem
+            // 
+            this.PersonReportBottonItem.Caption = "لیست اعضاء";
+            this.PersonReportBottonItem.Id = 3;
+            this.PersonReportBottonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("PersonReportBottonItem.ImageOptions.SvgImage")));
+            this.PersonReportBottonItem.Name = "PersonReportBottonItem";
+            // 
+            // HoshmandReportButtonItem
+            // 
+            this.HoshmandReportButtonItem.Caption = "لیست شماره هوشمند";
+            this.HoshmandReportButtonItem.Id = 4;
+            this.HoshmandReportButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("HoshmandReportButtonItem.ImageOptions.SvgImage")));
+            this.HoshmandReportButtonItem.Name = "HoshmandReportButtonItem";
+            // 
+            // MonthReportButtonItem
+            // 
+            this.MonthReportButtonItem.Caption = "گزارش ماهانه";
+            this.MonthReportButtonItem.Id = 5;
+            this.MonthReportButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("MonthReportButtonItem.ImageOptions.SvgImage")));
+            this.MonthReportButtonItem.Name = "MonthReportButtonItem";
+            // 
+            // ThreeMonthReportButtonItem
+            // 
+            this.ThreeMonthReportButtonItem.Caption = "گزارش سه ماهه";
+            this.ThreeMonthReportButtonItem.Id = 6;
+            this.ThreeMonthReportButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ThreeMonthReportButtonItem.ImageOptions.SvgImage")));
+            this.ThreeMonthReportButtonItem.Name = "ThreeMonthReportButtonItem";
+            // 
+            // SixMonthReportButtonItem
+            // 
+            this.SixMonthReportButtonItem.Caption = "گزارش شش ماهه";
+            this.SixMonthReportButtonItem.Id = 7;
+            this.SixMonthReportButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SixMonthReportButtonItem.ImageOptions.SvgImage")));
+            this.SixMonthReportButtonItem.Name = "SixMonthReportButtonItem";
+            // 
+            // YearReportButtonItem
+            // 
+            this.YearReportButtonItem.Caption = "گزارش سالانه";
+            this.YearReportButtonItem.Id = 8;
+            this.YearReportButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("YearReportButtonItem.ImageOptions.SvgImage")));
+            this.YearReportButtonItem.Name = "YearReportButtonItem";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 9;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "barStaticItem1";
+            this.barStaticItem1.Id = 10;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
+            // SendSmsButtonItem
+            // 
+            this.SendSmsButtonItem.Caption = "ارسال تکی";
+            this.SendSmsButtonItem.Id = 11;
+            this.SendSmsButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SendSmsButtonItem.ImageOptions.SvgImage")));
+            this.SendSmsButtonItem.Name = "SendSmsButtonItem";
+            this.SendSmsButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SendSmsButtonItem_ItemClick);
+            // 
+            // SendGroupSmsButtonItem
+            // 
+            this.SendGroupSmsButtonItem.Caption = "ارسال گروهی";
+            this.SendGroupSmsButtonItem.Id = 12;
+            this.SendGroupSmsButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SendGroupSmsButtonItem.ImageOptions.SvgImage")));
+            this.SendGroupSmsButtonItem.Name = "SendGroupSmsButtonItem";
+            // 
+            // InboxButtonItem
+            // 
+            this.InboxButtonItem.Caption = "صندوق ارسال";
+            this.InboxButtonItem.Id = 13;
+            this.InboxButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("InboxButtonItem.ImageOptions.SvgImage")));
+            this.InboxButtonItem.Name = "InboxButtonItem";
+            // 
             // DocumentRibbonPage
             // 
             this.DocumentRibbonPage.Appearance.Options.UseTextOptions = true;
@@ -130,66 +206,14 @@ namespace InfoTrucker.UI
             this.ReportsRibbonPageGroup.Name = "ReportsRibbonPageGroup";
             this.ReportsRibbonPageGroup.Text = "گزارشات";
             // 
-            // PersonReportBottonItem
+            // BillReportsRibbonPageGroup
             // 
-            this.PersonReportBottonItem.Caption = "لیست اعضاء";
-            this.PersonReportBottonItem.Id = 3;
-            this.PersonReportBottonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.PersonReportBottonItem.Name = "PersonReportBottonItem";
-            // 
-            // HoshmandReportButtonItem
-            // 
-            this.HoshmandReportButtonItem.Caption = "لیست شماره هوشمند";
-            this.HoshmandReportButtonItem.Id = 4;
-            this.HoshmandReportButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
-            this.HoshmandReportButtonItem.Name = "HoshmandReportButtonItem";
-            // 
-            // MonthReportButtonItem
-            // 
-            this.MonthReportButtonItem.Caption = "گزارش ماهانه";
-            this.MonthReportButtonItem.Id = 5;
-            this.MonthReportButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
-            this.MonthReportButtonItem.Name = "MonthReportButtonItem";
-            // 
-            // ThreeMonthReportButtonItem
-            // 
-            this.ThreeMonthReportButtonItem.Caption = "گزارش سه ماهه";
-            this.ThreeMonthReportButtonItem.Id = 6;
-            this.ThreeMonthReportButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
-            this.ThreeMonthReportButtonItem.Name = "ThreeMonthReportButtonItem";
-            // 
-            // SixMonthReportButtonItem
-            // 
-            this.SixMonthReportButtonItem.Caption = "گزارش شش ماهه";
-            this.SixMonthReportButtonItem.Id = 7;
-            this.SixMonthReportButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
-            this.SixMonthReportButtonItem.Name = "SixMonthReportButtonItem";
-            // 
-            // YearReportButtonItem
-            // 
-            this.YearReportButtonItem.Caption = "گزارش سالانه";
-            this.YearReportButtonItem.Id = 8;
-            this.YearReportButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem6.ImageOptions.SvgImage")));
-            this.YearReportButtonItem.Name = "YearReportButtonItem";
-            // 
-            // ribbonStatusBar1
-            // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 534);
-            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(800, 36);
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 9;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // barStaticItem1
-            // 
-            this.barStaticItem1.Caption = "barStaticItem1";
-            this.barStaticItem1.Id = 10;
-            this.barStaticItem1.Name = "barStaticItem1";
+            this.BillReportsRibbonPageGroup.ItemLinks.Add(this.MonthReportButtonItem);
+            this.BillReportsRibbonPageGroup.ItemLinks.Add(this.ThreeMonthReportButtonItem);
+            this.BillReportsRibbonPageGroup.ItemLinks.Add(this.SixMonthReportButtonItem);
+            this.BillReportsRibbonPageGroup.ItemLinks.Add(this.YearReportButtonItem);
+            this.BillReportsRibbonPageGroup.Name = "BillReportsRibbonPageGroup";
+            this.BillReportsRibbonPageGroup.Text = "نوبت دهی";
             // 
             // SmsRibbonPage
             // 
@@ -206,35 +230,12 @@ namespace InfoTrucker.UI
             this.SendSmsRibbonPageGroup.Name = "SendSmsRibbonPageGroup";
             this.SendSmsRibbonPageGroup.Text = "پیام کوتاه";
             // 
-            // SendSmsButtonItem
+            // ribbonStatusBar1
             // 
-            this.SendSmsButtonItem.Caption = "ارسال تکی";
-            this.SendSmsButtonItem.Id = 11;
-            this.SendSmsButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage1")));
-            this.SendSmsButtonItem.Name = "SendSmsButtonItem";
-            // 
-            // SendGroupSmsButtonItem
-            // 
-            this.SendGroupSmsButtonItem.Caption = "ارسال گروهی";
-            this.SendGroupSmsButtonItem.Id = 12;
-            this.SendGroupSmsButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage1")));
-            this.SendGroupSmsButtonItem.Name = "SendGroupSmsButtonItem";
-            // 
-            // InboxButtonItem
-            // 
-            this.InboxButtonItem.Caption = "صندوق ارسال";
-            this.InboxButtonItem.Id = 13;
-            this.InboxButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage1")));
-            this.InboxButtonItem.Name = "InboxButtonItem";
-            // 
-            // BillReportsRibbonPageGroup
-            // 
-            this.BillReportsRibbonPageGroup.ItemLinks.Add(this.MonthReportButtonItem);
-            this.BillReportsRibbonPageGroup.ItemLinks.Add(this.ThreeMonthReportButtonItem);
-            this.BillReportsRibbonPageGroup.ItemLinks.Add(this.SixMonthReportButtonItem);
-            this.BillReportsRibbonPageGroup.ItemLinks.Add(this.YearReportButtonItem);
-            this.BillReportsRibbonPageGroup.Name = "BillReportsRibbonPageGroup";
-            this.BillReportsRibbonPageGroup.Text = "نوبت دهی";
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 534);
+            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
+            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(800, 36);
             // 
             // MainForm
             // 

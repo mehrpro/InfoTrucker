@@ -9,6 +9,7 @@ namespace InfoTrucker.Infrastructure
         public AutoMappingClass()
         {
             CreateMap<PersonListReportDTO, Person>().ReverseMap();
+            CreateMap<PersonListForSms, Person>().ReverseMap().ForMember(dest => dest.FullName, opts => opts.MapFrom(src => src.FName + " " + src.LName));
             CreateMap<NewPersonDTO, Person>().ReverseMap();
             CreateMap<Person, PersonListForEditDTO>().ForMember(dest => dest.FullName, opts => opts.MapFrom(src => src.FName + " " + src.LName));
         }
