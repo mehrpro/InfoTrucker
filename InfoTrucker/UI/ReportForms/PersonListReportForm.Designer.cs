@@ -73,12 +73,13 @@ namespace InfoTrucker.UI.ReportForms
             this.PdfButton.Size = new System.Drawing.Size(60, 60);
             this.PdfButton.TabIndex = 3;
             this.PdfButton.Text = "PDF";
+            this.PdfButton.Visible = false;
             // 
             // PrintButton
             // 
             this.PrintButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("PrintButton.ImageOptions.Image")));
             this.PrintButton.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.PrintButton.Location = new System.Drawing.Point(210, 6);
+            this.PrintButton.Location = new System.Drawing.Point(78, 6);
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.Size = new System.Drawing.Size(60, 60);
             this.PrintButton.TabIndex = 2;
@@ -88,11 +89,12 @@ namespace InfoTrucker.UI.ReportForms
             // 
             this.ExcelButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ExcelButton.ImageOptions.Image")));
             this.ExcelButton.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.ExcelButton.Location = new System.Drawing.Point(78, 6);
+            this.ExcelButton.Location = new System.Drawing.Point(210, 6);
             this.ExcelButton.Name = "ExcelButton";
             this.ExcelButton.Size = new System.Drawing.Size(60, 60);
             this.ExcelButton.TabIndex = 1;
             this.ExcelButton.Text = "Excel";
+            this.ExcelButton.Visible = false;
             // 
             // CloseButton
             // 
