@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using InfoTrucker.DTO;
+using InfoTrucker.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,6 +36,7 @@ namespace InfoTrucker.UI.SmsForms
             var result = _unitofWork.Person.GetAll();
             var resultList = _mapper.Map<IEnumerable<PersonListForSms>>(result);
             PersonListSearchLookUp.Properties.DataSource = resultList;
+
         }
 
         private void ConnectedToPanel()
@@ -47,6 +49,7 @@ namespace InfoTrucker.UI.SmsForms
                     SmsNumberTextbox.Text = soapConnect[0].sms_numebrs[0];
                     SmsNumberTextbox.ReadOnly = true;
                     SmsNumberTextbox.BackColor = Color.LightGreen;
+                    CreditTextbox.Text = soapConnect[0].credit.ToString();
                     PersonListCombobox();
                 }
             }
@@ -70,14 +73,34 @@ namespace InfoTrucker.UI.SmsForms
                 string[] senderNumber = { PublicValue.SmsNumber };
                 string[] reciverNumber = { PersonListSearchLookUp.EditValue.ToString() };
                 string[] message = { MessageTextbox.Text.Trim() };
-                string snapTime = PublicValue.RandomString(10);
-                var resultSend = soap.sendSms(PublicValue.SmsUsername, PublicValue.SmsPassword, senderNumber, reciverNumber, message, new string[] { }, snapTime);
+                string WsdlCheckSendStr = PublicValue.RandomString(10);
+                var resultSend = soap.sendSms(PublicValue.SmsUsername, PublicValue.SmsPassword, senderNumber, reciverNumber, message, new string[] { }, WsdlCheckSendStr);
                 if (resultSend[0] > 0)
                 {
                     PublicValue.SuccsessSendSMS(resultSend[0].ToString());
 
                 }
-                var res = soap.WsdlCheckSend(PublicValue.SmsUsername, PublicValue.SmsPassword, snapTime);
+                var resultWsdlCheckSend = soap.WsdlCheckSend(PublicValue.SmsUsername, PublicValue.SmsPassword, WsdlCheckSendStr);
+
+                try
+                {
+                    var recorder = new SendMessages();
+                    recorder.Message = message[0].ToString();
+                    recorder.RegisterTime = DateTime.Now;
+                    recorder.WsdlCheckSend = resultWsdlCheckSend[0];
+                    recorder.WsdlCheckSendString = WsdlCheckSendStr.ToString();
+                    recorder.Reciver = reciverNumber[0].ToString();
+                    recorder.ResultNumber = resultSend[0];
+                    _unitofWork.SMS.Insert(recorder);
+                    _unitofWork.Commit();
+                    Close();
+                }
+                catch(Exception ex)
+                {
+                    var ed = ex.Message;
+                    PublicValue.ErrorSaveMessage();
+                }
+
 
             }
             catch (Exception ex)

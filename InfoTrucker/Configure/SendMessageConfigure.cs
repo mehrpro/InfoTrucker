@@ -12,6 +12,7 @@ namespace InfoTrucker.Configure
             Property(x => x.ID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.Message).HasMaxLength(700);
             Property(x => x.Reciver).HasMaxLength(11);
+            Property(x => x.WsdlCheckSendString).HasMaxLength(10);
 
         }
     }

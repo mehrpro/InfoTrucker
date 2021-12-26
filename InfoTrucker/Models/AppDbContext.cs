@@ -29,13 +29,13 @@ namespace InfoTrucker.Models
 
 
 
-        public virtual IDbSet<ApplicationUser> ApplicationUsers { get; set; }
-        public virtual IDbSet<Person> People { get; set; }
-        public virtual IDbSet<MenuGroup> MenuGroups { get; set; }
-        public virtual IDbSet<MenuItem> MenuItems { get; set; }
-        public virtual IDbSet<Cleam> Cleams { get; set; }
-        public virtual IDbSet<PublicType> PublicTypes { get; set; }
-        public virtual IDbSet<SendMessages> SendMessages { get; set; }
-        public virtual IDbSet<ResultCodeMessage> ResultCodeMessages { get; set; }
+        public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public virtual DbSet<Person> People { get; set; }
+        public virtual DbSet<MenuGroup> MenuGroups { get; set; }
+        public virtual DbSet<MenuItem> MenuItems { get; set; }
+        public virtual DbSet<Cleam> Cleams { get; set; }
+        public virtual DbSet<PublicType> PublicTypes { get; set; }
+        public virtual DbSet<SendMessages> SendMessages { get; set; }
+        public virtual DbSet<ResultCodeMessage> ResultCodeMessages { get; set; }
     }
 }

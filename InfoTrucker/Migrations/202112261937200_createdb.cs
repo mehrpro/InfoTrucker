@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class createDB : DbMigration
+    public partial class createdb : DbMigration
     {
         public override void Up()
         {
@@ -108,6 +108,30 @@
                     })
                 .PrimaryKey(t => t.ID);
             
+            CreateTable(
+                "dbo.ResultCodeMessages",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        ResultCode = c.Int(nullable: false),
+                        ResultMessage = c.String(maxLength: 250),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.SendMessages",
+                c => new
+                    {
+                        ID = c.Long(nullable: false, identity: true),
+                        RegisterTime = c.DateTime(nullable: false),
+                        Message = c.String(maxLength: 700),
+                        Reciver = c.String(maxLength: 11),
+                        ResultNumber = c.Int(nullable: false),
+                        WsdlCheckSendString = c.String(maxLength: 10),
+                        WsdlCheckSend = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
         }
         
         public override void Down()
@@ -122,6 +146,8 @@
             DropIndex("dbo.Cleams", new[] { "MenuItemID_FK" });
             DropIndex("dbo.Cleams", new[] { "GroupID_FK" });
             DropIndex("dbo.Cleams", new[] { "UserID_FK" });
+            DropTable("dbo.SendMessages");
+            DropTable("dbo.ResultCodeMessages");
             DropTable("dbo.PublicTypes");
             DropTable("dbo.People");
             DropTable("dbo.MenuItems");

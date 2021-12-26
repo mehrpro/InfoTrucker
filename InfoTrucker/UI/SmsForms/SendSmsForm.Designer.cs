@@ -40,18 +40,23 @@ namespace InfoTrucker.UI.SmsForms
             this.MessageTextbox = new DevExpress.XtraEditors.MemoEdit();
             this.PersonListSearchLookUp = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.CreditTextbox = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SmsNumberTextbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MessageTextbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonListSearchLookUp.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CreditTextbox.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
             this.groupControl1.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImageOptions.Image")));
             this.groupControl1.Controls.Add(this.CloseButton);
+            this.groupControl1.Controls.Add(this.CreditTextbox);
+            this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.SmsNumberTextbox);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.labelControl3);
@@ -62,14 +67,14 @@ namespace InfoTrucker.UI.SmsForms
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(361, 350);
+            this.groupControl1.Size = new System.Drawing.Size(361, 377);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "ارسال پیامک تکی";
             // 
             // CloseButton
             // 
             this.CloseButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.ImageOptions.Image")));
-            this.CloseButton.Location = new System.Drawing.Point(28, 282);
+            this.CloseButton.Location = new System.Drawing.Point(28, 314);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(85, 45);
             this.CloseButton.TabIndex = 6;
@@ -97,7 +102,7 @@ namespace InfoTrucker.UI.SmsForms
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(263, 133);
+            this.labelControl3.Location = new System.Drawing.Point(263, 165);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(50, 20);
             this.labelControl3.TabIndex = 3;
@@ -106,7 +111,7 @@ namespace InfoTrucker.UI.SmsForms
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(263, 102);
+            this.labelControl2.Location = new System.Drawing.Point(263, 134);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(60, 20);
             this.labelControl2.TabIndex = 2;
@@ -116,7 +121,7 @@ namespace InfoTrucker.UI.SmsForms
             // 
             this.SendButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SendButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("SendButton.ImageOptions.Image")));
-            this.SendButton.Location = new System.Drawing.Point(119, 282);
+            this.SendButton.Location = new System.Drawing.Point(119, 314);
             this.SendButton.Name = "SendButton";
             this.SendButton.Size = new System.Drawing.Size(85, 45);
             this.SendButton.TabIndex = 1;
@@ -126,7 +131,7 @@ namespace InfoTrucker.UI.SmsForms
             // MessageTextbox
             // 
             this.MessageTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MessageTextbox.Location = new System.Drawing.Point(28, 131);
+            this.MessageTextbox.Location = new System.Drawing.Point(28, 163);
             this.MessageTextbox.Name = "MessageTextbox";
             this.MessageTextbox.Parmida_ActivePlusMultiKeys = false;
             this.MessageTextbox.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -139,7 +144,7 @@ namespace InfoTrucker.UI.SmsForms
             // PersonListSearchLookUp
             // 
             this.PersonListSearchLookUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PersonListSearchLookUp.Location = new System.Drawing.Point(28, 99);
+            this.PersonListSearchLookUp.Location = new System.Drawing.Point(28, 131);
             this.PersonListSearchLookUp.Name = "PersonListSearchLookUp";
             this.PersonListSearchLookUp.Parmida_ActivePlusMultiKeys = false;
             this.PersonListSearchLookUp.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -162,11 +167,29 @@ namespace InfoTrucker.UI.SmsForms
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl4.Location = new System.Drawing.Point(263, 102);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(24, 20);
+            this.labelControl4.TabIndex = 2;
+            this.labelControl4.Text = "شارژ";
+            // 
+            // CreditTextbox
+            // 
+            this.CreditTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CreditTextbox.Location = new System.Drawing.Point(28, 99);
+            this.CreditTextbox.Name = "CreditTextbox";
+            this.CreditTextbox.Parmida_ActivePlusMultiKeys = false;
+            this.CreditTextbox.Size = new System.Drawing.Size(229, 26);
+            this.CreditTextbox.TabIndex = 4;
+            // 
             // SendSmsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(361, 350);
+            this.ClientSize = new System.Drawing.Size(361, 377);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SendSmsForm";
@@ -179,6 +202,7 @@ namespace InfoTrucker.UI.SmsForms
             ((System.ComponentModel.ISupportInitialize)(this.MessageTextbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonListSearchLookUp.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CreditTextbox.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -195,5 +219,7 @@ namespace InfoTrucker.UI.SmsForms
         private DevExpress.XtraEditors.MemoEdit MessageTextbox;
         private DevExpress.XtraEditors.SearchLookUpEdit PersonListSearchLookUp;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraEditors.TextEdit CreditTextbox;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
     }
 }

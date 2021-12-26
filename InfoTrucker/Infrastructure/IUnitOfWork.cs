@@ -12,6 +12,7 @@ namespace InfoTrucker.Infrastructure
         IMenuGroupRepository MenuGroup { get; }
         IMenuItemRepository MenuItem { get; }
         ICleamRepository Cleam { get; }
+        ISmsRepository SMS { get; }
         void Commit();
     }
 
@@ -24,6 +25,7 @@ namespace InfoTrucker.Infrastructure
         private IApplicationUserRepository _applicationUser;
         private IMenuGroupRepository _menuGroup;
         private IMenuItemRepository _menuItem;
+        private ISmsRepository _sms;
         public UnitofWork()
         {
             db = new TContext();
@@ -39,7 +41,7 @@ namespace InfoTrucker.Infrastructure
         public IApplicationUserRepository ApplicationUser => _applicationUser ?? (_applicationUser = new ApplicationUserRepository(db));
         public IMenuGroupRepository MenuGroup => _menuGroup ?? (_menuGroup = new MenuGroupRepository(db));
         public IMenuItemRepository MenuItem => _menuItem ?? (_menuItem = new MenuItemRepository(db));
-
+        public ISmsRepository SMS => _sms ?? (_sms = new SmsRepsitory(db));
 
         #region Disposed
         private bool disposed = false;

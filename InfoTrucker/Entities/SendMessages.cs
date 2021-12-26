@@ -13,8 +13,9 @@ namespace InfoTrucker.Entities
         public string Message { get; set; }
         public string Reciver { get; set; }
         public int ResultNumber { get; set; }
-        public int ResultMessageCode_FK { get; set; }
-        public ResultCodeMessage ResultCodeMessage { get; set; }
+        public string WsdlCheckSendString { get; set; }
+        public int WsdlCheckSend { get; set; }
+
 
     }
 }
