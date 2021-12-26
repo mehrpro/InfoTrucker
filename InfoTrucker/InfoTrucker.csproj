@@ -85,6 +85,8 @@
     <Compile Include="Configure\MenuItemConfigure.cs" />
     <Compile Include="Configure\PersonConfigure.cs" />
     <Compile Include="Configure\PublicTypeConfigure.cs" />
+    <Compile Include="Configure\ResultCodeMessageConfigure.cs" />
+    <Compile Include="Configure\SendMessageConfigure.cs" />
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -101,6 +103,8 @@
     <Compile Include="Entities\MenuItem.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\PublicType.cs" />
+    <Compile Include="Entities\ResultCodeMessage.cs" />
+    <Compile Include="Entities\SendMessages.cs" />
     <Compile Include="Infrastructure\AutoMappingClass.cs" />
     <Compile Include="Infrastructure\ImageResizer.cs" />
     <Compile Include="Infrastructure\IRepositoryBase.cs" />

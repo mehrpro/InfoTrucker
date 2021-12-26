@@ -68,7 +68,7 @@ namespace InfoTrucker.UI.SmsForms
             // 
             // CloseButton
             // 
-            this.CloseButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.CloseButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.ImageOptions.Image")));
             this.CloseButton.Location = new System.Drawing.Point(28, 282);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(85, 45);
@@ -115,7 +115,7 @@ namespace InfoTrucker.UI.SmsForms
             // SendButton
             // 
             this.SendButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SendButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.SendButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("SendButton.ImageOptions.Image")));
             this.SendButton.Location = new System.Drawing.Point(119, 282);
             this.SendButton.Name = "SendButton";
             this.SendButton.Size = new System.Drawing.Size(85, 45);
@@ -152,7 +152,6 @@ namespace InfoTrucker.UI.SmsForms
             this.PersonListSearchLookUp.Properties.NullText = "";
             this.PersonListSearchLookUp.Properties.PopupSizeable = false;
             this.PersonListSearchLookUp.Properties.PopupView = this.searchLookUpEdit1View;
-            this.PersonListSearchLookUp.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.PersonListSearchLookUp.Size = new System.Drawing.Size(229, 26);
             this.PersonListSearchLookUp.TabIndex = 4;
             // 

@@ -70,9 +70,15 @@ namespace InfoTrucker.UI.SmsForms
                 string[] senderNumber = { PublicValue.SmsNumber };
                 string[] reciverNumber = { PersonListSearchLookUp.EditValue.ToString() };
                 string[] message = { MessageTextbox.Text.Trim() };
-                var resultSend = soap.sendSms(PublicValue.SmsUsername, PublicValue.SmsPassword, senderNumber, reciverNumber, message, new string[] { }, "708801");
-                System.Threading.Thread.Sleep(1500);
-                var res = soap.WsdlCheckSend(PublicValue.SmsUsername, PublicValue.SmsPassword, "708801");
+                string snapTime = PublicValue.RandomString(10);
+                var resultSend = soap.sendSms(PublicValue.SmsUsername, PublicValue.SmsPassword, senderNumber, reciverNumber, message, new string[] { }, snapTime);
+                if (resultSend[0] > 0)
+                {
+                    PublicValue.SuccsessSendSMS(resultSend[0].ToString());
+
+                }
+                var res = soap.WsdlCheckSend(PublicValue.SmsUsername, PublicValue.SmsPassword, snapTime);
+
             }
             catch (Exception ex)
             {

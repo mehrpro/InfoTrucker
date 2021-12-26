@@ -53,13 +53,13 @@ namespace InfoTrucker.UI
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Parmida_ActivePlusMultiKeys = false;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(111, 103);
+            this.pictureEdit1.Size = new System.Drawing.Size(115, 108);
             this.pictureEdit1.TabIndex = 6;
             // 
             // UsernameTextbox
             // 
             this.UsernameTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UsernameTextbox.Location = new System.Drawing.Point(132, 14);
+            this.UsernameTextbox.Location = new System.Drawing.Point(136, 14);
             this.UsernameTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.UsernameTextbox.Name = "UsernameTextbox";
             this.UsernameTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -77,7 +77,7 @@ namespace InfoTrucker.UI
             // PasswordTextbox
             // 
             this.PasswordTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PasswordTextbox.Location = new System.Drawing.Point(132, 49);
+            this.PasswordTextbox.Location = new System.Drawing.Point(136, 49);
             this.PasswordTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PasswordTextbox.Name = "PasswordTextbox";
             this.PasswordTextbox.Parmida_ActivePlusMultiKeys = false;
@@ -96,7 +96,7 @@ namespace InfoTrucker.UI
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(343, 20);
+            this.labelControl1.Location = new System.Drawing.Point(347, 20);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(49, 20);
@@ -106,7 +106,7 @@ namespace InfoTrucker.UI
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(343, 52);
+            this.labelControl2.Location = new System.Drawing.Point(347, 52);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(39, 20);
@@ -116,7 +116,7 @@ namespace InfoTrucker.UI
             // LoginButton
             // 
             this.LoginButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("LoginButton.ImageOptions.Image")));
-            this.LoginButton.Location = new System.Drawing.Point(237, 83);
+            this.LoginButton.Location = new System.Drawing.Point(241, 83);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(100, 40);
             this.LoginButton.TabIndex = 4;
@@ -127,7 +127,7 @@ namespace InfoTrucker.UI
             // 
             this.ExitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.ExitButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ExitButton.ImageOptions.Image")));
-            this.ExitButton.Location = new System.Drawing.Point(132, 83);
+            this.ExitButton.Location = new System.Drawing.Point(136, 83);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(100, 40);
             this.ExitButton.TabIndex = 5;
@@ -140,7 +140,7 @@ namespace InfoTrucker.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.ExitButton;
-            this.ClientSize = new System.Drawing.Size(401, 133);
+            this.ClientSize = new System.Drawing.Size(405, 137);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.labelControl2);

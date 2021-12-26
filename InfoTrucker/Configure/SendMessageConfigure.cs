@@ -1,0 +1,18 @@
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration;
+using InfoTrucker.Entities;
+
+namespace InfoTrucker.Configure
+{
+    public class SendMessageConfigure : EntityTypeConfiguration<SendMessages>
+    {
+        public SendMessageConfigure()
+        {
+            HasKey(x => x.ID);
+            Property(x => x.ID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(x => x.Message).HasMaxLength(700);
+            Property(x => x.Reciver).HasMaxLength(11);
+
+        }
+    }
+}
