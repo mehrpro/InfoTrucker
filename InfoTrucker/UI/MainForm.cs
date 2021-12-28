@@ -11,22 +11,17 @@ namespace InfoTrucker.UI
 
         public MainForm()
         {
-            //_unitofWork = unitofWork;
-            //_container = container;
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-            this.StartPosition = FormStartPosition.CenterScreen;;
-
+            this.StartPosition = FormStartPosition.CenterScreen;
             PersonReportBottonItem.ItemClick += PersonReportBottonItem_ItemClick;
-
-
         }
 
         private void PersonReportBottonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var frm = _container.GetInstance<ReportForms.PersonListReportForm>();
             frm.MdiParent = this;
-            frm.WindowState =FormWindowState.Maximized;
+            frm.WindowState = FormWindowState.Maximized;
             frm.Dock = DockStyle.Fill;
             frm.ControlBox = false;
             frm.FormBorderStyle = FormBorderStyle.None;
@@ -38,7 +33,6 @@ namespace InfoTrucker.UI
 
             var frm = _container.GetInstance<NewPersonForm>();
             frm.MdiParent = this;
-            //frm.StartPosition = FormStartPosition.CenterParent;
             frm.WindowState = FormWindowState.Maximized;
             frm.Dock = DockStyle.Fill;
             frm.ControlBox = false;
@@ -52,7 +46,6 @@ namespace InfoTrucker.UI
         {
             var frm = _container.GetInstance<PersonListForm>();
             frm.MdiParent = this;
-            //frm.StartPosition = FormStartPosition.CenterParent;
             frm.WindowState = FormWindowState.Maximized;
             frm.Dock = DockStyle.Fill;
             frm.ControlBox = false;
@@ -65,17 +58,19 @@ namespace InfoTrucker.UI
 
         private void SendSmsButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-                       var frm = _container.GetInstance<UI.SmsForms.SendSmsForm>();
-            //frm.MdiParent = this;
-            //frm.StartPosition = FormStartPosition.CenterParent;
-            //frm.WindowState = FormWindowState.Maximized;
-            //frm.Dock = DockStyle.Fill;
+            var frm = _container.GetInstance<UI.SmsForms.SendSmsForm>();
             frm.ControlBox = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.StartPosition = FormStartPosition.CenterScreen;
-            //frm.Container = _container;
+            frm.ShowDialog();
+        }
 
-
+        private void SendGroupSmsButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = _container.GetInstance<UI.SmsForms.SendSmsGroupForm>();
+            frm.ControlBox = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
         }
     }

@@ -15,6 +15,21 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -24,7 +39,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>1</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -96,6 +111,7 @@
     <Compile Include="DTO\NewPersonDTO.cs" />
     <Compile Include="DTO\PersonListForEditDTO.cs" />
     <Compile Include="DTO\PersonListForSms.cs" />
+    <Compile Include="DTO\PersonListForSmsDTO.cs" />
     <Compile Include="DTO\PersonListReportDTO.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\Cleam.cs" />
@@ -181,6 +197,12 @@
     <Compile Include="UI\SmsForms\SendSmsForm.Designer.cs">
       <DependentUpon>SendSmsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\SmsForms\SendSmsGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SmsForms\SendSmsGroupForm.Designer.cs">
+      <DependentUpon>SendSmsGroupForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Migrations\202112261937200_createdb.resx">
       <DependentUpon>202112261937200_createdb.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SmsForms\SendSmsForm.resx">
       <DependentUpon>SendSmsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SmsForms\SendSmsGroupForm.resx">
+      <DependentUpon>SendSmsGroupForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Connected Services\ServiceReference1\InfoTrucker.ServiceReference1.object1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -272,6 +297,18 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

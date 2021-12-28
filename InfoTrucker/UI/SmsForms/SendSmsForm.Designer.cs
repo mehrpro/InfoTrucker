@@ -32,6 +32,8 @@ namespace InfoTrucker.UI.SmsForms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendSmsForm));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.CloseButton = new DevExpress.XtraEditors.SimpleButton();
+            this.CreditTextbox = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.SmsNumberTextbox = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -40,15 +42,13 @@ namespace InfoTrucker.UI.SmsForms
             this.MessageTextbox = new DevExpress.XtraEditors.MemoEdit();
             this.PersonListSearchLookUp = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.CreditTextbox = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CreditTextbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SmsNumberTextbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MessageTextbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonListSearchLookUp.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CreditTextbox.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -80,6 +80,24 @@ namespace InfoTrucker.UI.SmsForms
             this.CloseButton.TabIndex = 6;
             this.CloseButton.Text = "بستن";
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
+            // CreditTextbox
+            // 
+            this.CreditTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CreditTextbox.Location = new System.Drawing.Point(28, 99);
+            this.CreditTextbox.Name = "CreditTextbox";
+            this.CreditTextbox.Parmida_ActivePlusMultiKeys = false;
+            this.CreditTextbox.Size = new System.Drawing.Size(229, 26);
+            this.CreditTextbox.TabIndex = 4;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl4.Location = new System.Drawing.Point(263, 102);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(24, 20);
+            this.labelControl4.TabIndex = 2;
+            this.labelControl4.Text = "شارژ";
             // 
             // SmsNumberTextbox
             // 
@@ -138,6 +156,7 @@ namespace InfoTrucker.UI.SmsForms
             this.MessageTextbox.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.MessageTextbox.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.MessageTextbox.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.MessageTextbox.Properties.MaxLength = 500;
             this.MessageTextbox.Size = new System.Drawing.Size(229, 145);
             this.MessageTextbox.TabIndex = 5;
             // 
@@ -167,24 +186,6 @@ namespace InfoTrucker.UI.SmsForms
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // labelControl4
-            // 
-            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(263, 102);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(24, 20);
-            this.labelControl4.TabIndex = 2;
-            this.labelControl4.Text = "شارژ";
-            // 
-            // CreditTextbox
-            // 
-            this.CreditTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CreditTextbox.Location = new System.Drawing.Point(28, 99);
-            this.CreditTextbox.Name = "CreditTextbox";
-            this.CreditTextbox.Parmida_ActivePlusMultiKeys = false;
-            this.CreditTextbox.Size = new System.Drawing.Size(229, 26);
-            this.CreditTextbox.TabIndex = 4;
-            // 
             // SendSmsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -198,11 +199,11 @@ namespace InfoTrucker.UI.SmsForms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CreditTextbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SmsNumberTextbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MessageTextbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonListSearchLookUp.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CreditTextbox.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

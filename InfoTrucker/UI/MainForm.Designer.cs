@@ -80,7 +80,7 @@ namespace InfoTrucker.UI
             this.DocumentRibbonPage,
             this.ReportRibbonPage,
             this.SmsRibbonPage});
-            this.ribbonControl1.Size = new System.Drawing.Size(800, 175);
+            this.ribbonControl1.Size = new System.Drawing.Size(800, 174);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // NewPersonButtonItem
@@ -167,6 +167,7 @@ namespace InfoTrucker.UI
             this.SendGroupSmsButtonItem.Id = 12;
             this.SendGroupSmsButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SendGroupSmsButtonItem.ImageOptions.SvgImage")));
             this.SendGroupSmsButtonItem.Name = "SendGroupSmsButtonItem";
+            this.SendGroupSmsButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SendGroupSmsButtonItem_ItemClick);
             // 
             // InboxButtonItem
             // 
@@ -232,10 +233,10 @@ namespace InfoTrucker.UI
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 534);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 535);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(800, 36);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(800, 35);
             // 
             // MainForm
             // 

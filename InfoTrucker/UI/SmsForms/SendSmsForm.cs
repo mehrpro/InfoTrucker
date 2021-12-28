@@ -3,13 +3,7 @@ using InfoTrucker.DTO;
 using InfoTrucker.Entities;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace InfoTrucker.UI.SmsForms
 {
@@ -95,18 +89,19 @@ namespace InfoTrucker.UI.SmsForms
                     _unitofWork.Commit();
                     Close();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     var ed = ex.Message;
                     PublicValue.ErrorSaveMessage();
+                    PublicValue.ExseptionMessage(ex.Message);
                 }
 
 
             }
             catch (Exception ex)
             {
-
-                var exMessage = ex.Message;
+                PublicValue.ExseptionMessage(ex.Message);
+                //var exMessage = ex.Message;
             }
         }
     }
