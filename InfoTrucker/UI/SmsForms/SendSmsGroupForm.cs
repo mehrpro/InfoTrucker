@@ -94,44 +94,42 @@ namespace InfoTrucker.UI.SmsForms
             CalcuterTextbx.Text = (Convert.ToInt32(ReciverNumberTextbox.EditValue) * Convert.ToInt32(SMSPageTextbox.EditValue) * 283).ToString();
         }
 
-
-
-
-
         private void RefreshButton_Click(object sender, EventArgs e)
         {
             Clacuter();
-
         }
 
         private void SendButton_Click(object sender, EventArgs e)
         {
-
             Clacuter();
             try
             {
-                //string senderNumber = string.Join(",", _personListFoeSend.Select(x => x.Mobile1).ToArray());
-                var reciverNumber = string.Join(",", _personListFoeSend.Select(x => x.Mobile1).ToArray());
+                var receiverNumber = string.Join(",", _personListFoeSend.Select(x => x.Mobile1).ToArray());
                 var message = MessageTextbox.Text.Trim();
                 var wsdlCheckSendStr = RandomString(10);
-                var resultSend = _soap.sendSmsGroup(SmsUsername, SmsPassword, SmsNumber, reciverNumber, message, 0, wsdlCheckSendStr);
+                var resultSend = _soap.sendSmsGroup(SmsUsername, SmsPassword, SmsNumber, receiverNumber, message, 0, wsdlCheckSendStr);
                 if (resultSend[0] > 0) SuccsessSendSMS(resultSend[0].ToString());
-                //var resultWsdlCheckSend = soap.WsdlCheckSend(PublicValue.SmsUsername, PublicValue.SmsPassword, WsdlCheckSendStr);
-
                 try
                 {
                     foreach (var item in _personListFoeSend)
                     {
 
 
-                        var recorder = new SendMessages();
-                        recorder.Message = message;
-                        recorder.RegisterTime = DateTime.Now;
-                        recorder.WsdlCheckSend = 0;
-                        recorder.WsdlCheckSendString = wsdlCheckSendStr;
-                        recorder.Reciver = item.Mobile1;
-                        recorder.ResultNumber = resultSend[0];
-                        recorder.SendGroup = true;
+                        var recorder = new SendMessages
+                        {
+                            Message = message,
+                            RegisterTime = DateTime.Now,
+                            WsdlCheckSend = 0,
+                            WsdlCheckSendString = wsdlCheckSendStr,
+                            Reciver = item.Mobile1,
+                            ResultNumber = resultSend[0],
+                            SendGroup = true,
+                            CheckedStatusFromWenService = false,
+                            ReciverNumber = 0,
+
+
+
+                        };
 
                         _unitofWork.SMS.Insert(recorder);
                         _unitofWork.Commit();

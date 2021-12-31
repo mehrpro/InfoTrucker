@@ -98,6 +98,7 @@
     <Compile Include="Configure\CleamConfigure.cs" />
     <Compile Include="Configure\MenuGroupConfigure.cs" />
     <Compile Include="Configure\MenuItemConfigure.cs" />
+    <Compile Include="Configure\MessageGroupSubjectConfigure.cs" />
     <Compile Include="Configure\PersonConfigure.cs" />
     <Compile Include="Configure\PublicTypeConfigure.cs" />
     <Compile Include="Configure\ResultCodeMessageConfigure.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="Entities\Cleam.cs" />
     <Compile Include="Entities\MenuGroup.cs" />
     <Compile Include="Entities\MenuItem.cs" />
+    <Compile Include="Entities\MessageGroupSubject.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\PublicType.cs" />
     <Compile Include="Entities\ResultCodeMessage.cs" />
@@ -139,6 +141,10 @@
     <Compile Include="Migrations\202112310841578_updateSmsMessage2.designer.cs">
       <DependentUpon>202112310841578_updateSmsMessage2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112310913226_updateSMSMessage3.cs" />
+    <Compile Include="Migrations\202112310913226_updateSMSMessage3.designer.cs">
+      <DependentUpon>202112310913226_updateSMSMessage3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Program.cs" />
@@ -148,9 +154,10 @@
     <Compile Include="Services\ICleamRepository.cs" />
     <Compile Include="Services\IMenuGroupRepository.cs" />
     <Compile Include="Services\IMenuItemRepository.cs" />
+    <Compile Include="Services\IMessageGroupSubjectRepository.cs" />
     <Compile Include="Services\IPersonRepository.cs" />
     <Compile Include="Services\IPublicTypeRepository.cs" />
-    <Compile Include="Services\ISmsRepository.cs" />
+    <Compile Include="Services\ISendMessageRepository.cs" />
     <Compile Include="UI\AdminForms\ScannerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112310841578_updateSmsMessage2.resx">
       <DependentUpon>202112310841578_updateSmsMessage2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112310913226_updateSMSMessage3.resx">
+      <DependentUpon>202112310913226_updateSMSMessage3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

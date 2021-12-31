@@ -9,7 +9,6 @@ namespace InfoTrucker.Entities
     public class SendMessages
     {
         public long ID { get; set; }
-        public string Title { get; set; }
         public DateTime RegisterTime { get; set; }
         public string Message { get; set; }
         public string Reciver { get; set; }
@@ -18,7 +17,9 @@ namespace InfoTrucker.Entities
         public string WsdlCheckSendString { get; set; }
         public int WsdlCheckSend { get; set; }
         public bool SendGroup { get; set; }
-        public bool  CheckedStatusFromWenService { get; set; }
+        public bool CheckedStatusFromWenService { get; set; }
+        public int MessageSubjectID_FK { get; set; }
+        public MessageGroupSubject MessageGroupSubject { get; set; }
 
 
     }

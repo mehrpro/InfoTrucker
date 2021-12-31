@@ -53,7 +53,7 @@ namespace InfoTrucker.UI.SmsForms
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.SendButton = new DevExpress.XtraEditors.SimpleButton();
             this.MessageTextbox = new DevExpress.XtraEditors.MemoEdit();
-            this.memoEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.TitleTextbox = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PersonGridControl)).BeginInit();
@@ -64,7 +64,7 @@ namespace InfoTrucker.UI.SmsForms
             ((System.ComponentModel.ISupportInitialize)(this.CreditTextbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SmsNumberTextbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MessageTextbox.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TitleTextbox.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -87,7 +87,7 @@ namespace InfoTrucker.UI.SmsForms
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.SendButton);
             this.groupControl1.Controls.Add(this.MessageTextbox);
-            this.groupControl1.Controls.Add(this.memoEdit1);
+            this.groupControl1.Controls.Add(this.TitleTextbox);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
@@ -379,23 +379,23 @@ namespace InfoTrucker.UI.SmsForms
             this.MessageTextbox.TabIndex = 12;
             this.MessageTextbox.EditValueChanged += new System.EventHandler(this.MessageTextbox_EditValueChanged);
             // 
-            // memoEdit1
+            // TitleTextbox
             // 
-            this.memoEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TitleTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.memoEdit1.Location = new System.Drawing.Point(160, 63);
-            this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Parmida_ActivePlusMultiKeys = false;
-            this.memoEdit1.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.memoEdit1.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.memoEdit1.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.memoEdit1.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.memoEdit1.Properties.MaxLength = 500;
-            this.memoEdit1.Properties.NullValuePrompt = "موضوع جهت آرشیو بندی پیامک های گروهی مورد استفاده قرار می گیرد";
-            this.memoEdit1.Properties.NullValuePromptShowForEmptyValue = true;
-            this.memoEdit1.Size = new System.Drawing.Size(546, 26);
-            this.memoEdit1.TabIndex = 10;
-            this.memoEdit1.EditValueChanged += new System.EventHandler(this.MessageTextbox_EditValueChanged);
+            this.TitleTextbox.Location = new System.Drawing.Point(160, 63);
+            this.TitleTextbox.Name = "TitleTextbox";
+            this.TitleTextbox.Parmida_ActivePlusMultiKeys = false;
+            this.TitleTextbox.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.TitleTextbox.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.TitleTextbox.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.TitleTextbox.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.TitleTextbox.Properties.MaxLength = 500;
+            this.TitleTextbox.Properties.NullValuePrompt = "موضوع جهت آرشیو بندی پیامک های گروهی مورد استفاده قرار می گیرد";
+            this.TitleTextbox.Properties.NullValuePromptShowForEmptyValue = true;
+            this.TitleTextbox.Size = new System.Drawing.Size(546, 26);
+            this.TitleTextbox.TabIndex = 10;
+            this.TitleTextbox.EditValueChanged += new System.EventHandler(this.MessageTextbox_EditValueChanged);
             // 
             // SendSmsGroupForm
             // 
@@ -417,7 +417,7 @@ namespace InfoTrucker.UI.SmsForms
             ((System.ComponentModel.ISupportInitialize)(this.CreditTextbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SmsNumberTextbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MessageTextbox.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TitleTextbox.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -447,6 +447,6 @@ namespace InfoTrucker.UI.SmsForms
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.SimpleButton RefreshButton;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit memoEdit1;
+        private DevExpress.XtraEditors.TextEdit TitleTextbox;
     }
 }

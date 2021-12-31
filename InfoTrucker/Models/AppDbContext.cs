@@ -25,6 +25,7 @@ namespace InfoTrucker.Models
             builder.Configurations.Add(new PersonConfigure());
             builder.Configurations.Add(new SendMessageConfigure());
             builder.Configurations.Add(new ResultCodeMessageConfigure());
+            builder.Configurations.Add(new MessageGroupSubjectConfigure());
         }
 
 
@@ -37,5 +38,6 @@ namespace InfoTrucker.Models
         public virtual DbSet<PublicType> PublicTypes { get; set; }
         public virtual DbSet<SendMessages> SendMessages { get; set; }
         public virtual DbSet<ResultCodeMessage> ResultCodeMessages { get; set; }
+        public virtual DbSet<MessageGroupSubject> MessageGroupSubjects { get; set; }
     }
 }
