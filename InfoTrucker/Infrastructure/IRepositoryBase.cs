@@ -17,6 +17,9 @@ namespace InfoTrucker.Infrastructure
         void Delete(TEntity entity);
         void Delete(Expression<Func<TEntity, bool>> where); //lambda expression
 
+        TEntity GetFirstOrDefault(Expression<Func<TEntity, bool>> where);
+        TEntity GetSingleOrDefault(Expression<Func<TEntity, bool>> where);
+
         TEntity GetById(object Id);
         IEnumerable<TEntity> GetAll();
         TEntity Get(Expression<Func<TEntity, bool>> where);
@@ -85,9 +88,21 @@ namespace InfoTrucker.Infrastructure
             return await dbSet.ToListAsync();
         }
 
+        public TEntity GetFirstOrDefault(Expression<Func<TEntity, bool>> where)
+        {
+            return dbSet.Where(where).FirstOrDefault();
+        }
+
+
         public async Task<TEntity> GetFirstOrDefaultAsync(Expression<Func<TEntity, bool>> where)
         {
             return await dbSet.Where(where).FirstOrDefaultAsync();
+        }
+
+
+        public TEntity GetSingleOrDefault(Expression<Func<TEntity, bool>> where)
+        {
+            return dbSet.Where(where).SingleOrDefault();
         }
 
         public async Task<TEntity> GetSingleOrDefaultAsync(Expression<Func<TEntity, bool>> where)

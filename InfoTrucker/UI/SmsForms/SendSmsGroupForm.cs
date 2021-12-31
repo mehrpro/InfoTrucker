@@ -99,7 +99,7 @@ namespace InfoTrucker.UI.SmsForms
             Clacuter();
         }
 
-        private void SendButton_Click(object sender, EventArgs e)
+        private async void SendButton_Click(object sender, EventArgs e)
         {
             Clacuter();
             try
@@ -107,14 +107,17 @@ namespace InfoTrucker.UI.SmsForms
                 var receiverNumber = string.Join(",", _personListFoeSend.Select(x => x.Mobile1).ToArray());
                 var message = MessageTextbox.Text.Trim();
                 var wsdlCheckSendStr = RandomString(10);
-                var resultSend = _soap.sendSmsGroup(SmsUsername, SmsPassword, SmsNumber, receiverNumber, message, 0, wsdlCheckSendStr);
-                if (resultSend[0] > 0) SuccsessSendSMS(resultSend[0].ToString());
+                var resultSend = await _soap.sendSmsGroupAsync(SmsUsername, SmsPassword, SmsNumber, receiverNumber, message, 0, wsdlCheckSendStr);
+                if (Convert.ToInt32(resultSend[0]) < 0)
+                {
+                    throw new IndexOutOfRangeException(resultSend[0].ToString());
+                }
+
+                SuccsessSendSMS(resultSend[0].ToString());
                 try
                 {
                     foreach (var item in _personListFoeSend)
                     {
-
-
                         var recorder = new SendMessages
                         {
                             Message = message,
@@ -126,11 +129,7 @@ namespace InfoTrucker.UI.SmsForms
                             SendGroup = true,
                             CheckedStatusFromWenService = false,
                             ReciverNumber = 0,
-
-
-
                         };
-
                         _unitofWork.SMS.Insert(recorder);
                         _unitofWork.Commit();
                         Close();
@@ -138,16 +137,18 @@ namespace InfoTrucker.UI.SmsForms
                 }
                 catch (Exception ex)
                 {
-                    ErrorSaveMessage();
                     ExseptionMessage(ex.Message);
                 }
+            }
+            catch (IndexOutOfRangeException exception)
+            {
 
-
+                var message =  _unitofWork.ExceptionSms.ExceptionMessage(exception.Message);
+                ExseptionMessage(message);
             }
             catch (Exception ex)
             {
                 ExseptionMessage(ex.Message);
-                //var exMessage = ex.Message;
             }
 
         }

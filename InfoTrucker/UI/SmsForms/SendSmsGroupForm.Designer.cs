@@ -228,8 +228,7 @@ namespace InfoTrucker.UI.SmsForms
             // 
             // CloseButton
             // 
-            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CloseButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.ImageOptions.Image")));
             this.CloseButton.Location = new System.Drawing.Point(160, 163);
             this.CloseButton.Name = "CloseButton";
@@ -278,8 +277,7 @@ namespace InfoTrucker.UI.SmsForms
             // 
             // CalcuterTextbx
             // 
-            this.CalcuterTextbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CalcuterTextbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CalcuterTextbx.Location = new System.Drawing.Point(477, 163);
             this.CalcuterTextbx.Name = "CalcuterTextbx";
             this.CalcuterTextbx.Parmida_ActivePlusMultiKeys = false;
@@ -353,8 +351,7 @@ namespace InfoTrucker.UI.SmsForms
             // 
             // SendButton
             // 
-            this.SendButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SendButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SendButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("SendButton.ImageOptions.Image")));
             this.SendButton.Location = new System.Drawing.Point(251, 163);
             this.SendButton.Name = "SendButton";

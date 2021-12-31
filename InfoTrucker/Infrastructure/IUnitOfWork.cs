@@ -14,6 +14,7 @@ namespace InfoTrucker.Infrastructure
         ICleamRepository Cleam { get; }
         ISendMessageRepository SMS { get; }
         IMessageGroupSubjectRepository SmsSubject { get; }
+        IExceptionSms ExceptionSms { get; }
         void Commit();
     }
 
@@ -28,6 +29,7 @@ namespace InfoTrucker.Infrastructure
         private IMenuItemRepository _menuItem;
         private ISendMessageRepository _sms;
         private IMessageGroupSubjectRepository _smsSubject;
+        private IExceptionSms _exceptionSms;
         public UnitofWork()
         {
             db = new TContext();
@@ -46,6 +48,7 @@ namespace InfoTrucker.Infrastructure
         public ISendMessageRepository SMS => _sms ?? (_sms = new SendMessageRepository(db));
         public IMessageGroupSubjectRepository SmsSubject =>
             _smsSubject ?? (_smsSubject = new MessageGroupSubjectRepository(db));
+        public IExceptionSms ExceptionSms => _exceptionSms ?? (_exceptionSms = new ExcptionSms(db));
 
         #region Disposed
         private bool disposed = false;

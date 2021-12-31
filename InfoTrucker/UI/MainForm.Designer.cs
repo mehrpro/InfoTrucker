@@ -44,6 +44,7 @@ namespace InfoTrucker.UI
             this.SendSmsButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.SendGroupSmsButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.SendStatusButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.SendStatusGroupButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.DocumentRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PersonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ReportRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -52,7 +53,7 @@ namespace InfoTrucker.UI
             this.SmsRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.SendSmsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.SendStatusGroupButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.SplashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::InfoTrucker.UI.SmsForms.WaitSaveSMSForm), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,9 +176,16 @@ namespace InfoTrucker.UI
             // 
             this.SendStatusButtonItem.Caption = "صندوق ارسال تکی";
             this.SendStatusButtonItem.Id = 13;
-            this.SendStatusButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("InboxButtonItem.ImageOptions.SvgImage")));
+            this.SendStatusButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SendStatusButtonItem.ImageOptions.SvgImage")));
             this.SendStatusButtonItem.Name = "SendStatusButtonItem";
             this.SendStatusButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SendStatusButtonItem_ItemClick);
+            // 
+            // SendStatusGroupButtonItem
+            // 
+            this.SendStatusGroupButtonItem.Caption = "صندوق ارسال گروهی";
+            this.SendStatusGroupButtonItem.Id = 14;
+            this.SendStatusGroupButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SendStatusGroupButtonItem.ImageOptions.SvgImage")));
+            this.SendStatusGroupButtonItem.Name = "SendStatusGroupButtonItem";
             // 
             // DocumentRibbonPage
             // 
@@ -242,12 +250,9 @@ namespace InfoTrucker.UI
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(800, 35);
             // 
-            // SendStatusGroupButtonItem
+            // SplashScreenManager
             // 
-            this.SendStatusGroupButtonItem.Caption = "صندوق ارسال گروهی";
-            this.SendStatusGroupButtonItem.Id = 14;
-            this.SendStatusGroupButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
-            this.SendStatusGroupButtonItem.Name = "SendStatusGroupButtonItem";
+            this.SplashScreenManager.ClosingDelay = 500;
             // 
             // MainForm
             // 
@@ -294,5 +299,6 @@ namespace InfoTrucker.UI
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup BillReportsRibbonPageGroup;
         private DevExpress.XtraBars.BarButtonItem SendStatusGroupButtonItem;
+        private DevExpress.XtraSplashScreen.SplashScreenManager SplashScreenManager;
     }
 }
