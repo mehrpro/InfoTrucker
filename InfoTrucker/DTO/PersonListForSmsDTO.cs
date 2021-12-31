@@ -12,5 +12,6 @@ namespace InfoTrucker.DTO
         public string FullName { get; set; }
         public string Mobile1 { get; set; }
         public bool SendSMS { get; set; }
+        public string ReciverNumber { get; set; }
     }
 }

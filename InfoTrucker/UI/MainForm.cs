@@ -68,10 +68,18 @@ namespace InfoTrucker.UI
         private void SendGroupSmsButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var frm = _container.GetInstance<UI.SmsForms.SendSmsGroupForm>();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Dock = DockStyle.Fill;
             frm.ControlBox = false;
             frm.FormBorderStyle = FormBorderStyle.None;
-            frm.StartPosition = FormStartPosition.CenterScreen;
-            frm.ShowDialog();
+            //frm.Container = _container;
+            frm.Show();
+        }
+
+        private void SendStatusButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

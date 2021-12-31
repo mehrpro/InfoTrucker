@@ -131,6 +131,14 @@
     <Compile Include="Migrations\202112261937200_createdb.designer.cs">
       <DependentUpon>202112261937200_createdb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112310754076_updateSendMessage.cs" />
+    <Compile Include="Migrations\202112310754076_updateSendMessage.designer.cs">
+      <DependentUpon>202112310754076_updateSendMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112310841578_updateSmsMessage2.cs" />
+    <Compile Include="Migrations\202112310841578_updateSmsMessage2.designer.cs">
+      <DependentUpon>202112310841578_updateSmsMessage2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Program.cs" />
@@ -203,8 +211,20 @@
     <Compile Include="UI\SmsForms\SendSmsGroupForm.Designer.cs">
       <DependentUpon>SendSmsGroupForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\SmsForms\SendStatusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SmsForms\SendStatusForm.Designer.cs">
+      <DependentUpon>SendStatusForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Migrations\202112261937200_createdb.resx">
       <DependentUpon>202112261937200_createdb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112310754076_updateSendMessage.resx">
+      <DependentUpon>202112310754076_updateSendMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112310841578_updateSmsMessage2.resx">
+      <DependentUpon>202112310841578_updateSmsMessage2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -244,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SmsForms\SendSmsGroupForm.resx">
       <DependentUpon>SendSmsGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SmsForms\SendStatusForm.resx">
+      <DependentUpon>SendStatusForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Connected Services\ServiceReference1\InfoTrucker.ServiceReference1.object1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
