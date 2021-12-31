@@ -110,6 +110,7 @@
     </Compile>
     <Compile Include="DTO\LoginDTO.cs" />
     <Compile Include="DTO\NewPersonDTO.cs" />
+    <Compile Include="DTO\NewSmsSubjectDTO.cs" />
     <Compile Include="DTO\PersonListForEditDTO.cs" />
     <Compile Include="DTO\PersonListForSms.cs" />
     <Compile Include="DTO\PersonListForSmsDTO.cs" />
@@ -291,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SmsForms\SendStatusForm.resx">
       <DependentUpon>SendStatusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SmsForms\WaitSaveSMSForm.resx">
+      <DependentUpon>WaitSaveSMSForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Connected Services\ServiceReference1\InfoTrucker.ServiceReference1.object1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>

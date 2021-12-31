@@ -7,6 +7,8 @@ using InfoTrucker.Models;
 using AutoMapper;
 using InfoTrucker.DTO;
 using System.Linq;
+using System.Threading;
+using DevExpress.XtraSplashScreen;
 using InfoTrucker.Entities;
 using static InfoTrucker.PublicValue;
 
@@ -101,19 +103,35 @@ namespace InfoTrucker.UI.SmsForms
 
         private async void SendButton_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(this, typeof(WaitSaveSMSForm), true, true, false);
+            SplashScreenManager.Default.SetWaitFormDescription("در حال ارسال پیامک  ......");
             Clacuter();
             try
             {
+                var wsdlCheckSendStr = RandomString(10);
+                var objectWsdl = new NewSmsSubjectDTO()
+                {
+                    CreateTime = DateTime.Today,
+                    Subject = string.IsNullOrWhiteSpace(TitleTextbox.Text) ? DateTime.Now.ToString() : TitleTextbox.Text.Trim(),
+                    WsdlString = wsdlCheckSendStr,
+                };
+                var resultMap = _mapper.Map<MessageGroupSubject>(objectWsdl);
+                var resultInsertTitle = _unitofWork.SmsSubject.Insert(resultMap);
+
+                _unitofWork.Commit();
+                var resultTitleNumber = Convert.ToInt32(resultMap.ID);
+
+
+
                 var receiverNumber = string.Join(",", _personListFoeSend.Select(x => x.Mobile1).ToArray());
                 var message = MessageTextbox.Text.Trim();
-                var wsdlCheckSendStr = RandomString(10);
                 var resultSend = await _soap.sendSmsGroupAsync(SmsUsername, SmsPassword, SmsNumber, receiverNumber, message, 0, wsdlCheckSendStr);
-                if (Convert.ToInt32(resultSend[0]) < 0)
-                {
-                    throw new IndexOutOfRangeException(resultSend[0].ToString());
-                }
+                if (Convert.ToInt32(resultSend[0]) < 0) throw new IndexOutOfRangeException(resultSend[0].ToString());
+                SplashScreenManager.Default.SetWaitFormDescription("در حال ثبت اطلاعات");
 
-                SuccsessSendSMS(resultSend[0].ToString());
+
+
+
                 try
                 {
                     foreach (var item in _personListFoeSend)
@@ -129,9 +147,12 @@ namespace InfoTrucker.UI.SmsForms
                             SendGroup = true,
                             CheckedStatusFromWenService = false,
                             ReciverNumber = 0,
+                            MessageSubjectID_FK = resultTitleNumber,
                         };
                         _unitofWork.SMS.Insert(recorder);
                         _unitofWork.Commit();
+                        SplashScreenManager.CloseForm(false);
+
                         Close();
                     }
                 }
@@ -143,14 +164,14 @@ namespace InfoTrucker.UI.SmsForms
             catch (IndexOutOfRangeException exception)
             {
 
-                var message =  _unitofWork.ExceptionSms.ExceptionMessage(exception.Message);
+                var message = _unitofWork.ExceptionSms.ExceptionMessage(exception.Message);
                 ExseptionMessage(message);
             }
             catch (Exception ex)
             {
                 ExseptionMessage(ex.Message);
             }
-
+            SplashScreenManager.CloseForm(false);
         }
 
         private void CheckStatusButton_Click(object sender, EventArgs e)
