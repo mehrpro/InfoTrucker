@@ -70,6 +70,11 @@ namespace InfoTrucker.UI.SmsForms
 
         private async void SendButton_Click(object sender, EventArgs e)
         {
+            if (true)
+            {
+
+            }
+
             SplashScreenManager.ShowForm(this, typeof(WaitSaveSMSForm), true, true, false);
             SplashScreenManager.Default.SetWaitFormDescription("در حال ارسال پیامک ...");
             var wsdlCheckSendStr = PublicValue.RandomString(10);

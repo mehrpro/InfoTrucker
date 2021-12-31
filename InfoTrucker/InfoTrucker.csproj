@@ -103,6 +103,7 @@
     <Compile Include="Configure\PublicTypeConfigure.cs" />
     <Compile Include="Configure\ResultCodeMessageConfigure.cs" />
     <Compile Include="Configure\SendMessageConfigure.cs" />
+    <Compile Include="Configure\SmsPanelConfigure.cs" />
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,6 +126,7 @@
     <Compile Include="Entities\PublicType.cs" />
     <Compile Include="Entities\ResultCodeMessage.cs" />
     <Compile Include="Entities\SendMessages.cs" />
+    <Compile Include="Entities\SmsConfigure.cs" />
     <Compile Include="Infrastructure\AutoMappingClass.cs" />
     <Compile Include="Infrastructure\ImageResizer.cs" />
     <Compile Include="Infrastructure\IRepositoryBase.cs" />
@@ -156,6 +158,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicValue.cs" />
+    <Compile Include="Services\ASE.cs" />
     <Compile Include="Services\IApplicationUserRepository.cs" />
     <Compile Include="Services\ICleamRepository.cs" />
     <Compile Include="Services\IExceptionSms.cs" />
@@ -165,6 +168,7 @@
     <Compile Include="Services\IPersonRepository.cs" />
     <Compile Include="Services\IPublicTypeRepository.cs" />
     <Compile Include="Services\ISendMessageRepository.cs" />
+    <Compile Include="Services\ISmsConfigureRepository.cs" />
     <Compile Include="UI\AdminForms\ScannerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,10 +235,10 @@
     <Compile Include="UI\SmsForms\SendStatusForm.Designer.cs">
       <DependentUpon>SendStatusForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\SmsForms\WaitSaveSMSForm.cs">
+    <Compile Include="UI\WaitSaveSMSForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\SmsForms\WaitSaveSMSForm.Designer.cs">
+    <Compile Include="UI\WaitSaveSMSForm.Designer.cs">
       <DependentUpon>WaitSaveSMSForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Migrations\202112261937200_createdb.resx">
@@ -294,7 +298,7 @@
     <EmbeddedResource Include="UI\SmsForms\SendStatusForm.resx">
       <DependentUpon>SendStatusForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\SmsForms\WaitSaveSMSForm.resx">
+    <EmbeddedResource Include="UI\WaitSaveSMSForm.resx">
       <DependentUpon>WaitSaveSMSForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Connected Services\ServiceReference1\InfoTrucker.ServiceReference1.object1.datasource">

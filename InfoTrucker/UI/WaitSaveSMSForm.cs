@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraWaitForm;
 
-namespace InfoTrucker.UI.SmsForms
+namespace InfoTrucker.UI
 {
     public partial class WaitSaveSMSForm : WaitForm
     {
@@ -21,22 +21,26 @@ namespace InfoTrucker.UI.SmsForms
 
         #region Overrides
 
-        public override void SetCaption(string caption) {
+        public override void SetCaption(string caption)
+        {
             base.SetCaption(caption);
             this.SaveProgressPanel.Caption = caption;
         }
-        public override void SetDescription(string description) {
+        public override void SetDescription(string description)
+        {
             base.SetDescription(description);
             this.SaveProgressPanel.Description = description;
         }
-        public override void ProcessCommand(Enum cmd, object arg) {
+        public override void ProcessCommand(Enum cmd, object arg)
+        {
             base.ProcessCommand(cmd, arg);
-        
+
         }
 
         #endregion
 
-        public enum WaitFormCommand {
+        public enum WaitFormCommand
+        {
         }
     }
 }

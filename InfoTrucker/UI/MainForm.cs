@@ -17,6 +17,9 @@ namespace InfoTrucker.UI
             PersonReportBottonItem.ItemClick += PersonReportBottonItem_ItemClick;
         }
 
+
+
+
         private void PersonReportBottonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var frm = _container.GetInstance<ReportForms.PersonListReportForm>();

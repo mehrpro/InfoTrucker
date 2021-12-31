@@ -26,6 +26,8 @@ namespace InfoTrucker.Models
             builder.Configurations.Add(new SendMessageConfigure());
             builder.Configurations.Add(new ResultCodeMessageConfigure());
             builder.Configurations.Add(new MessageGroupSubjectConfigure());
+            builder.Configurations.Add(new SmsPanelConfigure());
+
         }
 
 
@@ -39,5 +41,6 @@ namespace InfoTrucker.Models
         public virtual DbSet<SendMessages> SendMessages { get; set; }
         public virtual DbSet<ResultCodeMessage> ResultCodeMessages { get; set; }
         public virtual DbSet<MessageGroupSubject> MessageGroupSubjects { get; set; }
+        public virtual DbSet<SmsConfigure> SmsConfigures { get; set; }
     }
 }

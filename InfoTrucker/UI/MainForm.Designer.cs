@@ -53,7 +53,7 @@ namespace InfoTrucker.UI
             this.SmsRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.SendSmsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.SplashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::InfoTrucker.UI.SmsForms.WaitSaveSMSForm), true, true);
+            this.SplashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::InfoTrucker.UI.WaitSaveSMSForm), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 

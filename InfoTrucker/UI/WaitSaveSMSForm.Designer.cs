@@ -1,5 +1,5 @@
 ﻿
-namespace InfoTrucker.UI.SmsForms
+namespace InfoTrucker.UI
 {
     partial class WaitSaveSMSForm
     {

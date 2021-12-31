@@ -59,6 +59,15 @@ namespace InfoTrucker.Migrations
             cleams.Add(new Cleam() { ID = 6, GroupID_FK = 5, IsDelete = false, UserID_FK = 1, MenuItemID_FK = 6 });
             context.Cleams.AddRange(cleams);
 
+            IList<SmsConfigure> smsConfigures = new List<SmsConfigure>();
+            smsConfigures.Add(new SmsConfigure()
+            {
+                ID = "aec60a14-946c-4428-9151-7e7dfca6b31e",
+                Password = "bSkuzdmotZ/mpsw9SG0PXA==",
+                Username = "yU6k4ImZAln1bwoUMOmwIA==",
+                Sender = "6q/oN0NY6evOItSS30aZBw==",
+                Price = 28,
+            });
 
             IList<Person> person = new List<Person>();
             person.Add(new Person()
@@ -92,6 +101,10 @@ namespace InfoTrucker.Migrations
                 ID = 1
             });
             context.People.AddRange(person);
+
+
+
+
         }
     }
 }
