@@ -7,13 +7,13 @@ namespace InfoTrucker.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class updateSendMessage : IMigrationMetadata
+    public sealed partial class CreateDB : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updateSendMessage));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateDB));
         
         string IMigrationMetadata.Id
         {
-            get { return "202112310754076_updateSendMessage"; }
+            get { return "202112312029191_CreateDB"; }
         }
         
         string IMigrationMetadata.Source

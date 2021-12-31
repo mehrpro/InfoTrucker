@@ -33,6 +33,13 @@ namespace InfoTrucker.Configure
             Property(x => x.MahelTavalod).HasMaxLength(100);
             Property(x => x.Tavalod).HasColumnType("datetime").IsRequired();
             Property(x => x.UserID_FK).IsRequired();
+
+
+
+            HasMany(x => x.SendMessages)
+                .WithRequired(x => x.Person)
+                .HasForeignKey(x => x.PersonID_FK)
+                .WillCascadeOnDelete(false);
         }
 
     }

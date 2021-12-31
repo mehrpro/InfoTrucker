@@ -12,7 +12,7 @@ namespace InfoTrucker.Configure
         {
             HasKey(x => x.UserId);
             Property(x => x.UserId).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(x => x.UserName).IsRequired().HasMaxLength(20);
+            Property(x => x.UserName).IsRequired().HasMaxLength(100);
             Property(x => x.UserPassword).IsRequired().HasMaxLength(100);
             Property(x => x.FullName).IsRequired().HasMaxLength(200);
             Property(x => x.LimetedCompany).IsRequired();

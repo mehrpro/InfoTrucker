@@ -68,6 +68,7 @@ namespace InfoTrucker.Migrations
                 Sender = "6q/oN0NY6evOItSS30aZBw==",
                 Price = 280,
             });
+            context.SmsConfigures.AddRange(smsConfigures);
 
             IList<Person> person = new List<Person>();
             person.Add(new Person()

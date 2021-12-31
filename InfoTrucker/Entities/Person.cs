@@ -1,9 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace InfoTrucker.Entities
 {
     public class Person
     {
+
+        public Person()
+        {
+            SendMessages = new HashSet<SendMessages>();
+        }
+
+
         public int ID { get; set; }
         public int PersonID { get; set; }
         public string FName { get; set; }
@@ -32,5 +40,8 @@ namespace InfoTrucker.Entities
         public DateTime DateRegister { get; set; }
         public int UserID_FK { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
+
+
+        public virtual ICollection<SendMessages> SendMessages { get; set; }
     }
 }

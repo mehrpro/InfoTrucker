@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class createdb : DbMigration
+    public partial class CreateDB : DbMigration
     {
         public override void Up()
         {
@@ -12,7 +12,7 @@
                 c => new
                     {
                         UserId = c.Int(nullable: false, identity: true),
-                        UserName = c.String(nullable: false, maxLength: 20),
+                        UserName = c.String(nullable: false, maxLength: 100),
                         UserPassword = c.String(nullable: false, maxLength: 100),
                         FullName = c.String(nullable: false, maxLength: 200),
                         Editor = c.String(nullable: false, maxLength: 10),
@@ -99,6 +99,36 @@
                 .Index(t => t.UserID_FK);
             
             CreateTable(
+                "dbo.SendMessages",
+                c => new
+                    {
+                        ID = c.Long(nullable: false, identity: true),
+                        PersonID_FK = c.Int(nullable: false),
+                        CheckedStatusFromWenService = c.Boolean(nullable: false),
+                        ResultSend = c.Int(nullable: false),
+                        MessageSubjectID_FK = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.MessageGroupSubjects", t => t.MessageSubjectID_FK)
+                .ForeignKey("dbo.People", t => t.PersonID_FK)
+                .Index(t => t.PersonID_FK)
+                .Index(t => t.MessageSubjectID_FK);
+            
+            CreateTable(
+                "dbo.MessageGroupSubjects",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Subject = c.String(nullable: false, maxLength: 250),
+                        Message = c.String(maxLength: 700),
+                        SendGroup = c.Boolean(nullable: false),
+                        CreateTime = c.DateTime(nullable: false),
+                        WsdlString = c.String(nullable: false, maxLength: 10),
+                        WsdlCheckSend = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
                 "dbo.PublicTypes",
                 c => new
                     {
@@ -119,16 +149,14 @@
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
-                "dbo.SendMessages",
+                "dbo.SmsConfigures",
                 c => new
                     {
-                        ID = c.Long(nullable: false, identity: true),
-                        RegisterTime = c.DateTime(nullable: false),
-                        Message = c.String(maxLength: 700),
-                        Reciver = c.String(maxLength: 11),
-                        ResultNumber = c.Int(nullable: false),
-                        WsdlCheckSendString = c.String(maxLength: 10),
-                        WsdlCheckSend = c.Int(nullable: false),
+                        ID = c.String(nullable: false, maxLength: 128),
+                        Username = c.String(),
+                        Password = c.String(),
+                        Sender = c.String(),
+                        Price = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
             
@@ -137,18 +165,24 @@
         public override void Down()
         {
             DropForeignKey("dbo.People", "UserID_FK", "dbo.ApplicationUsers");
+            DropForeignKey("dbo.SendMessages", "PersonID_FK", "dbo.People");
+            DropForeignKey("dbo.SendMessages", "MessageSubjectID_FK", "dbo.MessageGroupSubjects");
             DropForeignKey("dbo.Cleams", "UserID_FK", "dbo.ApplicationUsers");
             DropForeignKey("dbo.MenuItems", "GroupID_FK", "dbo.MenuGroups");
             DropForeignKey("dbo.Cleams", "MenuItemID_FK", "dbo.MenuItems");
             DropForeignKey("dbo.Cleams", "GroupID_FK", "dbo.MenuGroups");
+            DropIndex("dbo.SendMessages", new[] { "MessageSubjectID_FK" });
+            DropIndex("dbo.SendMessages", new[] { "PersonID_FK" });
             DropIndex("dbo.People", new[] { "UserID_FK" });
             DropIndex("dbo.MenuItems", new[] { "GroupID_FK" });
             DropIndex("dbo.Cleams", new[] { "MenuItemID_FK" });
             DropIndex("dbo.Cleams", new[] { "GroupID_FK" });
             DropIndex("dbo.Cleams", new[] { "UserID_FK" });
-            DropTable("dbo.SendMessages");
+            DropTable("dbo.SmsConfigures");
             DropTable("dbo.ResultCodeMessages");
             DropTable("dbo.PublicTypes");
+            DropTable("dbo.MessageGroupSubjects");
+            DropTable("dbo.SendMessages");
             DropTable("dbo.People");
             DropTable("dbo.MenuItems");
             DropTable("dbo.MenuGroups");

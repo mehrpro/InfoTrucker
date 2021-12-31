@@ -26,11 +26,11 @@ namespace InfoTrucker.Services
 
         public async Task<bool> LoginTask(string username, string password)
         {
-            var usernameDe = ASE.DecryptString(username);
+            var usernameDe = ASE.EncryptString(username);
             var resultUsername = await GetFirstOrDefaultAsync(x => x.UserName == usernameDe);
             if (resultUsername != null)
             {
-                var passwordDe = ASE.DecryptString(password);
+                var passwordDe = ASE.EncryptString(password);
                 if (resultUsername.UserPassword == passwordDe)
                 {
                     PublicValue.Fullname = resultUsername.FullName;

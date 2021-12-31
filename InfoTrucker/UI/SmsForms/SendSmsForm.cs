@@ -20,8 +20,8 @@ namespace InfoTrucker.UI.SmsForms
             _mapper = mapper;
             soap = new ServiceReference1.tsmsServiceClient();
             InitializeComponent();
-            PersonListSearchLookUp.Properties.DisplayMember = "FullName";
-            PersonListSearchLookUp.Properties.ValueMember = "Mobile1";
+            PersonListSearchLookUp.Properties.DisplayMember = "Mobile1";
+            PersonListSearchLookUp.Properties.ValueMember = "ID";
             ConnectedToPanel();
 
         }
@@ -96,11 +96,12 @@ namespace InfoTrucker.UI.SmsForms
                 var resultMap = _mapper.Map<MessageGroupSubject>(objectWsdl);
                 _unitofWork.SmsSubject.Insert(resultMap);
                 _unitofWork.Commit();
+                string[] SmsSender = { PublicValue.SmsNumber };
                 var resultTitleNumber = Convert.ToInt32(resultMap.ID);
-                string receiverNumber = PersonListSearchLookUp.EditValue.ToString();
-                var message = MessageTextbox.Text.Trim();
-                var resultSend = await soap.sendSmsGroupAsync(PublicValue.SmsUsername, PublicValue.SmsPassword,
-                    PublicValue.SmsNumber, receiverNumber, message, 0, wsdlCheckSendStr);
+                string[] receiverNumber = { PersonListSearchLookUp.EditValue.ToString() };
+                string[] message = { MessageTextbox.Text.Trim() };
+                var resultSend = soap.sendSms(PublicValue.SmsUsername, PublicValue.SmsPassword,
+                  SmsSender, receiverNumber, message, string[] new { }, wsdlCheckSendStr);
                 if (Convert.ToInt32(resultSend[0]) < 0) throw new IndexOutOfRangeException(resultSend[0].ToString());
                 SplashScreenManager.Default.SetWaitFormDescription($"شماره پیگیری {resultSend[0]}");
                 Thread.Sleep(1025);

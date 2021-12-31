@@ -26,7 +26,8 @@ namespace InfoTrucker.UI
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            UsernameTextbox.Text = PasswordTextbox.Text = "admin";
+            UsernameTextbox.Text = "admin";
+            PasswordTextbox.Text = "Admin708801298";
         }
 
         private async void LoginButton_Click(object sender, EventArgs e)
