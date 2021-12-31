@@ -15,6 +15,7 @@ namespace InfoTrucker.Infrastructure
         ISendMessageRepository SMS { get; }
         IMessageGroupSubjectRepository SmsSubject { get; }
         IExceptionSms ExceptionSms { get; }
+        ISmsConfigureRepository SmsConfigure { get; }
         void Commit();
     }
 
@@ -30,6 +31,7 @@ namespace InfoTrucker.Infrastructure
         private ISendMessageRepository _sms;
         private IMessageGroupSubjectRepository _smsSubject;
         private IExceptionSms _exceptionSms;
+        private ISmsConfigureRepository _smsConfigure;
         public UnitofWork()
         {
             db = new TContext();
@@ -49,6 +51,7 @@ namespace InfoTrucker.Infrastructure
         public IMessageGroupSubjectRepository SmsSubject =>
             _smsSubject ?? (_smsSubject = new MessageGroupSubjectRepository(db));
         public IExceptionSms ExceptionSms => _exceptionSms ?? (_exceptionSms = new ExcptionSms(db));
+        public ISmsConfigureRepository SmsConfigure => _smsConfigure ?? (_smsConfigure = new SmsConfigureRepository(db));
 
         #region Disposed
         private bool disposed = false;

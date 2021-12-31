@@ -25,8 +25,8 @@ namespace InfoTrucker.Migrations
             {
                 UserId = 1,
                 Enabled = true,
-                UserName = "admin",
-                UserPassword = "admin",
+                UserName = "o2DUeeUN//chNK6u9APQdw==", //admin
+                UserPassword = "r1iuHVzwh0BHzDa+rauWxg==", //Admin708801298
                 FullName = "مدیرسیستم",
                 Editor = "Admin",
                 LimetedCompany = false
@@ -66,7 +66,7 @@ namespace InfoTrucker.Migrations
                 Password = "bSkuzdmotZ/mpsw9SG0PXA==",
                 Username = "yU6k4ImZAln1bwoUMOmwIA==",
                 Sender = "6q/oN0NY6evOItSS30aZBw==",
-                Price = 28,
+                Price = 280,
             });
 
             IList<Person> person = new List<Person>();
@@ -103,7 +103,42 @@ namespace InfoTrucker.Migrations
             context.People.AddRange(person);
 
 
-
+            IList<ResultCodeMessage> resultCodeMessages = new List<ResultCodeMessage>();
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 1, ResultCode = -1, ResultMessage = "خطاي ناشناخته دوباره تلاش نمایید" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 2, ResultCode = -3, ResultMessage = "خطاي ناشناخته دوباره تلاش نمایید" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 3, ResultCode = -5, ResultMessage = "متنی جهت ارسال وجود ندارد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 4, ResultCode = -6, ResultMessage = "تلفن همراه ناصحیح می باشد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 5, ResultCode = -8, ResultMessage = "نام کاربري و یا کلمه عبور نادرست می باشد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 6, ResultCode = -10, ResultMessage = "امکان ارسال از وب سرویس براي این کاربر وجود ندارد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 7, ResultCode = -11, ResultMessage = "عدم وجود شماره پیامک" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 8, ResultCode = -12, ResultMessage = "تعداد درخواستی بیش از حد مجاز" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 9, ResultCode = -13, ResultMessage = "ورودي نا معتبر" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 10, ResultCode = -14, ResultMessage = "اعتبار کافی نمی باشد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 11, ResultCode = -15, ResultMessage = "ورودي نا معتبر" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 12, ResultCode = -16, ResultMessage = "آرایه هاي ارسال پیام متناظر نمی باشد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 13, ResultCode = -17, ResultMessage = "تعداد ارسال پیامک بیشتر از حد مجاز می باشد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 14, ResultCode = -24, ResultMessage = "پیامی به سرور ارسال نشده است" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 15, ResultCode = -30, ResultMessage = "کد صداي آرشیوي نادرست ارسال شده است" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 16, ResultCode = -31, ResultMessage = "تلفن ورودي ناصحیح است" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 17, ResultCode = -32, ResultMessage = "عنوان ارسال خالی است" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 18, ResultCode = -33, ResultMessage = "چنین صوتی در آرشیو وجود ندارد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 19, ResultCode = -34, ResultMessage = "فرمت صداي آپلود شده ندرست می باشد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 20, ResultCode = -35, ResultMessage = "سایز فایل آپلود شده بیشتر از حد مجاز می باشد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 21, ResultCode = -36, ResultMessage = "خطاي ناشناخته در ورود اطلاعات" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 22, ResultCode = -37, ResultMessage = "تعداد تلفنها بیشتر از حد مجاز ارسال گروهی می باشد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 23, ResultCode = -38, ResultMessage = "تعداد تلفنها براي دریافت دلیوري بیشتر از 100 عدد می باشد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 24, ResultCode = -39, ResultMessage = "چنین کدي وجود ندارد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 25, ResultCode = -40, ResultMessage = "پیام در صف ارسال می باشد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 26, ResultCode = -41, ResultMessage = "چنین شناسه اي وجود ندارد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 27, ResultCode = -42, ResultMessage = "موبایل وجود ندارد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 28, ResultCode = -43, ResultMessage = "پیامی براي دریافت وجود ندارد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 29, ResultCode = -44, ResultMessage = "خطا در کد الگوي صدا" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 30, ResultCode = -45, ResultMessage = "خطا در الگوي سایت الگو دوبار ست شود" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 31, ResultCode = -46, ResultMessage = "خطا در ارسال متغیر شماره" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 32, ResultCode = -47, ResultMessage = "خطا در ارسال تعداد متغیر ها - کمتر از میزان لازم است" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 33, ResultCode = -48, ResultMessage = "فرمت تاریخ صحیح نمی باشد" });
+            resultCodeMessages.Add(new ResultCodeMessage() { ID = 34, ResultCode = -49, ResultMessage = "فرمت ساعت ارسالی اشتباه است" });
+            context.ResultCodeMessages.AddRange(resultCodeMessages);
 
         }
     }

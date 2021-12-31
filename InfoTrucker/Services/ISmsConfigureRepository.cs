@@ -37,6 +37,7 @@ namespace InfoTrucker.Services
                 PublicValue.SmsNumber = ASE.DecryptString(result.Sender);
                 PublicValue.SmsUsername = ASE.DecryptString(result.Username);
                 PublicValue.SmsPassword = ASE.DecryptString(result.Password);
+                PublicValue.SmsPrice = result.Price;
 
             }
         }

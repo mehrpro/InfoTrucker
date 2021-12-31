@@ -35,6 +35,14 @@ namespace InfoTrucker.UI.SmsForms
 
         }
 
+        private bool CalcuterPrice()
+        {
+            var credit = Convert.ToInt32(CreditTextbox.EditValue);
+            var pageSms = Convert.ToInt32(MessageTextbox.Text.Length) / 64 + 1;
+            var result = pageSms * PublicValue.SmsPrice;
+            return result < credit ? true : false;
+        }
+
         private void ConnectedToPanel()
         {
             try
@@ -70,11 +78,7 @@ namespace InfoTrucker.UI.SmsForms
 
         private async void SendButton_Click(object sender, EventArgs e)
         {
-            if (true)
-            {
-
-            }
-
+            if (!CalcuterPrice()) return;
             SplashScreenManager.ShowForm(this, typeof(WaitSaveSMSForm), true, true, false);
             SplashScreenManager.Default.SetWaitFormDescription("در حال ارسال پیامک ...");
             var wsdlCheckSendStr = PublicValue.RandomString(10);

@@ -22,22 +22,20 @@ namespace InfoTrucker.UI
             _unitofWork = unitofWork;
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-
-
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
             UsernameTextbox.Text = PasswordTextbox.Text = "admin";
-
         }
 
         private async void LoginButton_Click(object sender, EventArgs e)
         {
             var result = await
-                _unitofWork.ApplicationUser.LoginTask(UsernameTextbox.Text.Trim(), PasswordTextbox.Text.Trim());
+            _unitofWork.ApplicationUser.LoginTask(UsernameTextbox.Text.Trim(), PasswordTextbox.Text.Trim());
             if (result)
             {
+                _unitofWork.SmsConfigure.UpdateValue();
                 this.DialogResult = DialogResult.OK;
                 Close();
             }

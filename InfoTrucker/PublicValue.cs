@@ -10,6 +10,7 @@ namespace InfoTrucker
         public static string SmsUsername { get; set; }
         public static string SmsPassword { get; set; }
         public static string SmsNumber { get; set; }
+        public static decimal SmsPrice { get; set; }
 
         public static string Fullname { get; set; }
         public static int UserID { get; set; }
