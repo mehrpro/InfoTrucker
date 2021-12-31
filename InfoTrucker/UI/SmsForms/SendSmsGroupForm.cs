@@ -10,7 +10,7 @@ using System.Linq;
 using System.Threading;
 using DevExpress.XtraSplashScreen;
 using InfoTrucker.Entities;
-using static InfoTrucker.PublicValue;
+
 
 namespace InfoTrucker.UI.SmsForms
 {
@@ -39,8 +39,8 @@ namespace InfoTrucker.UI.SmsForms
         {
             try
             {
-                var soapConnect = _soap.UserInfo(SmsUsername, SmsPassword);
-                if (soapConnect[0].sms_numebrs[0] == SmsNumber)// && soapConnect[0].sms_numebrs[0].Length == 10
+                var soapConnect = _soap.UserInfo(PublicValue.SmsUsername, PublicValue.SmsPassword);
+                if (soapConnect[0].sms_numebrs[0] == PublicValue.SmsNumber)// && soapConnect[0].sms_numebrs[0].Length == 10
                 {
                     SmsNumberTextbox.Text = soapConnect[0].sms_numebrs[0];
                     SmsNumberTextbox.ReadOnly = true;
@@ -51,7 +51,7 @@ namespace InfoTrucker.UI.SmsForms
             }
             catch (Exception ex)
             {
-                ExseptionMessage(ex.Message);
+                PublicValue.ExseptionMessage(ex.Message);
                 Close();
             }
         }
@@ -106,50 +106,42 @@ namespace InfoTrucker.UI.SmsForms
             SplashScreenManager.ShowForm(this, typeof(WaitSaveSMSForm), true, true, false);
             SplashScreenManager.Default.SetWaitFormDescription("در حال ارسال پیامک  ......");
             Clacuter();
+            var wsdlCheckSendStr = PublicValue.RandomString(10);
             try
             {
-                var wsdlCheckSendStr = RandomString(10);
-                var objectWsdl = new NewSmsSubjectDTO()
+                var objectWsdl = new NewSmsSubjectDTO
                 {
-                    CreateTime = DateTime.Today,
-                    Subject = string.IsNullOrWhiteSpace(TitleTextbox.Text) ? DateTime.Now.ToString() : TitleTextbox.Text.Trim(),
+                    CreateTime = DateTime.Now,
+                    Subject = string.IsNullOrWhiteSpace(TitleTextbox.Text) ? $"ارسال گروهی در تاریخ {DateTime.Now}" : TitleTextbox.Text.Trim(),
                     WsdlString = wsdlCheckSendStr,
+                    SendGroup = true,
+                    Message = MessageTextbox.Text.Trim(),
                 };
                 var resultMap = _mapper.Map<MessageGroupSubject>(objectWsdl);
-                var resultInsertTitle = _unitofWork.SmsSubject.Insert(resultMap);
-
+                _unitofWork.SmsSubject.Insert(resultMap);
                 _unitofWork.Commit();
                 var resultTitleNumber = Convert.ToInt32(resultMap.ID);
-
-
-
                 var receiverNumber = string.Join(",", _personListFoeSend.Select(x => x.Mobile1).ToArray());
                 var message = MessageTextbox.Text.Trim();
-                var resultSend = await _soap.sendSmsGroupAsync(SmsUsername, SmsPassword, SmsNumber, receiverNumber, message, 0, wsdlCheckSendStr);
+                var resultSend = await _soap.sendSmsGroupAsync(PublicValue.SmsUsername, PublicValue.SmsPassword,
+                    PublicValue.SmsNumber, receiverNumber, message, 0, wsdlCheckSendStr);
                 if (Convert.ToInt32(resultSend[0]) < 0) throw new IndexOutOfRangeException(resultSend[0].ToString());
+                SplashScreenManager.Default.SetWaitFormDescription($"شماره پیگیری {resultSend[0]}");
+                Thread.Sleep(1025);
                 SplashScreenManager.Default.SetWaitFormDescription("در حال ثبت اطلاعات");
-
-
-
-
                 try
                 {
                     foreach (var item in _personListFoeSend)
                     {
-                        var recorder = new SendMessages
+                        var recorder = new NewSendMessageDTO
                         {
-                            Message = message,
-                            RegisterTime = DateTime.Now,
-                            WsdlCheckSend = 0,
-                            WsdlCheckSendString = wsdlCheckSendStr,
-                            Reciver = item.Mobile1,
-                            ResultNumber = resultSend[0],
-                            SendGroup = true,
+                            PersonID_FK = item.ID,
+                            ResultSend = resultSend[0],
                             CheckedStatusFromWenService = false,
-                            ReciverNumber = 0,
                             MessageSubjectID_FK = resultTitleNumber,
                         };
-                        _unitofWork.SMS.Insert(recorder);
+                        var resultMapMessage = _mapper.Map<SendMessages>(recorder);
+                        _unitofWork.SMS.Insert(resultMapMessage);
                         _unitofWork.Commit();
                         SplashScreenManager.CloseForm(false);
 
@@ -158,18 +150,18 @@ namespace InfoTrucker.UI.SmsForms
                 }
                 catch (Exception ex)
                 {
-                    ExseptionMessage(ex.Message);
+                    PublicValue.ExseptionMessage(ex.Message);
                 }
             }
             catch (IndexOutOfRangeException exception)
             {
 
                 var message = _unitofWork.ExceptionSms.ExceptionMessage(exception.Message);
-                ExseptionMessage(message);
+                PublicValue.ExseptionMessage(message);
             }
             catch (Exception ex)
             {
-                ExseptionMessage(ex.Message);
+                PublicValue.ExseptionMessage(ex.Message);
             }
             SplashScreenManager.CloseForm(false);
         }

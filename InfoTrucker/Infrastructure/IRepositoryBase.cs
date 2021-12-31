@@ -10,7 +10,7 @@ namespace InfoTrucker.Infrastructure
     public interface IRepositoryBase<TEntity> : IDisposable where TEntity : class
     {
         //-------Definition Public Functions Models-----------//
-        object Insert(TEntity entity);
+        void Insert(TEntity entity);
         void Change(TEntity entity, bool nullabl);
 
         void Delete(object Id);
@@ -125,9 +125,9 @@ namespace InfoTrucker.Infrastructure
             return await dbSet.Where(where).ToListAsync();
         }
 
-        public object Insert(TEntity entity)
+        public void Insert(TEntity entity)
         {
-           return dbSet.Add(entity);
+            dbSet.Add(entity);
         }
 
         public void Change(TEntity entity, bool nullabl)

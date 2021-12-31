@@ -147,7 +147,7 @@ namespace InfoTrucker.UI.PersonForms
 
         }
 
-        private async void LastId()
+        private  void LastId()
         {
             person = _unitofWork.Person.GetById(Id);
             Id1Textbox.Text = Id2Textbox.Text = Id3Textbox.Text = person.PersonID.ToString();

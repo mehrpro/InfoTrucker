@@ -54,7 +54,6 @@ namespace InfoTrucker.UI.SmsForms
             this.SendButton = new DevExpress.XtraEditors.SimpleButton();
             this.MessageTextbox = new DevExpress.XtraEditors.MemoEdit();
             this.TitleTextbox = new DevExpress.XtraEditors.TextEdit();
-            this.SplashScreenManagerSMS = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::InfoTrucker.UI.SmsForms.WaitSaveSMSForm), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PersonGridControl)).BeginInit();
@@ -395,10 +394,6 @@ namespace InfoTrucker.UI.SmsForms
             this.TitleTextbox.TabIndex = 10;
             this.TitleTextbox.EditValueChanged += new System.EventHandler(this.MessageTextbox_EditValueChanged);
             // 
-            // SplashScreenManagerSMS
-            // 
-            this.SplashScreenManagerSMS.ClosingDelay = 500;
-            // 
             // SendSmsGroupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -450,6 +445,5 @@ namespace InfoTrucker.UI.SmsForms
         private DevExpress.XtraEditors.SimpleButton RefreshButton;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit TitleTextbox;
-        private DevExpress.XtraSplashScreen.SplashScreenManager SplashScreenManagerSMS;
     }
 }

@@ -110,6 +110,7 @@
     </Compile>
     <Compile Include="DTO\LoginDTO.cs" />
     <Compile Include="DTO\NewPersonDTO.cs" />
+    <Compile Include="DTO\NewSendMessageDTO.cs" />
     <Compile Include="DTO\NewSmsSubjectDTO.cs" />
     <Compile Include="DTO\PersonListForEditDTO.cs" />
     <Compile Include="DTO\PersonListForSms.cs" />
