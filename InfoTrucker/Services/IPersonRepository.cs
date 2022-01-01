@@ -1,6 +1,8 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using InfoTrucker.Entities;
 using InfoTrucker.Infrastructure;
 
@@ -10,6 +12,7 @@ namespace InfoTrucker.Services
     {
         Task<int> LastPersonID();
         Task Update(Person person);
+        List<Person> PersonsListSending();
     }
 
     public class PersonRepository : RepositoryBase<Person>, IPersonRepository
@@ -36,6 +39,11 @@ namespace InfoTrucker.Services
         {
             var local = await GetFirstOrDefaultAsync(x => x.ID == person.ID);
             Change(local, local == null);
+        }
+
+        public List<Person> PersonsListSending()
+        {
+            var result  = Get()
         }
     }
 }
