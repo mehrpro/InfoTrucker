@@ -22,7 +22,10 @@ namespace InfoTrucker.UI.SmsForms
             InitializeComponent();
             PersonListSearchLookUp.Properties.DisplayMember = "Mobile1";
             PersonListSearchLookUp.Properties.ValueMember = "ID";
+
+
             ConnectedToPanel();
+
 
         }
 
@@ -47,6 +50,8 @@ namespace InfoTrucker.UI.SmsForms
         {
             try
             {
+
+
                 var soapConnect = soap.UserInfo(PublicValue.SmsUsername, PublicValue.SmsPassword);
 
                 if (soapConnect[0].sms_numebrs[0] == PublicValue.SmsNumber)
@@ -98,10 +103,11 @@ namespace InfoTrucker.UI.SmsForms
                 _unitofWork.Commit();
                 string[] SmsSender = { PublicValue.SmsNumber };
                 var resultTitleNumber = Convert.ToInt32(resultMap.ID);
-                string[] receiverNumber = { PersonListSearchLookUp.EditValue.ToString() };
+                string[] receiverNumber = { PersonListSearchLookUp.Text.ToString() };
                 string[] message = { MessageTextbox.Text.Trim() };
-                var resultSend = soap.sendSms(PublicValue.SmsUsername, PublicValue.SmsPassword,
-                  SmsSender, receiverNumber, message, string[] new { }, wsdlCheckSendStr);
+                string[] msc = new string[] { };
+                var resultSend = await soap.sendSmsAsync(PublicValue.SmsUsername, PublicValue.SmsPassword,
+                  SmsSender, receiverNumber, message, msc, wsdlCheckSendStr);
                 if (Convert.ToInt32(resultSend[0]) < 0) throw new IndexOutOfRangeException(resultSend[0].ToString());
                 SplashScreenManager.Default.SetWaitFormDescription($"شماره پیگیری {resultSend[0]}");
                 Thread.Sleep(1025);

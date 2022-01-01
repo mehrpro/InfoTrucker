@@ -310,6 +310,15 @@
     <Content Include="SMS.ico" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="TSMSLIB_TLB">
+      <Guid>{F8F48F8E-6D60-4D79-9E17-E96CF817ACD3}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="WIA">
       <Guid>{94A0E92D-43C0-494E-AC29-FD45948A5221}</Guid>
       <VersionMajor>1</VersionMajor>

@@ -92,7 +92,6 @@ namespace InfoTrucker.UI.SmsForms
             _personListTemp = PersonGridControl.DataSource as List<PersonListForSmsDTO>;
             ReciverNumberTextbox.Text = _personListTemp.Count(x => x.SendSMS).ToString();
             _personListFoeSend = _personListTemp.Where(x => x.SendSMS).ToList();
-
             CalcuterTextbx.Text = (Convert.ToInt32(ReciverNumberTextbox.EditValue) * Convert.ToInt32(SMSPageTextbox.EditValue) * 283).ToString();
         }
 
@@ -103,6 +102,11 @@ namespace InfoTrucker.UI.SmsForms
 
         private async void SendButton_Click(object sender, EventArgs e)
         {
+            if(Convert.ToInt32(CalcuterTextbx.Text) > Convert.ToInt32(CreditTextbox.Text))
+            {
+                PublicValue.ExseptionMessage("اعتبار کافی برای ارسال ندارید");
+                return;
+            }
             SplashScreenManager.ShowForm(this, typeof(WaitSaveSMSForm), true, true, false);
             SplashScreenManager.Default.SetWaitFormDescription("در حال ارسال پیامک  ......");
             Clacuter();
