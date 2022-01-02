@@ -12,7 +12,7 @@ namespace InfoTrucker.Services
     {
         Task<int> LastPersonID();
         Task Update(Person person);
-        List<Person> PersonsListSending();
+
     }
 
     public class PersonRepository : RepositoryBase<Person>, IPersonRepository
@@ -41,9 +41,6 @@ namespace InfoTrucker.Services
             Change(local, local == null);
         }
 
-        public List<Person> PersonsListSending()
-        {
-            var result  = Get()
-        }
+
     }
 }

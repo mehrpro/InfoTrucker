@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
+using InfoTrucker.Entities;
+using InfoTrucker.Models;
 using InfoTrucker.Services;
 
 namespace InfoTrucker.Infrastructure
@@ -16,6 +18,8 @@ namespace InfoTrucker.Infrastructure
         IMessageGroupSubjectRepository SmsSubject { get; }
         IExceptionSms ExceptionSms { get; }
         ISmsConfigureRepository SmsConfigure { get; }
+        Person personU { get; }
+        AppDbContext contextdb { get; }
         void Commit();
     }
 
@@ -32,6 +36,8 @@ namespace InfoTrucker.Infrastructure
         private IMessageGroupSubjectRepository _smsSubject;
         private IExceptionSms _exceptionSms;
         private ISmsConfigureRepository _smsConfigure;
+        private Person _personU;
+        private AppDbContext _contextdb;
         public UnitofWork()
         {
             db = new TContext();
@@ -52,6 +58,8 @@ namespace InfoTrucker.Infrastructure
             _smsSubject ?? (_smsSubject = new MessageGroupSubjectRepository(db));
         public IExceptionSms ExceptionSms => _exceptionSms ?? (_exceptionSms = new ExcptionSms(db));
         public ISmsConfigureRepository SmsConfigure => _smsConfigure ?? (_smsConfigure = new SmsConfigureRepository(db));
+        public Person personU => _personU ?? (_personU = new Person());
+        public AppDbContext contextdb => _contextdb ?? (_contextdb = new AppDbContext());
 
         #region Disposed
         private bool disposed = false;

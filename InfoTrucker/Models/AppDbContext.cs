@@ -10,7 +10,8 @@ namespace InfoTrucker.Models
         public AppDbContext() : base("cn")
         {
 
-            //Database.SetInitializer(new InitialDatabase());        
+            //Database.SetInitializer(new InitialDatabase());
+            this.Configuration.LazyLoadingEnabled = false;
 
         }
 

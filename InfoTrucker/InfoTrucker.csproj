@@ -117,6 +117,7 @@
     <Compile Include="DTO\PersonListForSms.cs" />
     <Compile Include="DTO\PersonListForSmsDTO.cs" />
     <Compile Include="DTO\PersonListReportDTO.cs" />
+    <Compile Include="DTO\SendStatusDTO.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\Cleam.cs" />
     <Compile Include="Entities\MenuGroup.cs" />
@@ -133,9 +134,13 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\TypeRegistery.cs" />
     <Compile Include="Infrastructure\WIAScanner.cs" />
-    <Compile Include="Migrations\202112312029191_CreateDB.cs" />
-    <Compile Include="Migrations\202112312029191_CreateDB.designer.cs">
-      <DependentUpon>202112312029191_CreateDB.cs</DependentUpon>
+    <Compile Include="Migrations\202201021837155_createdb.cs" />
+    <Compile Include="Migrations\202201021837155_createdb.designer.cs">
+      <DependentUpon>202201021837155_createdb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201021844176_createdb2.cs" />
+    <Compile Include="Migrations\202201021844176_createdb2.designer.cs">
+      <DependentUpon>202201021844176_createdb2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
@@ -225,8 +230,11 @@
     <Compile Include="UI\WaitSaveSMSForm.Designer.cs">
       <DependentUpon>WaitSaveSMSForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202112312029191_CreateDB.resx">
-      <DependentUpon>202112312029191_CreateDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202201021837155_createdb.resx">
+      <DependentUpon>202201021837155_createdb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201021844176_createdb2.resx">
+      <DependentUpon>202201021844176_createdb2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
