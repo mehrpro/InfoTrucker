@@ -4,16 +4,20 @@ using InfoTrucker.Infrastructure;
 
 namespace InfoTrucker.Services
 {
-    public interface ICleamRepository : IRepositoryBase<Cleam>
+    public interface ICleamRepository
     {
 
     }
 
-    public class CleamRepository : RepositoryBase<Cleam>, ICleamRepository
+    public class CleamRepository : ICleamRepository
     {
-        public CleamRepository(DbContext context) : base(context)
-        {
+        private readonly IUnitofWork _unitofWork;
+        private readonly IDbSet<Cleam> _cleams;
 
+        public CleamRepository(IUnitofWork unitofWork)
+        {
+            _unitofWork = unitofWork;
+            _cleams = _unitofWork.Set<Cleam>();
         }
     }
 }

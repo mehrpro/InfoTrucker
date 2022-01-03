@@ -10,23 +10,33 @@ using System.Linq;
 using System.Threading;
 using DevExpress.XtraSplashScreen;
 using InfoTrucker.Entities;
+using InfoTrucker.Services;
 
 
 namespace InfoTrucker.UI.SmsForms
 {
     public partial class SendSmsGroupForm : XtraForm
     {
-        private readonly UnitofWork<AppDbContext> _unitofWork;
+        private readonly IUnitofWork _unitofWork;
         private readonly IMapper _mapper;
+        private readonly IPersonRepository _personRepository;
+        private readonly ISendMessageRepository _messageRepository;
+        private readonly IMessageGroupSubjectRepository _messageGroupSubjectRepository;
+        private readonly IExceptionSms _exceptionSms;
         private readonly ServiceReference1.tsmsServiceClient _soap;
         private List<PersonListForSmsDTO> _personListTemp;
         private List<PersonListForSmsDTO> _personListFoeSend;
 
-        public SendSmsGroupForm(UnitofWork<AppDbContext> unitofWork, IMapper mapper)
+        public SendSmsGroupForm(IUnitofWork unitofWork, IMapper mapper, IPersonRepository personRepository
+        , ISendMessageRepository messageRepository, IMessageGroupSubjectRepository messageGroupSubjectRepository, IExceptionSms exceptionSms)
         {
             InitializeComponent();
             _unitofWork = unitofWork;
             _mapper = mapper;
+            _personRepository = personRepository;
+            _messageRepository = messageRepository;
+            _messageGroupSubjectRepository = messageGroupSubjectRepository;
+            _exceptionSms = exceptionSms;
             _soap = new ServiceReference1.tsmsServiceClient();
             ConnectedToPanelSms();
 
@@ -62,7 +72,7 @@ namespace InfoTrucker.UI.SmsForms
         /// </summary>
         private async void PersonListForSend()
         {
-            var resultPerson = await _unitofWork.Person.GetAllAsync();
+            var resultPerson = _personRepository.GetAllEnumerable();
             var result = _mapper.Map<IEnumerable<PersonListForSmsDTO>>(resultPerson);
             foreach (var item in result)
             {
@@ -102,7 +112,7 @@ namespace InfoTrucker.UI.SmsForms
 
         private async void SendButton_Click(object sender, EventArgs e)
         {
-            if(Convert.ToInt32(CalcuterTextbx.Text) > Convert.ToInt32(CreditTextbox.Text))
+            if (Convert.ToInt32(CalcuterTextbx.Text) > Convert.ToInt32(CreditTextbox.Text))
             {
                 PublicValue.ExseptionMessage("اعتبار کافی برای ارسال ندارید");
                 return;
@@ -122,8 +132,8 @@ namespace InfoTrucker.UI.SmsForms
                     Message = MessageTextbox.Text.Trim(),
                 };
                 var resultMap = _mapper.Map<MessageGroupSubject>(objectWsdl);
-                _unitofWork.SmsSubject.Insert(resultMap);
-                _unitofWork.Commit();
+                _messageGroupSubjectRepository.Insert(resultMap);
+                _unitofWork.SaveChanges();
                 var resultTitleNumber = Convert.ToInt32(resultMap.ID);
                 var receiverNumber = string.Join(",", _personListFoeSend.Select(x => x.Mobile1).ToArray());
                 var message = MessageTextbox.Text.Trim();
@@ -145,8 +155,8 @@ namespace InfoTrucker.UI.SmsForms
                             MessageSubjectID_FK = resultTitleNumber,
                         };
                         var resultMapMessage = _mapper.Map<SendMessages>(recorder);
-                        _unitofWork.SMS.Insert(resultMapMessage);
-                        _unitofWork.Commit();
+                        _messageRepository.Insert(resultMapMessage);
+                        _unitofWork.SaveChanges();
                         SplashScreenManager.CloseForm(false);
 
                         Close();
@@ -160,7 +170,7 @@ namespace InfoTrucker.UI.SmsForms
             catch (IndexOutOfRangeException exception)
             {
 
-                var message = _unitofWork.ExceptionSms.ExceptionMessage(exception.Message);
+                var message = _exceptionSms.ExceptionMessage(exception.Message);
                 PublicValue.ExseptionMessage(message);
             }
             catch (Exception ex)

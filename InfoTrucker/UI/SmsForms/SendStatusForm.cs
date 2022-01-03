@@ -12,20 +12,23 @@ using AutoMapper;
 using DevExpress.XtraEditors;
 using InfoTrucker.Infrastructure;
 using InfoTrucker.Models;
+using InfoTrucker.Services;
 
 namespace InfoTrucker.UI.SmsForms
 {
     public partial class SendStatusForm : XtraForm
     {
-        private readonly UnitofWork<AppDbContext> _unitofWork;
+        private readonly IUnitofWork _unitofWork;
         private readonly IMapper _mapper;
+        private readonly IPersonRepository _personRepository;
         private readonly ServiceReference1.tsmsServiceClient soap;
 
 
-        public SendStatusForm(UnitofWork<AppDbContext> unitofWork, IMapper mapper)
+        public SendStatusForm(IUnitofWork unitofWork, IMapper mapper, IPersonRepository personRepository)
         {
             _unitofWork = unitofWork;
             _mapper = mapper;
+            _personRepository = personRepository;
             soap = new ServiceReference1.tsmsServiceClient();
             InitializeComponent();
             ConnectedToPanel();
@@ -33,7 +36,7 @@ namespace InfoTrucker.UI.SmsForms
 
         private void PersonListComboBox()
         {
-            var resultPerson = _unitofWork.Person.GetAll();
+            var resultPerson = _personRepository.GetAllEnumerable();
         }
 
         private void ConnectedToPanel()

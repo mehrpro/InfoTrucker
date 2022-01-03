@@ -8,19 +8,26 @@ using InfoTrucker.Infrastructure;
 
 namespace InfoTrucker.Services
 {
-    public interface IMessageGroupSubjectRepository : IRepositoryBase<MessageGroupSubject>
+    public interface IMessageGroupSubjectRepository
     {
-
+        void Insert(MessageGroupSubject messageGroupSubject);
     }
 
-    public class MessageGroupSubjectRepository : RepositoryBase<MessageGroupSubject>, IMessageGroupSubjectRepository
+    public class MessageGroupSubjectRepository : IMessageGroupSubjectRepository
     {
+        private readonly IUnitofWork _unitofWork;
+        private readonly IDbSet<MessageGroupSubject> _subjects;
 
-        public MessageGroupSubjectRepository(DbContext context) : base(context)
+        public MessageGroupSubjectRepository(IUnitofWork unitofWork)
         {
-
+            _unitofWork = unitofWork;
+            _subjects = _unitofWork.Set<MessageGroupSubject>();
         }
 
 
+        public void Insert(MessageGroupSubject messageGroupSubject)
+        {
+            _subjects.Add(messageGroupSubject);
+        }
     }
 }

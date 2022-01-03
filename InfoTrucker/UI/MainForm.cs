@@ -1,5 +1,6 @@
 ﻿using System.Windows.Forms;
 using InfoTrucker.UI.PersonForms;
+using InfoTrucker.UI.SmsForms;
 
 namespace InfoTrucker.UI
 {
@@ -61,7 +62,7 @@ namespace InfoTrucker.UI
 
         private void SendSmsButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = _container.GetInstance<UI.SmsForms.SendSmsForm>();
+            var frm = _container.GetInstance<SendSmsForm>();
             frm.ControlBox = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.StartPosition = FormStartPosition.CenterScreen;
@@ -70,7 +71,7 @@ namespace InfoTrucker.UI
 
         private void SendGroupSmsButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = _container.GetInstance<UI.SmsForms.SendSmsGroupForm>();
+            var frm = _container.GetInstance<SendSmsGroupForm>();
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
             frm.Dock = DockStyle.Fill;

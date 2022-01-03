@@ -6,18 +6,32 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Threading;
+using AutoMapper;
+using InfoTrucker.Infrastructure;
+using InfoTrucker.Services;
 
 namespace InfoTrucker.UI.SmsForms
 {
     public partial class SendSmsForm : XtraForm
     {
-        private readonly Infrastructure.UnitofWork<Models.AppDbContext> _unitofWork;
-        private readonly AutoMapper.IMapper _mapper;
+        private readonly IUnitofWork _unitofWork;
+        private readonly IMapper _mapper;
+        private readonly IPersonRepository _personRepository;
+        private readonly IMessageGroupSubjectRepository _messageGroupSubjectRepository;
+
+        private readonly IExceptionSms _exceptionSms;
+        private readonly ISendMessageRepository _messageRepository;
         private readonly ServiceReference1.tsmsServiceClient soap;
-        public SendSmsForm(Infrastructure.UnitofWork<Models.AppDbContext> unitofWork, AutoMapper.IMapper mapper)
+        public SendSmsForm(IUnitofWork unitofWork, IMapper mapper, IPersonRepository personRepository
+        , IMessageGroupSubjectRepository messageGroupSubjectRepository, IExceptionSms exceptionSms, ISendMessageRepository messageRepository)
         {
             _unitofWork = unitofWork;
             _mapper = mapper;
+            _personRepository = personRepository;
+            _messageGroupSubjectRepository = messageGroupSubjectRepository;
+
+            _exceptionSms = exceptionSms;
+            _messageRepository = messageRepository;
             soap = new ServiceReference1.tsmsServiceClient();
             InitializeComponent();
             PersonListSearchLookUp.Properties.DisplayMember = "Mobile1";
@@ -32,7 +46,7 @@ namespace InfoTrucker.UI.SmsForms
 
         private void PersonListCombobox()
         {
-            var result = _unitofWork.Person.GetAll();
+            var result = _personRepository.GetAllEnumerable();
             var resultList = _mapper.Map<IEnumerable<PersonListForSms>>(result);
             PersonListSearchLookUp.Properties.DataSource = resultList;
 
@@ -99,8 +113,8 @@ namespace InfoTrucker.UI.SmsForms
 
                 };
                 var resultMap = _mapper.Map<MessageGroupSubject>(objectWsdl);
-                _unitofWork.SmsSubject.Insert(resultMap);
-                _unitofWork.Commit();
+                _messageGroupSubjectRepository.Insert(resultMap);
+                _unitofWork.SaveChanges();
                 string[] SmsSender = { PublicValue.SmsNumber };
                 var resultTitleNumber = Convert.ToInt32(resultMap.ID);
                 string[] receiverNumber = { PersonListSearchLookUp.Text.ToString() };
@@ -123,8 +137,8 @@ namespace InfoTrucker.UI.SmsForms
 
                     };
                     var resultMapMessage = _mapper.Map<SendMessages>(recorder);
-                    _unitofWork.SMS.Insert(resultMapMessage);
-                    _unitofWork.Commit();
+                    _messageRepository.Insert(resultMapMessage);
+                    _unitofWork.SaveChanges();
                     SplashScreenManager.CloseForm(false);
                     Close();
                 }
@@ -137,7 +151,7 @@ namespace InfoTrucker.UI.SmsForms
             }
             catch (IndexOutOfRangeException exception)
             {
-                var message = _unitofWork.ExceptionSms.ExceptionMessage(exception.Message);
+                var message = _exceptionSms.ExceptionMessage(exception.Message);
                 PublicValue.ExseptionMessage(message);
             }
             catch (Exception ex)

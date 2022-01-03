@@ -15,19 +15,22 @@ using InfoTrucker.DTO;
 using DevExpress.XtraPrinting;
 using System.Drawing.Printing;
 using DevExpress.LookAndFeel;
+using InfoTrucker.Services;
 
 namespace InfoTrucker.UI.ReportForms
 {
     public partial class PersonListReportForm : XtraForm
     {
 
-        private readonly UnitofWork<AppDbContext> _unitofwork;
+        private readonly IUnitofWork _unitofwork;
         private readonly IMapper _mapper;
+        private readonly IPersonRepository _personRepository;
 
-        public PersonListReportForm(UnitofWork<AppDbContext> unitofWork, IMapper mapper)
+        public PersonListReportForm(IUnitofWork unitofWork, IMapper mapper, IPersonRepository personRepository)
         {
             _unitofwork = unitofWork;
             _mapper = mapper;
+            _personRepository = personRepository;
             InitializeComponent();
             ExcelButton.Click += ExcelButton_Click;
             PrintButton.Click += PrintButton_Click;
@@ -54,9 +57,9 @@ namespace InfoTrucker.UI.ReportForms
             throw new NotImplementedException();
         }
 
-        public async void PersonListReport()
+        public void PersonListReport()
         {
-            var result = await _unitofwork.Person.GetAllAsync();
+            var result = _personRepository.GetAllEnumerable();
             var resultList = _mapper.Map<List<PersonListReportDTO>>(result);
             for (int i = 0; i < resultList.Count(); i++)
                 resultList[i].RowID = i + 1;

@@ -8,23 +8,26 @@ using AutoMapper;
 using InfoTrucker.Entities;
 using WIA;
 using System.Drawing.Imaging;
+using InfoTrucker.Services;
 
 namespace InfoTrucker.UI.PersonForms
 {
     public partial class NewPersonForm : XtraForm
     {
 
-        private readonly UnitofWork<AppDbContext> _unitofWork;
+        private readonly IUnitofWork _unitofWork;
         private readonly IMapper _mapper;
+        private readonly IPersonRepository _personRepository;
         private bool _mobileValidate;
         private bool _codeMelieiValidate;
         private bool _hoshmandValidate;
         private bool _plackValidate;
 
-        public NewPersonForm(UnitofWork<AppDbContext> unitofWork, IMapper mapper)
+        public NewPersonForm(IUnitofWork unitofWork, IMapper mapper, IPersonRepository personRepository)
         {
             _unitofWork = unitofWork;
             _mapper = mapper;
+            _personRepository = personRepository;
             InitializeComponent();
             Id1Textbox.ReadOnly = Id2Textbox.ReadOnly = Id3Textbox.ReadOnly = true;
             BirthDatePicker.DateTime = DateTime.Today;
@@ -47,7 +50,7 @@ namespace InfoTrucker.UI.PersonForms
                 _plackValidate = false;
                 return;
             }
-            var result = _unitofWork.Person.Get(x => x.Sh_Plak == obj.Text.Trim());
+            var result = _personRepository.Get(x => x.Sh_Plak == obj.Text.Trim());
             if (result != null)
             {
                 PlackErrorTextbox.Text = $@"این پلاک برای راننده {result.FName} {result.LName} ثبت شده است";
@@ -82,7 +85,7 @@ namespace InfoTrucker.UI.PersonForms
         private void Mobile1Textbox_TextChanged(object sender, EventArgs e)
         {
             var mobile = (TextEdit)sender;
-            var result = _unitofWork.Person.Get(x => x.Mobile1 == mobile.Text.Trim());
+            var result = _personRepository.Get(x => x.Mobile1 == mobile.Text.Trim());
             if (result != null)
             {
                 MobileErrorTextbox.Text = $@"این شماره تلفن قبلاً برای {result.FName} {result.LName} ثبت شده است";
@@ -102,7 +105,7 @@ namespace InfoTrucker.UI.PersonForms
         private void HoshmandTextbox_TextChanged(object sender, EventArgs e)
         {
             var hosmandText = (TextEdit)sender;
-            var result = _unitofWork.Person.Get(x => x.Hoshmand == hosmandText.Text);
+            var result = _personRepository.Get(x => x.Hoshmand == hosmandText.Text);
             if (result == null)
             {
                 HoshmandErrorTextbox.Text = null;
@@ -133,7 +136,7 @@ namespace InfoTrucker.UI.PersonForms
 
         private async void LastId()
         {
-            var result = await _unitofWork.Person.LastPersonID();
+            var result = await _personRepository.LastPersonID();
             Id1Textbox.Text = Id2Textbox.Text = Id3Textbox.Text = result.ToString();
         }
 
@@ -172,8 +175,8 @@ namespace InfoTrucker.UI.PersonForms
                 resultMap.DateRegister = DateTime.Today;
                 try
                 {
-                    _unitofWork.Person.Insert(resultMap);
-                    _unitofWork.Commit();
+                    _personRepository.Insert(resultMap);
+                    _unitofWork.SaveChanges();
                     PublicValue.SaveMessage();
                 }
                 catch (Exception exception)
@@ -214,7 +217,7 @@ namespace InfoTrucker.UI.PersonForms
             }
 
 
-            var result = _unitofWork.Person.Get(x => x.CodeMelei == obj.Text);
+            var result = _personRepository.Get(x => x.CodeMelei == obj.Text);
             if (result != null)
             {
                 NationalCodeErrorTextbox.Text = $@"این کد ملی قبلاً برای {result.FName} {result.LName} ثبت شده است";

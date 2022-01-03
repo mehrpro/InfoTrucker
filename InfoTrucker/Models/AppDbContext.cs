@@ -1,10 +1,13 @@
 ﻿using System.Data.Entity;
+using System.Threading;
+using System.Threading.Tasks;
 using InfoTrucker.Configure;
 using InfoTrucker.Entities;
+using InfoTrucker.Infrastructure;
 
 namespace InfoTrucker.Models
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : DbContext, IUnitofWork
     {
 
         public AppDbContext() : base("cn")
@@ -13,6 +16,14 @@ namespace InfoTrucker.Models
             //Database.SetInitializer(new InitialDatabase());        
 
         }
+
+        #region IUnitOfWork Members
+        public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
+        {
+            return base.Set<TEntity>();
+        }
+        #endregion
+
 
         protected override void OnModelCreating(DbModelBuilder builder)
         {
@@ -42,5 +53,9 @@ namespace InfoTrucker.Models
         public virtual DbSet<ResultCodeMessage> ResultCodeMessages { get; set; }
         public virtual DbSet<MessageGroupSubject> MessageGroupSubjects { get; set; }
         public virtual DbSet<SmsConfigure> SmsConfigures { get; set; }
+
+
+
+
     }
 }

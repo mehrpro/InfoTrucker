@@ -10,16 +10,22 @@ using System.Windows.Forms;
 using DevExpress.Utils;
 using InfoTrucker.Infrastructure;
 using InfoTrucker.Models;
+using InfoTrucker.Services;
 
 namespace InfoTrucker.UI
 {
     public partial class LoginForm : DevExpress.XtraEditors.XtraForm
     {
-        private readonly UnitofWork<AppDbContext> _unitofWork;
+        private readonly IUnitofWork _unitofWork;
+        private readonly IApplicationUserRepository _applicationUserRepository;
+        private readonly ISmsConfigureRepository _smsConfigureRepository;
 
-        public LoginForm(UnitofWork<AppDbContext> unitofWork)
+
+        public LoginForm(IUnitofWork unitofWork, IApplicationUserRepository applicationUserRepository, ISmsConfigureRepository smsConfigureRepository)
         {
             _unitofWork = unitofWork;
+            _applicationUserRepository = applicationUserRepository;
+            _smsConfigureRepository = smsConfigureRepository;
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
@@ -32,11 +38,10 @@ namespace InfoTrucker.UI
 
         private async void LoginButton_Click(object sender, EventArgs e)
         {
-            var result = await
-            _unitofWork.ApplicationUser.LoginTask(UsernameTextbox.Text.Trim(), PasswordTextbox.Text.Trim());
+            var result = await _applicationUserRepository.LoginTask(UsernameTextbox.Text.Trim(), PasswordTextbox.Text.Trim());
             if (result)
             {
-                _unitofWork.SmsConfigure.UpdateValue();
+                _smsConfigureRepository.UpdateValue();
                 this.DialogResult = DialogResult.OK;
                 Close();
             }

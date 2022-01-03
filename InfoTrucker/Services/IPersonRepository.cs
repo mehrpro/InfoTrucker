@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using InfoTrucker.Entities;
@@ -8,25 +10,45 @@ using InfoTrucker.Infrastructure;
 
 namespace InfoTrucker.Services
 {
-    public interface IPersonRepository : IRepositoryBase<Person>
+    public interface IPersonRepository
     {
+        void Insert(Person person);
+        IEnumerable<Person> GetAllEnumerable();
         Task<int> LastPersonID();
         Task Update(Person person);
         List<Person> PersonsListSending();
+        Person Get(Expression<Func<Person, bool>> expression);
+
+        Person GetById(int id);
+        //Person Get(Func<Person, bool> predicate);
     }
 
-    public class PersonRepository : RepositoryBase<Person>, IPersonRepository
+    public class PersonRepository : IPersonRepository
     {
-        public PersonRepository(DbContext context) : base(context)
-        {
+        private readonly IUnitofWork _unitofWork;
+        private readonly IDbSet<Person> _persons;
 
+        public PersonRepository(IUnitofWork unitofWork)
+        {
+            _unitofWork = unitofWork;
+            _persons = _unitofWork.Set<Person>();
         }
 
+
+        public void Insert(Person person)
+        {
+            _persons.Add(person);
+        }
+
+        public IEnumerable<Person> GetAllEnumerable()
+        {
+            return _persons.AsEnumerable();
+        }
 
         public async Task<int> LastPersonID()
         {
             var rangeID = Enumerable.Range(1220001, 9998);
-            var personIdQuery = await GetAllAsync();
+            var personIdQuery = await _persons.ToListAsync();
             personIdQuery.ToArray();
             personIdQuery.Sort();
             var result = personIdQuery.Select(x => x.PersonID);
@@ -37,13 +59,23 @@ namespace InfoTrucker.Services
 
         public async Task Update(Person person)
         {
-            var local = await GetFirstOrDefaultAsync(x => x.ID == person.ID);
-            Change(local, local == null);
+            var local = await _persons.FirstOrDefaultAsync(x => x.ID == person.ID);
+            //Change(local, local == null);
         }
 
         public List<Person> PersonsListSending()
         {
-            var result  = Get()
+            return _persons.ToList();
+        }
+
+        public Person Get(Expression<Func<Person, bool>> expression)
+        {
+            return _persons.FirstOrDefault(expression);
+        }
+
+        public Person GetById(int id)
+        {
+            return _persons.Find(id);
         }
     }
 }

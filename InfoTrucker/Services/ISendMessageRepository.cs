@@ -4,17 +4,26 @@ using InfoTrucker.Infrastructure;
 
 namespace InfoTrucker.Services
 {
-    public interface ISendMessageRepository : IRepositoryBase<SendMessages>
+    public interface ISendMessageRepository
     {
-
+        void Insert(SendMessages sendMessages);
     }
 
 
-    public class SendMessageRepository : RepositoryBase<SendMessages>, ISendMessageRepository
+    public class SendMessageRepository : ISendMessageRepository
     {
-        public SendMessageRepository(DbContext context) : base(context)
-        {
+        private readonly IUnitofWork _unitofWork;
+        private readonly IDbSet<SendMessages> _sendMessageses;
 
+        public SendMessageRepository(IUnitofWork unitofWork)
+        {
+            _unitofWork = unitofWork;
+            _sendMessageses = _unitofWork.Set<SendMessages>();
+        }
+
+        public void Insert(SendMessages sendMessages)
+        {
+            _sendMessageses.Add(sendMessages);
         }
     }
 }

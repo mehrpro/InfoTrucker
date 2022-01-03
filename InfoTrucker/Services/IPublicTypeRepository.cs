@@ -4,15 +4,20 @@ using InfoTrucker.Infrastructure;
 
 namespace InfoTrucker.Services
 {
-    public interface IPublicTypeRepository : IRepositoryBase<PublicType>
+    public interface IPublicTypeRepository
     {
 
     }
 
-    public class PublicTypeRepository : RepositoryBase<PublicType>, IPublicTypeRepository
+    public class PublicTypeRepository : IPublicTypeRepository
     {
-        public PublicTypeRepository(DbContext context) : base(context)
+        private readonly IUnitofWork _unitofWork;
+        private readonly IDbSet<PublicType> _publicTypes;
+
+        public PublicTypeRepository(IUnitofWork unitofWork)
         {
+            _unitofWork = unitofWork;
+            _publicTypes = _unitofWork.Set<PublicType>();
         }
     }
 }

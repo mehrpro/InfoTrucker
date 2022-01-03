@@ -1,21 +1,20 @@
 ﻿using AutoMapper;
 using DevExpress.XtraEditors;
-using InfoTrucker.DTO;
 using InfoTrucker.Entities;
 using InfoTrucker.Infrastructure;
-using InfoTrucker.Models;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using InfoTrucker.Services;
 using WIA;
 
 namespace InfoTrucker.UI.PersonForms
 {
     public partial class EditPersonForm : XtraForm
     {
-
-        private readonly UnitofWork<AppDbContext> _unitofWork;
+        private readonly IUnitofWork _unitofWork;
         private readonly IMapper _mapper;
+        private readonly IPersonRepository _personRepository;
         private bool _mobileValidate;
         private bool _codeMelieiValidate;
         private bool _hoshmandValidate;
@@ -23,10 +22,12 @@ namespace InfoTrucker.UI.PersonForms
         private Person person;
         public int Id { get; set; }
 
-        public EditPersonForm(UnitofWork<AppDbContext> unitofWork, IMapper mapper)
+        public EditPersonForm(IUnitofWork unitofWork, IMapper mapper, IPersonRepository personRepository)
         {
+
             _unitofWork = unitofWork;
             _mapper = mapper;
+            _personRepository = personRepository;
             InitializeComponent();
             Id1Textbox.ReadOnly = Id2Textbox.ReadOnly = Id3Textbox.ReadOnly = true;
 
@@ -48,7 +49,7 @@ namespace InfoTrucker.UI.PersonForms
                 _plackValidate = false;
                 return;
             }
-            var result = _unitofWork.Person.Get(x => x.Sh_Plak == obj.Text.Trim());
+            var result = _personRepository.Get(x => x.Sh_Plak == obj.Text.Trim());
             if (result != null)
             {
                 if (result.ID == Id)
@@ -88,7 +89,7 @@ namespace InfoTrucker.UI.PersonForms
         private void Mobile1Textbox_TextChanged(object sender, EventArgs e)
         {
             var mobile = (TextEdit)sender;
-            var result = _unitofWork.Person.Get(x => x.Mobile1 == mobile.Text.Trim());
+            var result = _personRepository.Get(x => x.Mobile1 == mobile.Text.Trim());
             if (result != null)
             {
                 if (result.ID == Id)
@@ -113,7 +114,7 @@ namespace InfoTrucker.UI.PersonForms
         private void HoshmandTextbox_TextChanged(object sender, EventArgs e)
         {
             var hosmandText = (TextEdit)sender;
-            var result = _unitofWork.Person.Get(x => x.Hoshmand == hosmandText.Text);
+            var result = _personRepository.Get(x => x.Hoshmand == hosmandText.Text);
             if (result == null)
             {
                 HoshmandErrorTextbox.Text = null;
@@ -147,9 +148,9 @@ namespace InfoTrucker.UI.PersonForms
 
         }
 
-        private  void LastId()
+        private void LastId()
         {
-            person = _unitofWork.Person.GetById(Id);
+            person = _personRepository.Get(x => x.ID == Id);
             Id1Textbox.Text = Id2Textbox.Text = Id3Textbox.Text = person.PersonID.ToString();
             FNameTextbox.Text = person.FName;
             LNameTextbox.Text = person.LName;
@@ -207,8 +208,8 @@ namespace InfoTrucker.UI.PersonForms
 
                 try
                 {
-                    _unitofWork.Person.Update(person);
-                    _unitofWork.Commit();
+                    _personRepository.Update(person);
+                    _unitofWork.SaveChanges();
                     PublicValue.SaveMessage();
                     Close();
                 }
@@ -250,7 +251,7 @@ namespace InfoTrucker.UI.PersonForms
             }
 
 
-            var result = _unitofWork.Person.Get(x => x.CodeMelei == obj.Text);
+            var result = _personRepository.Get(x => x.CodeMelei == obj.Text);
             if (result != null)
             {
                 if (result.ID == Id)

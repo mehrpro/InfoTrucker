@@ -4,16 +4,20 @@ using InfoTrucker.Infrastructure;
 
 namespace InfoTrucker.Services
 {
-    public interface IMenuItemRepository : IRepositoryBase<MenuItem>
+    public interface IMenuItemRepository
     {
 
     }
 
-    public class MenuItemRepository : RepositoryBase<MenuItem>, IMenuItemRepository
+    public class MenuItemRepository :IMenuItemRepository
     {
-        public MenuItemRepository(DbContext context) : base(context)
-        {
+        private readonly IUnitofWork _unitofWork;
+        private readonly IDbSet<MenuItem> _menuItems;
 
+        public MenuItemRepository(IUnitofWork unitofWork)
+        {
+            _unitofWork = unitofWork;
+            _menuItems = _unitofWork.Set<MenuItem>();
         }
     }
 

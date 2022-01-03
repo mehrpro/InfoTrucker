@@ -2,42 +2,35 @@
 using DevExpress.XtraEditors;
 using InfoTrucker.DTO;
 using InfoTrucker.Infrastructure;
-using InfoTrucker.Models;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using InfoTrucker.Services;
 
 namespace InfoTrucker.UI.PersonForms
 {
     public partial class PersonListForm : XtraForm
     {
-        private readonly UnitofWork<AppDbContext> _unitofWork;
+        private readonly IUnitofWork _unitofWork;
         private readonly IMapper _mapper;
+        private readonly IPersonRepository _personRepository;
         private StructureMap.Container _container;
         public StructureMap.Container Container { get => _container; set => _container = value; }
 
 
-        public PersonListForm(UnitofWork<AppDbContext> unitofWork, IMapper mapper)
+        public PersonListForm(IUnitofWork unitofWork, IMapper mapper, IPersonRepository personRepository)
         {
             InitializeComponent();
             _unitofWork = unitofWork;
             _mapper = mapper;
+            _personRepository = personRepository;
             GetPersonList();
-            
+
         }
 
 
 
-        public async void GetPersonList()
+        public void GetPersonList()
         {
-            var resultList = await _unitofWork.Person.GetAllAsync();
+            var resultList = _personRepository.GetAllEnumerable();
             var result = _mapper.Map<IEnumerable<PersonListForEditDTO>>(resultList);
             PersonListGridControl.DataSource = result;
 
