@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AutoMapper;
 using DevExpress.XtraEditors;
-using InfoTrucker.DTO;
 using InfoTrucker.Infrastructure;
 using InfoTrucker.Models;
 
@@ -28,19 +27,13 @@ namespace InfoTrucker.UI.SmsForms
             _unitofWork = unitofWork;
             _mapper = mapper;
             soap = new ServiceReference1.tsmsServiceClient();
-
             InitializeComponent();
-            cbxPersonList.Properties.DisplayMember = "FullName";
-            cbxPersonList.Properties.ValueMember = "ID";
             ConnectedToPanel();
         }
 
         private void PersonListComboBox()
         {
             var resultPerson = _unitofWork.Person.GetAll();
-            var resultMap = _mapper.Map<IEnumerable<PersonListForSms>>(resultPerson);
-            cbxPersonList.Properties.DataSource = resultMap;
-
         }
 
         private void ConnectedToPanel()
@@ -53,7 +46,6 @@ namespace InfoTrucker.UI.SmsForms
                     SmsNumberTextbox.Text = soapConnect[0].sms_numebrs[0];
                     SmsNumberTextbox.ReadOnly = true;
                     SmsNumberTextbox.BackColor = Color.LightGreen;
-                    PersonListComboBox();
                     //CreditTextbox.Text = soapConnect[0].credit.ToString();
                     //PersonListCombobox();
                 }
@@ -71,34 +63,7 @@ namespace InfoTrucker.UI.SmsForms
 
         }
 
-        private void cbxPersonList_EditValueChanged(object sender, EventArgs e)
-        {
-            var _selectPerson = (PersonListForSms)cbxPersonList.GetSelectedDataRow();
-            var sendMessageses = _unitofWork.SMS.GetMany(x => x.PersonID_FK == _selectPerson.ID);
-            var rest = _unitofWork.contextdb.MessageGroupSubjects.Include()
-            //var resultInt = array.Select(x => x.ResultSend).ToArray();
-
-            //foreach (var i in resultInt)
-            //{
-            //    var result = soap.GetDeliverySms(PublicValue.SmsUsername, PublicValue.SmsPassword, new int[] { i });
-            //}
-
-            var list = new List<SendStatusDTO>();
-            int row = 0;
-            foreach (var item in sendMessageses)
-            {
-                var dto = new SendStatusDTO();
-                dto.ID = ++row;
-                dto.Message = item.MessageGroupSubject.Message.Trim();
-                dto.Result = item.ResultSend;
-                dto.TimeSend = item.MessageGroupSubject.CreateTime;
-                list.Add(dto);
-            }
 
 
-            SendGridControl.DataSource = list;
-
-
-        }
     }
 }

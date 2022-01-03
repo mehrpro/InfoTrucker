@@ -139,10 +139,6 @@ namespace InfoTrucker.Migrations
             resultCodeMessages.Add(new ResultCodeMessage() { ID = 32, ResultCode = -47, ResultMessage = "خطا در ارسال تعداد متغیر ها - کمتر از میزان لازم است" });
             resultCodeMessages.Add(new ResultCodeMessage() { ID = 33, ResultCode = -48, ResultMessage = "فرمت تاریخ صحیح نمی باشد" });
             resultCodeMessages.Add(new ResultCodeMessage() { ID = 34, ResultCode = -49, ResultMessage = "فرمت ساعت ارسالی اشتباه است" });
-            resultCodeMessages.Add(new ResultCodeMessage() { ID = 35, ResultCode = 1, ResultMessage = "رسیده به گوشی" });
-            resultCodeMessages.Add(new ResultCodeMessage() { ID = 36, ResultCode = 2, ResultMessage = "نرسیده به گوشی" });
-            resultCodeMessages.Add(new ResultCodeMessage() { ID = 37, ResultCode = 5, ResultMessage = "هنوز دلیوري بر نگشته است" });
-            resultCodeMessages.Add(new ResultCodeMessage() { ID = 38, ResultCode = 9, ResultMessage = "هنوز دلیوري بر نگشته است و یا کد اشتباه می باشد" });
             context.ResultCodeMessages.AddRange(resultCodeMessages);
 
         }
