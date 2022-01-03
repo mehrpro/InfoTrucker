@@ -9,6 +9,4 @@ namespace InfoTrucker.Infrastructure
         IDbSet<TEntity> Set<TEntity>() where TEntity : class;
         int SaveChanges();
     }
-
-
 }

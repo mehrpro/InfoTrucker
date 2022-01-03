@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AutoMapper;
 using DevExpress.XtraEditors;
+using InfoTrucker.DTO;
 using InfoTrucker.Infrastructure;
 using InfoTrucker.Models;
 using InfoTrucker.Services;
@@ -19,24 +20,34 @@ namespace InfoTrucker.UI.SmsForms
     public partial class SendStatusForm : XtraForm
     {
         private readonly IUnitofWork _unitofWork;
+        private readonly ISendMessageRepository _messageRepository;
+        private readonly IMessageGroupSubjectRepository _messageGroupSubjectRepository;
         private readonly IMapper _mapper;
         private readonly IPersonRepository _personRepository;
         private readonly ServiceReference1.tsmsServiceClient soap;
 
 
-        public SendStatusForm(IUnitofWork unitofWork, IMapper mapper, IPersonRepository personRepository)
+        public SendStatusForm(IUnitofWork unitofWork,
+            ISendMessageRepository messageRepository, IMessageGroupSubjectRepository messageGroupSubjectRepository, IMapper mapper, IPersonRepository personRepository)
         {
             _unitofWork = unitofWork;
+            _messageRepository = messageRepository;
+            _messageGroupSubjectRepository = messageGroupSubjectRepository;
             _mapper = mapper;
             _personRepository = personRepository;
             soap = new ServiceReference1.tsmsServiceClient();
             InitializeComponent();
+            cbxPersonList.Properties.DisplayMember = "FullName";
+            cbxPersonList.Properties.ValueMember = "ID";
             ConnectedToPanel();
+            PersonListComboBox();
         }
 
         private void PersonListComboBox()
         {
             var resultPerson = _personRepository.GetAllEnumerable();
+            var resultMap = _mapper.Map<IEnumerable<PersonListForSms>>(resultPerson);
+            cbxPersonList.Properties.DataSource = resultMap;
         }
 
         private void ConnectedToPanel()
@@ -66,7 +77,30 @@ namespace InfoTrucker.UI.SmsForms
 
         }
 
+        private async void cbxPersonList_EditValueChanged(object sender, EventArgs e)
+        {
+            var _selected = (PersonListForSms)cbxPersonList.GetSelectedDataRow();
+            if (_selected == null)
+            {
+                return;
+            }
+
+            var resultSended = await _messageRepository.GetMessagesByPersonIdAsync(_selected.ID);
+            var list = new List<MessageSendedDTO>();
+            int row = 0;
+            foreach (var item in resultSended)
+            {
+                list.Add(new MessageSendedDTO
+                {
+                    Row = ++row,
+                    Message = item.MessageGroupSubject.Message,
+                    ResultCode = item.ResultSend,
+                    DateSending = item.MessageGroupSubject.CreateTime
+                });
+            }
+            SendingGridControl.DataSource = list;
 
 
+        }
     }
 }

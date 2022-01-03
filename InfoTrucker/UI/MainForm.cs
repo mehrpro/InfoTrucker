@@ -83,7 +83,14 @@ namespace InfoTrucker.UI
 
         private void SendStatusButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            var frm = _container.GetInstance<SendStatusForm>();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Dock = DockStyle.Fill;
+            frm.ControlBox = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            //frm.Container = _container;
+            frm.Show();
         }
     }
 }

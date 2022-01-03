@@ -110,6 +110,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="DTO\LoginDTO.cs" />
+    <Compile Include="DTO\MessageSendedDTO.cs" />
     <Compile Include="DTO\NewPersonDTO.cs" />
     <Compile Include="DTO\NewSendMessageDTO.cs" />
     <Compile Include="DTO\NewSmsSubjectDTO.cs" />

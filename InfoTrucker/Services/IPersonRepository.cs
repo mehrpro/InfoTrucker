@@ -16,9 +16,8 @@ namespace InfoTrucker.Services
         IEnumerable<Person> GetAllEnumerable();
         Task<int> LastPersonID();
         Task Update(Person person);
-        List<Person> PersonsListSending();
-        Person Get(Expression<Func<Person, bool>> expression);
 
+        Person Get(Expression<Func<Person, bool>> expression);
         Person GetById(int id);
         //Person Get(Func<Person, bool> predicate);
     }
@@ -63,10 +62,7 @@ namespace InfoTrucker.Services
             //Change(local, local == null);
         }
 
-        public List<Person> PersonsListSending()
-        {
-            return _persons.ToList();
-        }
+
 
         public Person Get(Expression<Func<Person, bool>> expression)
         {

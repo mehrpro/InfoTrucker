@@ -1,4 +1,8 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Threading.Tasks;
+using DevExpress.Data.ODataLinq.Helpers;
 using InfoTrucker.Entities;
 using InfoTrucker.Infrastructure;
 
@@ -7,6 +11,8 @@ namespace InfoTrucker.Services
     public interface ISendMessageRepository
     {
         void Insert(SendMessages sendMessages);
+        Task<IList<SendMessages>> GetMessagesByPersonIdAsync(int personId);
+
     }
 
 
@@ -24,6 +30,11 @@ namespace InfoTrucker.Services
         public void Insert(SendMessages sendMessages)
         {
             _sendMessageses.Add(sendMessages);
+        }
+
+        public async Task<IList<SendMessages>> GetMessagesByPersonIdAsync(int personId)
+        {
+            return await _sendMessageses.Where(x => x.PersonID_FK == personId).Include(x=>x.MessageGroupSubject).ToListAsync();
         }
     }
 }
