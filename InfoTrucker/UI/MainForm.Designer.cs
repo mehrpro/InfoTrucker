@@ -44,7 +44,7 @@ namespace InfoTrucker.UI
             this.SendSmsButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.SendGroupSmsButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.SendStatusButtonItem = new DevExpress.XtraBars.BarButtonItem();
-            this.SendStatusGroupButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.ReceiverButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.DocumentRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PersonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ReportRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -75,7 +75,7 @@ namespace InfoTrucker.UI
             this.SendSmsButtonItem,
             this.SendGroupSmsButtonItem,
             this.SendStatusButtonItem,
-            this.SendStatusGroupButtonItem});
+            this.ReceiverButtonItem});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 15;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -90,8 +90,10 @@ namespace InfoTrucker.UI
             // 
             this.NewPersonButtonItem.Caption = "عضو جدید";
             this.NewPersonButtonItem.Id = 1;
-            this.NewPersonButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("NewPersonButtonItem.ImageOptions.SvgImage")));
+            this.NewPersonButtonItem.ImageOptions.Image = global::InfoTrucker.Properties.Resources.icons8_add_user_male_48;
             this.NewPersonButtonItem.Name = "NewPersonButtonItem";
+            this.NewPersonButtonItem.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.NewPersonButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NewPersonButtonItem_ItemClick);
             // 
             // EditButtonItem
@@ -106,7 +108,8 @@ namespace InfoTrucker.UI
             // 
             this.PersonReportBottonItem.Caption = "لیست اعضاء";
             this.PersonReportBottonItem.Id = 3;
-            this.PersonReportBottonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("PersonReportBottonItem.ImageOptions.SvgImage")));
+            this.PersonReportBottonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("PersonReportBottonItem.ImageOptions.Image")));
+            this.PersonReportBottonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("PersonReportBottonItem.ImageOptions.LargeImage")));
             this.PersonReportBottonItem.Name = "PersonReportBottonItem";
             // 
             // HoshmandReportButtonItem
@@ -160,32 +163,38 @@ namespace InfoTrucker.UI
             // 
             this.SendSmsButtonItem.Caption = "ارسال تکی";
             this.SendSmsButtonItem.Id = 11;
-            this.SendSmsButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SendSmsButtonItem.ImageOptions.SvgImage")));
+            this.SendSmsButtonItem.ImageOptions.Image = global::InfoTrucker.Properties.Resources.icons8_new_message_32;
             this.SendSmsButtonItem.Name = "SendSmsButtonItem";
+            this.SendSmsButtonItem.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.SendSmsButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SendSmsButtonItem_ItemClick);
             // 
             // SendGroupSmsButtonItem
             // 
             this.SendGroupSmsButtonItem.Caption = "ارسال گروهی";
             this.SendGroupSmsButtonItem.Id = 12;
-            this.SendGroupSmsButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SendGroupSmsButtonItem.ImageOptions.SvgImage")));
+            this.SendGroupSmsButtonItem.ImageOptions.Image = global::InfoTrucker.Properties.Resources.icons8_subscription_32;
             this.SendGroupSmsButtonItem.Name = "SendGroupSmsButtonItem";
+            this.SendGroupSmsButtonItem.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.SendGroupSmsButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SendGroupSmsButtonItem_ItemClick);
             // 
             // SendStatusButtonItem
             // 
-            this.SendStatusButtonItem.Caption = "صندوق ارسال تکی";
+            this.SendStatusButtonItem.Caption = "پیام های ارسالی";
             this.SendStatusButtonItem.Id = 13;
-            this.SendStatusButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SendStatusButtonItem.ImageOptions.SvgImage")));
+            this.SendStatusButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("SendStatusButtonItem.ImageOptions.Image")));
+            this.SendStatusButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("SendStatusButtonItem.ImageOptions.LargeImage")));
             this.SendStatusButtonItem.Name = "SendStatusButtonItem";
             this.SendStatusButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SendStatusButtonItem_ItemClick);
             // 
-            // SendStatusGroupButtonItem
+            // ReceiverButtonItem
             // 
-            this.SendStatusGroupButtonItem.Caption = "صندوق ارسال گروهی";
-            this.SendStatusGroupButtonItem.Id = 14;
-            this.SendStatusGroupButtonItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SendStatusGroupButtonItem.ImageOptions.SvgImage")));
-            this.SendStatusGroupButtonItem.Name = "SendStatusGroupButtonItem";
+            this.ReceiverButtonItem.Caption = "پیام های دریافتی";
+            this.ReceiverButtonItem.Id = 14;
+            this.ReceiverButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ReceiverButtonItem.ImageOptions.Image")));
+            this.ReceiverButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ReceiverButtonItem.ImageOptions.LargeImage")));
+            this.ReceiverButtonItem.Name = "ReceiverButtonItem";
             // 
             // DocumentRibbonPage
             // 
@@ -239,7 +248,7 @@ namespace InfoTrucker.UI
             this.SendSmsRibbonPageGroup.ItemLinks.Add(this.SendSmsButtonItem);
             this.SendSmsRibbonPageGroup.ItemLinks.Add(this.SendGroupSmsButtonItem);
             this.SendSmsRibbonPageGroup.ItemLinks.Add(this.SendStatusButtonItem);
-            this.SendSmsRibbonPageGroup.ItemLinks.Add(this.SendStatusGroupButtonItem);
+            this.SendSmsRibbonPageGroup.ItemLinks.Add(this.ReceiverButtonItem);
             this.SendSmsRibbonPageGroup.Name = "SendSmsRibbonPageGroup";
             this.SendSmsRibbonPageGroup.Text = "پیام کوتاه";
             // 
@@ -298,7 +307,7 @@ namespace InfoTrucker.UI
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup SendSmsRibbonPageGroup;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup BillReportsRibbonPageGroup;
-        private DevExpress.XtraBars.BarButtonItem SendStatusGroupButtonItem;
+        private DevExpress.XtraBars.BarButtonItem ReceiverButtonItem;
         private DevExpress.XtraSplashScreen.SplashScreenManager SplashScreenManager;
     }
 }

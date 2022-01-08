@@ -1,18 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Data.Entity;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using AutoMapper;
 using DevExpress.XtraEditors;
 using InfoTrucker.DTO;
 using InfoTrucker.Infrastructure;
-using InfoTrucker.Models;
 using InfoTrucker.Services;
 
 namespace InfoTrucker.UI.SmsForms
@@ -28,7 +20,9 @@ namespace InfoTrucker.UI.SmsForms
 
 
         public SendStatusForm(IUnitofWork unitofWork,
-            ISendMessageRepository messageRepository, IMessageGroupSubjectRepository messageGroupSubjectRepository, IMapper mapper, IPersonRepository personRepository)
+            ISendMessageRepository messageRepository,
+            IMessageGroupSubjectRepository messageGroupSubjectRepository,
+            IMapper mapper, IPersonRepository personRepository)
         {
             _unitofWork = unitofWork;
             _messageRepository = messageRepository;
@@ -101,6 +95,11 @@ namespace InfoTrucker.UI.SmsForms
             SendingGridControl.DataSource = list;
 
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

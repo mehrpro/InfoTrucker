@@ -33,7 +33,7 @@ namespace InfoTrucker.UI.SmsForms
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
             this.SmsNumberTextbox = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cbxPersonList = new DevExpress.XtraEditors.SearchLookUpEdit();
@@ -41,6 +41,10 @@ namespace InfoTrucker.UI.SmsForms
             this.sidePanel2 = new DevExpress.XtraEditors.SidePanel();
             this.SendingGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Row = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Message = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sidePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SmsNumberTextbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxPersonList.Properties)).BeginInit();
@@ -54,7 +58,7 @@ namespace InfoTrucker.UI.SmsForms
             // 
             this.sidePanel1.Controls.Add(this.SmsNumberTextbox);
             this.sidePanel1.Controls.Add(this.labelControl2);
-            this.sidePanel1.Controls.Add(this.simpleButton2);
+            this.sidePanel1.Controls.Add(this.btnClose);
             this.sidePanel1.Controls.Add(this.simpleButton1);
             this.sidePanel1.Controls.Add(this.labelControl1);
             this.sidePanel1.Controls.Add(this.cbxPersonList);
@@ -83,15 +87,16 @@ namespace InfoTrucker.UI.SmsForms
             this.labelControl2.TabIndex = 5;
             this.labelControl2.Text = "شماره خط";
             // 
-            // simpleButton2
+            // btnClose
             // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(12, 36);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(100, 45);
-            this.simpleButton2.TabIndex = 3;
-            this.simpleButton2.Text = "بستن";
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnClose.Location = new System.Drawing.Point(12, 36);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(100, 45);
+            this.btnClose.TabIndex = 3;
+            this.btnClose.Text = "بستن";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // simpleButton1
             // 
@@ -102,6 +107,7 @@ namespace InfoTrucker.UI.SmsForms
             this.simpleButton1.Size = new System.Drawing.Size(100, 45);
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "بروزرسانی";
+            this.simpleButton1.Visible = false;
             // 
             // labelControl1
             // 
@@ -155,9 +161,109 @@ namespace InfoTrucker.UI.SmsForms
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.ColumnFilterButton.Options.UseTextOptions = true;
+            this.gridView1.Appearance.ColumnFilterButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.ColumnFilterButtonActive.Options.UseTextOptions = true;
+            this.gridView1.Appearance.ColumnFilterButtonActive.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.CustomizationFormHint.Options.UseTextOptions = true;
+            this.gridView1.Appearance.CustomizationFormHint.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.DetailTip.Options.UseTextOptions = true;
+            this.gridView1.Appearance.DetailTip.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.Empty.Options.UseTextOptions = true;
+            this.gridView1.Appearance.Empty.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.EvenRow.Options.UseTextOptions = true;
+            this.gridView1.Appearance.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.FilterCloseButton.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FilterCloseButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.FilterPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FilterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.FixedLine.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FixedLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.FocusedCell.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FocusedCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.FocusedRow.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.GroupButton.Options.UseTextOptions = true;
+            this.gridView1.Appearance.GroupButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.GroupFooter.Options.UseTextOptions = true;
+            this.gridView1.Appearance.GroupFooter.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.GroupPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.GroupPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.GroupRow.Options.UseTextOptions = true;
+            this.gridView1.Appearance.GroupRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.HideSelectionRow.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HideSelectionRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.HorzLine.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HorzLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.OddRow.Options.UseTextOptions = true;
+            this.gridView1.Appearance.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.Preview.Options.UseTextOptions = true;
+            this.gridView1.Appearance.Preview.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView1.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.RowSeparator.Options.UseTextOptions = true;
+            this.gridView1.Appearance.RowSeparator.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.SelectedRow.Options.UseTextOptions = true;
+            this.gridView1.Appearance.SelectedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.TopNewRow.Options.UseTextOptions = true;
+            this.gridView1.Appearance.TopNewRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.VertLine.Options.UseTextOptions = true;
+            this.gridView1.Appearance.VertLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.ViewCaption.Options.UseTextOptions = true;
+            this.gridView1.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Row,
+            this.gridColumn2,
+            this.Message,
+            this.gridColumn4});
             this.gridView1.GridControl = this.SendingGridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // Row
+            // 
+            this.Row.Caption = "ردیف";
+            this.Row.FieldName = "Row";
+            this.Row.MaxWidth = 80;
+            this.Row.MinWidth = 80;
+            this.Row.Name = "Row";
+            this.Row.Visible = true;
+            this.Row.VisibleIndex = 0;
+            this.Row.Width = 80;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "تاریخ";
+            this.gridColumn2.FieldName = "DateSending";
+            this.gridColumn2.MaxWidth = 120;
+            this.gridColumn2.MinWidth = 120;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 120;
+            // 
+            // Message
+            // 
+            this.Message.Caption = "پیامک";
+            this.Message.FieldName = "Message";
+            this.Message.Name = "Message";
+            this.Message.Visible = true;
+            this.Message.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "شناسه";
+            this.gridColumn4.FieldName = "ResultCode";
+            this.gridColumn4.MaxWidth = 100;
+            this.gridColumn4.MinWidth = 100;
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 100;
             // 
             // SendStatusForm
             // 
@@ -184,7 +290,7 @@ namespace InfoTrucker.UI.SmsForms
         #endregion
 
         private DevExpress.XtraEditors.SidePanel sidePanel1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SearchLookUpEdit cbxPersonList;
@@ -194,5 +300,9 @@ namespace InfoTrucker.UI.SmsForms
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.TextEdit SmsNumberTextbox;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraGrid.Columns.GridColumn Row;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn Message;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
     }
 }
