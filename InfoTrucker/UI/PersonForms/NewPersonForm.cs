@@ -146,6 +146,7 @@ namespace InfoTrucker.UI.PersonForms
             if (Person_dxProvider.Validate() && _mobileValidate && _codeMelieiValidate && _plackValidate && _hoshmandValidate)
             {
                 var newPerson = new NewPersonDTO();
+                newPerson.PersonID = Convert.ToInt32(Id1Textbox.Text);
                 newPerson.FName = FNameTextbox.Text.Trim();
                 newPerson.LName = LNameTextbox.Text.Trim();
                 newPerson.Address = AddressTextbox.Text.Trim();

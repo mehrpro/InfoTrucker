@@ -23,6 +23,8 @@ namespace InfoTrucker.UI
 
         private void PersonReportBottonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            foreach (Form item in this.MdiChildren) item.Close();
+
             var frm = _container.GetInstance<ReportForms.PersonListReportForm>();
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
@@ -34,7 +36,10 @@ namespace InfoTrucker.UI
 
         private void NewPersonButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            foreach (var c in this.MdiChildren)
+            {
+                c.Close();
+            }
             var frm = _container.GetInstance<NewPersonForm>();
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
@@ -48,6 +53,9 @@ namespace InfoTrucker.UI
 
         private void EditButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
+            foreach (Form item in this.MdiChildren) item.Close();
+
             var frm = _container.GetInstance<PersonListForm>();
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
@@ -62,6 +70,7 @@ namespace InfoTrucker.UI
 
         private void SendSmsButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
             var frm = _container.GetInstance<SendSmsForm>();
             frm.ControlBox = false;
             frm.FormBorderStyle = FormBorderStyle.None;
@@ -71,6 +80,8 @@ namespace InfoTrucker.UI
 
         private void SendGroupSmsButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            foreach (Form item in this.MdiChildren) item.Close();
+
             var frm = _container.GetInstance<SendSmsGroupForm>();
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
@@ -83,7 +94,9 @@ namespace InfoTrucker.UI
 
         private void SendStatusButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = _container.GetInstance<SendStatusForm>();
+            foreach (Form item in this.MdiChildren)
+                item.Close();
+            var frm = _container.GetInstance<ReceiveMessageForm>();
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
             frm.Dock = DockStyle.Fill;

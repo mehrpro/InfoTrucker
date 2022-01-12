@@ -132,6 +132,7 @@
     <Compile Include="Infrastructure\ImageResizer.cs" />
     <Compile Include="Infrastructure\IRepositoryBase.cs" />
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\IUnitOfWorkClass.cs" />
     <Compile Include="Infrastructure\TypeRegistery.cs" />
     <Compile Include="Infrastructure\WIAScanner.cs" />
     <Compile Include="Migrations\202112312029191_CreateDB.cs" />
@@ -207,6 +208,12 @@
     </Compile>
     <Compile Include="UI\SmsForms\ReceiveMessageForm.Designer.cs">
       <DependentUpon>ReceiveMessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SmsForms\SendingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SmsForms\SendingForm.Designer.cs">
+      <DependentUpon>SendingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\SmsForms\SendSmsForm.cs">
       <SubType>Form</SubType>

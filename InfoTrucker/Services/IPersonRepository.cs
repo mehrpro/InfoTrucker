@@ -48,9 +48,10 @@ namespace InfoTrucker.Services
         {
             var rangeID = Enumerable.Range(1220001, 9998);
             var personIdQuery = await _persons.ToListAsync();
-            personIdQuery.ToArray();
-            personIdQuery.Sort();
+
             var result = personIdQuery.Select(x => x.PersonID);
+            result.ToArray();
+            
             if (result.Count() > 9998) return 0;
             if (result.Count() > 0) return rangeID.Except(result).Min();
             return 1220001;

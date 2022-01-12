@@ -22,6 +22,7 @@ namespace InfoTrucker.Infrastructure
             For<IPublicTypeRepository>().Use<PublicTypeRepository>();
             For<ISendMessageRepository>().Use<SendMessageRepository>();
             For<ISmsConfigureRepository>().Use<SmsConfigureRepository>();
+            For<IUnitOfWorkClass>().Use<UnitOfWorkClass>();
 
             var mapperConfiguration = new MapperConfiguration(cfg =>
             {
