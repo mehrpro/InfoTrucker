@@ -116,7 +116,7 @@ namespace InfoTrucker.Services
                     }
 
                     AppSetting appSetting = new AppSetting();
-                    appSetting.SaveConnectionString("Conn", connectionString);
+                    appSetting.SaveConnectionString("cn", connectionString);
                     return true;
                 }
                 else
@@ -138,7 +138,7 @@ namespace InfoTrucker.Services
                     }
 
                     AppSetting appSetting = new AppSetting();
-                    appSetting.SaveConnectionString("Conn", connectionString);
+                    appSetting.SaveConnectionString("cn", connectionString);
                     return true;
                 }
             }

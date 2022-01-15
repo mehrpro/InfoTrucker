@@ -21,6 +21,11 @@ namespace InfoTrucker.UI
         private readonly ISmsConfigureRepository _smsConfigureRepository;
 
 
+        //private readonly UnitofWork<AppDbContext> _unitofWork;
+        private StructureMap.Container _container;
+        public StructureMap.Container Container { get => _container; set => _container = value; }
+
+
         public LoginForm(IUnitofWork unitofWork, IApplicationUserRepository applicationUserRepository, ISmsConfigureRepository smsConfigureRepository)
         {
             _unitofWork = unitofWork;

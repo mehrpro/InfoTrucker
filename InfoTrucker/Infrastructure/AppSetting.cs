@@ -1,5 +1,4 @@
 ﻿using System.Configuration;
-using InfoTrucker.UI.Admin;
 
 namespace InfoTrucker.Infrastructure
 {

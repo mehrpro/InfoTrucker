@@ -35,6 +35,11 @@ namespace InfoTrucker.Infrastructure
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.progressBar = new DevExpress.XtraEditors.MarqueeProgressBarControl();
@@ -102,9 +107,25 @@ namespace InfoTrucker.Infrastructure
             this.cbxServer.Location = new System.Drawing.Point(62, 74);
             this.cbxServer.Name = "cbxServer";
             this.cbxServer.Parmida_ActivePlusMultiKeys = false;
+            this.cbxServer.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxServer.Properties.Appearance.Options.UseFont = true;
             this.cbxServer.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxServer.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxServer.Properties.AppearanceDisabled.Options.UseFont = true;
             this.cbxServer.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxServer.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxServer.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.cbxServer.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxServer.Properties.AppearanceFocused.Options.UseFont = true;
             this.cbxServer.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxServer.Properties.AppearanceItemDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxServer.Properties.AppearanceItemDisabled.Options.UseFont = true;
+            this.cbxServer.Properties.AppearanceItemHighlight.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxServer.Properties.AppearanceItemHighlight.Options.UseFont = true;
+            this.cbxServer.Properties.AppearanceItemSelected.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxServer.Properties.AppearanceItemSelected.Options.UseFont = true;
+            this.cbxServer.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxServer.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.cbxServer.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             serializableAppearanceObject1.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             serializableAppearanceObject2.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -113,8 +134,11 @@ namespace InfoTrucker.Infrastructure
             this.cbxServer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cbxServer.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbxServer.Size = new System.Drawing.Size(243, 26);
+            this.cbxServer.Size = new System.Drawing.Size(243, 22);
             this.cbxServer.TabIndex = 21;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxServer, conditionValidationRule1);
             // 
             // btnSave
             // 
@@ -134,9 +158,25 @@ namespace InfoTrucker.Infrastructure
             this.cbxAuthentication.Location = new System.Drawing.Point(34, 106);
             this.cbxAuthentication.Name = "cbxAuthentication";
             this.cbxAuthentication.Parmida_ActivePlusMultiKeys = false;
+            this.cbxAuthentication.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxAuthentication.Properties.Appearance.Options.UseFont = true;
             this.cbxAuthentication.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxAuthentication.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxAuthentication.Properties.AppearanceDisabled.Options.UseFont = true;
             this.cbxAuthentication.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxAuthentication.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxAuthentication.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.cbxAuthentication.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxAuthentication.Properties.AppearanceFocused.Options.UseFont = true;
             this.cbxAuthentication.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxAuthentication.Properties.AppearanceItemDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxAuthentication.Properties.AppearanceItemDisabled.Options.UseFont = true;
+            this.cbxAuthentication.Properties.AppearanceItemHighlight.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxAuthentication.Properties.AppearanceItemHighlight.Options.UseFont = true;
+            this.cbxAuthentication.Properties.AppearanceItemSelected.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxAuthentication.Properties.AppearanceItemSelected.Options.UseFont = true;
+            this.cbxAuthentication.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxAuthentication.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.cbxAuthentication.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.cbxAuthentication.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -145,8 +185,11 @@ namespace InfoTrucker.Infrastructure
             "Windows Authentication",
             "SQL Server Authentication"});
             this.cbxAuthentication.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbxAuthentication.Size = new System.Drawing.Size(271, 26);
+            this.cbxAuthentication.Size = new System.Drawing.Size(271, 22);
             this.cbxAuthentication.TabIndex = 22;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxAuthentication, conditionValidationRule2);
             this.cbxAuthentication.SelectedIndexChanged += new System.EventHandler(this.cbxAuthentication_SelectedIndexChanged);
             // 
             // labelControl1
@@ -183,10 +226,15 @@ namespace InfoTrucker.Infrastructure
             this.txtPassword.Location = new System.Drawing.Point(34, 170);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Parmida_ActivePlusMultiKeys = false;
+            this.txtPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtPassword.Properties.Appearance.Options.UseFont = true;
             this.txtPassword.Properties.PasswordChar = '*';
             this.txtPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtPassword.Size = new System.Drawing.Size(271, 26);
+            this.txtPassword.Size = new System.Drawing.Size(271, 22);
             this.txtPassword.TabIndex = 28;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.txtPassword, conditionValidationRule3);
             // 
             // labelControl2
             // 
@@ -213,9 +261,14 @@ namespace InfoTrucker.Infrastructure
             this.txtUser.Location = new System.Drawing.Point(34, 138);
             this.txtUser.Name = "txtUser";
             this.txtUser.Parmida_ActivePlusMultiKeys = false;
+            this.txtUser.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtUser.Properties.Appearance.Options.UseFont = true;
             this.txtUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtUser.Size = new System.Drawing.Size(271, 26);
+            this.txtUser.Size = new System.Drawing.Size(271, 22);
             this.txtUser.TabIndex = 26;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.txtUser, conditionValidationRule4);
             // 
             // labelControl4
             // 
@@ -234,16 +287,35 @@ namespace InfoTrucker.Infrastructure
             this.cbxDatabase.Location = new System.Drawing.Point(34, 231);
             this.cbxDatabase.Name = "cbxDatabase";
             this.cbxDatabase.Parmida_ActivePlusMultiKeys = false;
+            this.cbxDatabase.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxDatabase.Properties.Appearance.Options.UseFont = true;
             this.cbxDatabase.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxDatabase.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxDatabase.Properties.AppearanceDisabled.Options.UseFont = true;
             this.cbxDatabase.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxDatabase.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxDatabase.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.cbxDatabase.Properties.AppearanceFocused.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxDatabase.Properties.AppearanceFocused.Options.UseFont = true;
             this.cbxDatabase.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxDatabase.Properties.AppearanceItemDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxDatabase.Properties.AppearanceItemDisabled.Options.UseFont = true;
+            this.cbxDatabase.Properties.AppearanceItemHighlight.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxDatabase.Properties.AppearanceItemHighlight.Options.UseFont = true;
+            this.cbxDatabase.Properties.AppearanceItemSelected.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxDatabase.Properties.AppearanceItemSelected.Options.UseFont = true;
+            this.cbxDatabase.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbxDatabase.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.cbxDatabase.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.cbxDatabase.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxDatabase.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbxDatabase.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbxDatabase.Size = new System.Drawing.Size(271, 26);
+            this.cbxDatabase.Size = new System.Drawing.Size(271, 22);
             this.cbxDatabase.TabIndex = 24;
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxDatabase, conditionValidationRule5);
             // 
             // btnRefresh
             // 

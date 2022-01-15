@@ -345,12 +345,6 @@
     <Compile Include="Infrastructure\AppSetting.cs" />
     <Compile Include="Infrastructure\EnCoding.cs" />
     <Compile Include="UI\Admin\InitialDatabase.cs" />
-    <Compile Include="UI\Admin\NewDBForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Admin\NewDBForm.Designer.cs">
-      <DependentUpon>NewDBForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Infrastructure\SqlHelper.cs" />
     <Compile Include="UI\LoginForm.cs">
       <SubType>Form</SubType>
@@ -443,9 +437,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UI\Admin\NewDBForm.resx">
-      <DependentUpon>NewDBForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

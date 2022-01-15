@@ -30,6 +30,7 @@ namespace InfoTrucker.Infrastructure
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.progressBar = new DevExpress.XtraEditors.MarqueeProgressBarControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
@@ -181,6 +182,9 @@ namespace InfoTrucker.Infrastructure
             this.cbxDataBase.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cbxDataBase.Size = new System.Drawing.Size(235, 26);
             this.cbxDataBase.TabIndex = 21;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxDataBase, conditionValidationRule1);
             // 
             // NewDatabaseForm
             // 

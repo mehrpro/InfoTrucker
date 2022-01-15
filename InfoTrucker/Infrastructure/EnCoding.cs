@@ -38,7 +38,7 @@ namespace InfoTrucker.Infrastructure
         /// <returns></returns>
         public static string ConnString()
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
             return connectionString;
 
         }

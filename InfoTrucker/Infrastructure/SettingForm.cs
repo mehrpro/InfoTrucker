@@ -48,7 +48,7 @@ namespace InfoTrucker.Infrastructure
         private void mnuConnectonNow_Click(object sender, EventArgs e)
         {
             var appsettimg = new AppSetting();
-            var str = appsettimg.GetConnectionString("Conn");
+            var str = appsettimg.GetConnectionString("cn");
             MessageBox.Show(EnCoding.ConnString().Split(';')[0] + "\n"
                                                                 + EnCoding.ConnString().Split(';')[1], "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -263,7 +263,7 @@ namespace InfoTrucker.Infrastructure
                 if (dx.Validate(cbxServer) && dx.Validate(txtUser) && dx.Validate(txtPassword))
                 {
                     var result = _dbRepository.SqlServerConnect(_srvConnStr);
-                    if (result) return;
+                    if (!result) return;
                     if (!TestConnection()) return;
                     var contain = new StructureMap.Container(new TypeRegistery());
                     var frm = contain.GetInstance<NewDatabaseForm>();

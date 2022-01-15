@@ -25,6 +25,7 @@ namespace InfoTrucker
             Application.SetCompatibleTextRenderingDefault(false);
             var container = new Container(new TypeRegistery());
             var frmLogin = container.GetInstance<UI.LoginForm>();
+            frmLogin.Container = container;
             Application.Run(frmLogin);
             var result = frmLogin.DialogResult;
             if (result == DialogResult.OK)
