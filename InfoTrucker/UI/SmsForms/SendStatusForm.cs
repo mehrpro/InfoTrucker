@@ -16,20 +16,22 @@ namespace InfoTrucker.UI.SmsForms
         private readonly IMessageGroupSubjectRepository _messageGroupSubjectRepository;
         private readonly IMapper _mapper;
         private readonly IPersonRepository _personRepository;
-        private readonly ServiceReference1.tsmsServiceClient soap;
+        private readonly IUnitOfWorkClass _unitOfWorkClass;
 
 
         public SendStatusForm(IUnitofWork unitofWork,
-            ISendMessageRepository messageRepository,
-            IMessageGroupSubjectRepository messageGroupSubjectRepository,
-            IMapper mapper, IPersonRepository personRepository)
+                              ISendMessageRepository messageRepository,
+                              IMessageGroupSubjectRepository messageGroupSubjectRepository,
+                              IMapper mapper,
+                              IPersonRepository personRepository,
+                              IUnitOfWorkClass unitOfWorkClass)
         {
             _unitofWork = unitofWork;
             _messageRepository = messageRepository;
             _messageGroupSubjectRepository = messageGroupSubjectRepository;
             _mapper = mapper;
             _personRepository = personRepository;
-            soap = new ServiceReference1.tsmsServiceClient();
+            _unitOfWorkClass = unitOfWorkClass;
             InitializeComponent();
             cbxPersonList.Properties.DisplayMember = "FullName";
             cbxPersonList.Properties.ValueMember = "ID";
@@ -48,7 +50,7 @@ namespace InfoTrucker.UI.SmsForms
         {
             try
             {
-                var soapConnect = soap.UserInfo(PublicValue.SmsUsername, PublicValue.SmsPassword);
+                var soapConnect = _unitOfWorkClass.SMSClient.UserInfo(PublicValue.SmsUsername, PublicValue.SmsPassword);
                 if (soapConnect[0].sms_numebrs[0] == PublicValue.SmsNumber)
                 {
                     SmsNumberTextbox.Text = soapConnect[0].sms_numebrs[0];

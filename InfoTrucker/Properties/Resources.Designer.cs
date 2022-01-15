@@ -73,6 +73,36 @@ namespace InfoTrucker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_data_backup_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-data-backup-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_database_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-database-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_database_restore_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-database-restore-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_message_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-message-32", resourceCulture);
@@ -97,6 +127,51 @@ namespace InfoTrucker.Properties {
             get {
                 object obj = ResourceManager.GetObject("icons8-subscription-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string ScriptApplicationUser {
+            get {
+                return ResourceManager.GetString("ScriptApplicationUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string ScriptCompany {
+            get {
+                return ResourceManager.GetString("ScriptCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string ScriptMenu {
+            get {
+                return ResourceManager.GetString("ScriptMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string ScriptUnitOfMa {
+            get {
+                return ResourceManager.GetString("ScriptUnitOfMa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string sqlScriptForNewDatabase {
+            get {
+                return ResourceManager.GetString("sqlScriptForNewDatabase", resourceCulture);
             }
         }
     }

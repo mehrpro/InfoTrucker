@@ -55,5 +55,13 @@ namespace InfoTrucker.UI
         {
             Environment.Exit(1);
         }
+
+        private void pictureEdit1_DoubleClick(object sender, EventArgs e)
+        {
+            this.Hide();
+            var frm = _container.GetInstance<SettingForm>();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }

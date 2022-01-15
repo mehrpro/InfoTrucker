@@ -55,6 +55,7 @@ namespace InfoTrucker.UI
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Size = new System.Drawing.Size(115, 108);
             this.pictureEdit1.TabIndex = 6;
+            this.pictureEdit1.DoubleClick += new System.EventHandler(this.pictureEdit1_DoubleClick);
             // 
             // UsernameTextbox
             // 

@@ -23,12 +23,17 @@ namespace InfoTrucker.UI.SmsForms
         private readonly ISendMessageRepository _messageRepository;
         private readonly IMessageGroupSubjectRepository _messageGroupSubjectRepository;
         private readonly IExceptionSms _exceptionSms;
-        private readonly ServiceReference1.tsmsServiceClient _soap;
+        private readonly IUnitOfWorkClass _unitOfWorkClass;
         private List<PersonListForSmsDTO> _personListTemp;
         private List<PersonListForSmsDTO> _personListFoeSend;
 
-        public SendSmsGroupForm(IUnitofWork unitofWork, IMapper mapper, IPersonRepository personRepository
-        , ISendMessageRepository messageRepository, IMessageGroupSubjectRepository messageGroupSubjectRepository, IExceptionSms exceptionSms)
+        public SendSmsGroupForm(IUnitofWork unitofWork,
+                                IMapper mapper,
+                                IPersonRepository personRepository,
+                                ISendMessageRepository messageRepository,
+                                IMessageGroupSubjectRepository messageGroupSubjectRepository,
+                                IExceptionSms exceptionSms,
+                                IUnitOfWorkClass unitOfWorkClass)
         {
             InitializeComponent();
             _unitofWork = unitofWork;
@@ -37,7 +42,7 @@ namespace InfoTrucker.UI.SmsForms
             _messageRepository = messageRepository;
             _messageGroupSubjectRepository = messageGroupSubjectRepository;
             _exceptionSms = exceptionSms;
-            _soap = new ServiceReference1.tsmsServiceClient();
+            _unitOfWorkClass = unitOfWorkClass;
             ConnectedToPanelSms();
 
         }
@@ -49,7 +54,7 @@ namespace InfoTrucker.UI.SmsForms
         {
             try
             {
-                var soapConnect = _soap.UserInfo(PublicValue.SmsUsername, PublicValue.SmsPassword);
+                var soapConnect = _unitOfWorkClass.SMSClient.UserInfo(PublicValue.SmsUsername, PublicValue.SmsPassword);
                 if (soapConnect[0].sms_numebrs[0] == PublicValue.SmsNumber)// && soapConnect[0].sms_numebrs[0].Length == 10
                 {
                     SmsNumberTextbox.Text = soapConnect[0].sms_numebrs[0];
@@ -137,7 +142,7 @@ namespace InfoTrucker.UI.SmsForms
                 var resultTitleNumber = Convert.ToInt32(resultMap.ID);
                 var receiverNumber = string.Join(",", _personListFoeSend.Select(x => x.Mobile1).ToArray());
                 var message = MessageTextbox.Text.Trim();
-                var resultSend = await _soap.sendSmsGroupAsync(PublicValue.SmsUsername, PublicValue.SmsPassword,
+                var resultSend = await _unitOfWorkClass.SMSClient.sendSmsGroupAsync(PublicValue.SmsUsername, PublicValue.SmsPassword,
                     PublicValue.SmsNumber, receiverNumber, message, 0, wsdlCheckSendStr);
                 if (Convert.ToInt32(resultSend[0]) < 0) throw new IndexOutOfRangeException(resultSend[0].ToString());
                 SplashScreenManager.Default.SetWaitFormDescription($"شماره پیگیری {resultSend[0]}");

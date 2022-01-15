@@ -105,5 +105,15 @@ namespace InfoTrucker.UI
             //frm.Container = _container;
             frm.Show();
         }
+
+        private void btnBackup_Click(object sender, System.EventArgs e)
+        {
+            PublicValue.BackupDatabase(@"e:\990710\12.bak");
+        }
+
+        private void btnRestore_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

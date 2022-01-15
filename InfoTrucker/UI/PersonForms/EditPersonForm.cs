@@ -22,7 +22,9 @@ namespace InfoTrucker.UI.PersonForms
         private Person person;
         public int Id { get; set; }
 
-        public EditPersonForm(IUnitofWork unitofWork, IMapper mapper, IPersonRepository personRepository)
+        public EditPersonForm(IUnitofWork unitofWork,
+                              IMapper mapper,
+                              IPersonRepository personRepository)
         {
 
             _unitofWork = unitofWork;

@@ -22,13 +22,13 @@ namespace InfoTrucker.UI.ReportForms
     public partial class PersonListReportForm : XtraForm
     {
 
-        private readonly IUnitofWork _unitofwork;
+        //private readonly IUnitofWork _unitofwork;
         private readonly IMapper _mapper;
         private readonly IPersonRepository _personRepository;
 
-        public PersonListReportForm(IUnitofWork unitofWork, IMapper mapper, IPersonRepository personRepository)
+        public PersonListReportForm(IMapper mapper, IPersonRepository personRepository)
         {
-            _unitofwork = unitofWork;
+            //_unitofwork = unitofWork;
             _mapper = mapper;
             _personRepository = personRepository;
             InitializeComponent();
