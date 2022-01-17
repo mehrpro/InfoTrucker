@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CreateDB : DbMigration
+    public partial class _14001027 : DbMigration
     {
         public override void Up()
         {
@@ -93,6 +93,7 @@
                         IsDelete = c.Boolean(nullable: false),
                         DateRegister = c.DateTime(nullable: false),
                         UserID_FK = c.Int(nullable: false),
+                        PersonImg = c.Binary(),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.ApplicationUsers", t => t.UserID_FK)

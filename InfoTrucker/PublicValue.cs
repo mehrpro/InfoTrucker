@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
@@ -106,6 +107,20 @@ namespace InfoTrucker
             destination.Devices.Add(source);
             destination.ReplaceDatabase = true;
             destination.SqlRestore(server);
+        }
+
+
+        public static byte[] ImageToByte(this Image img)
+        {
+            ImageConverter converter = new ImageConverter();
+            return (byte[])converter.ConvertTo(img, typeof(byte[]));
+        }
+
+        public static string RemoveWhitespace(this string input)
+        {
+            return new string(input.ToCharArray()
+                .Where(c => !Char.IsWhiteSpace(c))
+                .ToArray());
         }
 
 

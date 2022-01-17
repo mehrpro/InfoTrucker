@@ -103,9 +103,9 @@ namespace InfoTrucker.UI.PersonForms
             this.AddressTextbox = new DevExpress.XtraEditors.MemoEdit();
             this.ScanTabPage = new DevExpress.XtraTab.XtraTabPage();
             this.PictureSidePanel = new DevExpress.XtraEditors.SidePanel();
-            this.ScanButton = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPicture = new DevExpress.XtraEditors.SimpleButton();
             this.sidePanel4 = new DevExpress.XtraEditors.SidePanel();
-            this.PersonPictureEdit = new DevExpress.XtraEditors.PictureEdit();
+            this.picPerson = new DevExpress.XtraEditors.PictureEdit();
             this.BottonSidePanel = new DevExpress.XtraEditors.SidePanel();
             this.CloseButton = new DevExpress.XtraEditors.SimpleButton();
             this.SaveButton = new DevExpress.XtraEditors.SimpleButton();
@@ -151,7 +151,7 @@ namespace InfoTrucker.UI.PersonForms
             this.ScanTabPage.SuspendLayout();
             this.PictureSidePanel.SuspendLayout();
             this.sidePanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PersonPictureEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPerson.Properties)).BeginInit();
             this.BottonSidePanel.SuspendLayout();
             this.MainSidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Person_dxProvider)).BeginInit();
@@ -967,7 +967,7 @@ namespace InfoTrucker.UI.PersonForms
             // 
             // PictureSidePanel
             // 
-            this.PictureSidePanel.Controls.Add(this.ScanButton);
+            this.PictureSidePanel.Controls.Add(this.btnPicture);
             this.PictureSidePanel.Controls.Add(this.sidePanel4);
             this.PictureSidePanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.PictureSidePanel.Location = new System.Drawing.Point(616, 0);
@@ -976,19 +976,19 @@ namespace InfoTrucker.UI.PersonForms
             this.PictureSidePanel.TabIndex = 0;
             this.PictureSidePanel.Text = "sidePanel1";
             // 
-            // ScanButton
+            // btnPicture
             // 
-            this.ScanButton.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ScanButton.ImageOptions.SvgImage")));
-            this.ScanButton.Location = new System.Drawing.Point(75, 235);
-            this.ScanButton.Name = "ScanButton";
-            this.ScanButton.Size = new System.Drawing.Size(100, 40);
-            this.ScanButton.TabIndex = 2;
-            this.ScanButton.Text = "Scan";
-            this.ScanButton.Click += new System.EventHandler(this.ScanButton_Click);
+            this.btnPicture.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPicture.ImageOptions.Image")));
+            this.btnPicture.Location = new System.Drawing.Point(75, 235);
+            this.btnPicture.Name = "btnPicture";
+            this.btnPicture.Size = new System.Drawing.Size(100, 40);
+            this.btnPicture.TabIndex = 2;
+            this.btnPicture.Text = "بارگذاری";
+            this.btnPicture.Click += new System.EventHandler(this.ScanButton_Click);
             // 
             // sidePanel4
             // 
-            this.sidePanel4.Controls.Add(this.PersonPictureEdit);
+            this.sidePanel4.Controls.Add(this.picPerson);
             this.sidePanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.sidePanel4.Location = new System.Drawing.Point(0, 0);
             this.sidePanel4.Name = "sidePanel4";
@@ -996,15 +996,17 @@ namespace InfoTrucker.UI.PersonForms
             this.sidePanel4.TabIndex = 1;
             this.sidePanel4.Text = "sidePanel4";
             // 
-            // PersonPictureEdit
+            // picPerson
             // 
-            this.PersonPictureEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PersonPictureEdit.Location = new System.Drawing.Point(0, 0);
-            this.PersonPictureEdit.Name = "PersonPictureEdit";
-            this.PersonPictureEdit.Parmida_ActivePlusMultiKeys = false;
-            this.PersonPictureEdit.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.PersonPictureEdit.Size = new System.Drawing.Size(250, 228);
-            this.PersonPictureEdit.TabIndex = 0;
+            this.picPerson.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picPerson.EditValue = global::InfoTrucker.Properties.Resources.icons8_add_user_male_48;
+            this.picPerson.Location = new System.Drawing.Point(0, 0);
+            this.picPerson.Name = "picPerson";
+            this.picPerson.Parmida_ActivePlusMultiKeys = false;
+            this.picPerson.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picPerson.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.picPerson.Size = new System.Drawing.Size(250, 228);
+            this.picPerson.TabIndex = 0;
             // 
             // BottonSidePanel
             // 
@@ -1109,7 +1111,7 @@ namespace InfoTrucker.UI.PersonForms
             this.ScanTabPage.ResumeLayout(false);
             this.PictureSidePanel.ResumeLayout(false);
             this.sidePanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PersonPictureEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPerson.Properties)).EndInit();
             this.BottonSidePanel.ResumeLayout(false);
             this.MainSidePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Person_dxProvider)).EndInit();
@@ -1177,12 +1179,12 @@ namespace InfoTrucker.UI.PersonForms
         private DevExpress.XtraTab.XtraTabPage ScanTabPage;
         private DevExpress.XtraEditors.SidePanel PictureSidePanel;
         private DevExpress.XtraEditors.SidePanel sidePanel4;
-        private DevExpress.XtraEditors.PictureEdit PersonPictureEdit;
+        private DevExpress.XtraEditors.PictureEdit picPerson;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider Person_dxProvider;
         private DevExpress.XtraEditors.TextEdit TakalofSpanEdit;
         private DevExpress.XtraEditors.TextEdit HoshmandNavganTextbox;
         private DevExpress.XtraEditors.DateEdit BirthDatePicker;
-        private DevExpress.XtraEditors.SimpleButton ScanButton;
+        private DevExpress.XtraEditors.SimpleButton btnPicture;
         private DevExpress.XtraEditors.TextEdit MobileErrorTextbox;
         private DevExpress.XtraEditors.TextEdit NationalCodeErrorTextbox;
         private DevExpress.XtraEditors.TextEdit PlackTextbox;

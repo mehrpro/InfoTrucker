@@ -38,6 +38,16 @@ namespace InfoTrucker.Models
             builder.Configurations.Add(new ResultCodeMessageConfigure());
             builder.Configurations.Add(new MessageGroupSubjectConfigure());
             builder.Configurations.Add(new SmsPanelConfigure());
+            builder.Configurations.Add(new CachConfigure());
+            builder.Configurations.Add(new CenterConfigure());
+            builder.Configurations.Add(new CommissionConfigure());
+            builder.Configurations.Add(new DriverConfigure());
+            builder.Configurations.Add(new LoadTypeConfigure());
+            builder.Configurations.Add(new PhoneBookConfigure());
+            builder.Configurations.Add(new QueueConfigure());
+            builder.Configurations.Add(new UserConfigure());
+            builder.Configurations.Add(new SeriesPriceConfigure());
+            builder.Configurations.Add(new BankAccNumConfigure());
 
         }
 
@@ -53,6 +63,16 @@ namespace InfoTrucker.Models
         public virtual DbSet<ResultCodeMessage> ResultCodeMessages { get; set; }
         public virtual DbSet<MessageGroupSubject> MessageGroupSubjects { get; set; }
         public virtual DbSet<SmsConfigure> SmsConfigures { get; set; }
+        public virtual DbSet<Cash> Cash { get; set; }
+        public virtual DbSet<Center> Centers { get; set; }
+        public virtual DbSet<Commission> Commissions { get; set; }
+        public virtual DbSet<Driver> Drivers { get; set; }
+        public virtual DbSet<LoadType> LoadTypes { get; set; }
+        public virtual DbSet<PhoneBook> PhoneBooks { get; set; }
+        public virtual DbSet<Queue> Queues { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<SeriesPrice> SeriesPrices { get; set; }
+        public virtual DbSet<BankAccNum> BankAccNums { get; set; }
 
 
 

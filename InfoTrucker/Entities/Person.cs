@@ -40,6 +40,7 @@ namespace InfoTrucker.Entities
         public DateTime DateRegister { get; set; }
         public int UserID_FK { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
+        public byte[] PersonImg { get; set; }
 
 
         public virtual ICollection<SendMessages> SendMessages { get; set; }

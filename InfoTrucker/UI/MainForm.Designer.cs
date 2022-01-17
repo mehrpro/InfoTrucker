@@ -31,14 +31,6 @@ namespace InfoTrucker.UI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
-            this.backstageViewClientControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
-            this.memoEdit2 = new DevExpress.XtraEditors.MemoEdit();
-            this.btnRestore = new DevExpress.XtraEditors.SimpleButton();
-            this.btnBackup = new DevExpress.XtraEditors.SimpleButton();
-            this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.MemoEdit();
-            this.backstageViewTabItem1 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.NewPersonButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.EditButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.PersonReportBottonItem = new DevExpress.XtraBars.BarButtonItem();
@@ -62,18 +54,12 @@ namespace InfoTrucker.UI
             this.SendSmsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.SplashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::InfoTrucker.UI.WaitSaveSMSForm), true, true);
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
-            this.backstageViewControl1.SuspendLayout();
-            this.backstageViewClientControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.ApplicationButtonDropDownControl = this.backstageViewControl1;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -99,112 +85,8 @@ namespace InfoTrucker.UI
             this.ReportRibbonPage,
             this.SmsRibbonPage});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
-            this.ribbonControl1.Size = new System.Drawing.Size(800, 174);
+            this.ribbonControl1.Size = new System.Drawing.Size(894, 174);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
-            // 
-            // backstageViewControl1
-            // 
-            this.backstageViewControl1.Controls.Add(this.backstageViewClientControl1);
-            this.backstageViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.backstageViewControl1.Items.Add(this.backstageViewTabItem1);
-            this.backstageViewControl1.Location = new System.Drawing.Point(0, 174);
-            this.backstageViewControl1.Name = "backstageViewControl1";
-            this.backstageViewControl1.OwnerControl = this.ribbonControl1;
-            this.backstageViewControl1.SelectedTab = this.backstageViewTabItem1;
-            this.backstageViewControl1.SelectedTabIndex = 0;
-            this.backstageViewControl1.Size = new System.Drawing.Size(800, 396);
-            this.backstageViewControl1.TabIndex = 3;
-            // 
-            // backstageViewClientControl1
-            // 
-            this.backstageViewClientControl1.Controls.Add(this.memoEdit2);
-            this.backstageViewClientControl1.Controls.Add(this.btnRestore);
-            this.backstageViewClientControl1.Controls.Add(this.btnBackup);
-            this.backstageViewClientControl1.Controls.Add(this.memoEdit1);
-            this.backstageViewClientControl1.Controls.Add(this.textEdit1);
-            this.backstageViewClientControl1.Location = new System.Drawing.Point(1, 63);
-            this.backstageViewClientControl1.Name = "backstageViewClientControl1";
-            this.backstageViewClientControl1.Size = new System.Drawing.Size(625, 332);
-            this.backstageViewClientControl1.TabIndex = 1;
-            // 
-            // memoEdit2
-            // 
-            this.memoEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.memoEdit2.Location = new System.Drawing.Point(11, 18);
-            this.memoEdit2.Name = "memoEdit2";
-            this.memoEdit2.Parmida_ActivePlusMultiKeys = false;
-            this.memoEdit2.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.memoEdit2.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.memoEdit2.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.memoEdit2.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.memoEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.memoEdit2.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.memoEdit2.Size = new System.Drawing.Size(385, 88);
-            this.memoEdit2.TabIndex = 3;
-            // 
-            // btnRestore
-            // 
-            this.btnRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestore.ImageOptions.Image = global::InfoTrucker.Properties.Resources.icons8_database_restore_48;
-            this.btnRestore.Location = new System.Drawing.Point(413, 136);
-            this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(180, 90);
-            this.btnRestore.TabIndex = 1;
-            this.btnRestore.Text = "بازگردانی بانک";
-            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
-            // 
-            // btnBackup
-            // 
-            this.btnBackup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBackup.ImageOptions.Image = global::InfoTrucker.Properties.Resources.icons8_data_backup_48;
-            this.btnBackup.Location = new System.Drawing.Point(413, 16);
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(180, 90);
-            this.btnBackup.TabIndex = 0;
-            this.btnBackup.Text = "پشتیبان گیری";
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
-            // 
-            // memoEdit1
-            // 
-            this.memoEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.memoEdit1.Location = new System.Drawing.Point(11, 138);
-            this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Parmida_ActivePlusMultiKeys = false;
-            this.memoEdit1.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.memoEdit1.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.memoEdit1.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.memoEdit1.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.memoEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.memoEdit1.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.memoEdit1.Size = new System.Drawing.Size(385, 88);
-            this.memoEdit1.TabIndex = 2;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit1.Location = new System.Drawing.Point(11, 18);
-            this.textEdit1.MenuManager = this.ribbonControl1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Parmida_ActivePlusMultiKeys = false;
-            this.textEdit1.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.textEdit1.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.textEdit1.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.textEdit1.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.textEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit1.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textEdit1.Size = new System.Drawing.Size(385, 88);
-            this.textEdit1.TabIndex = 2;
-            // 
-            // backstageViewTabItem1
-            // 
-            this.backstageViewTabItem1.Caption = "بانک اطلاعاتی";
-            this.backstageViewTabItem1.ContentControl = this.backstageViewClientControl1;
-            this.backstageViewTabItem1.ImageOptions.ItemNormal.Image = global::InfoTrucker.Properties.Resources.icons8_database_48;
-            this.backstageViewTabItem1.Name = "backstageViewTabItem1";
-            this.backstageViewTabItem1.Selected = true;
             // 
             // NewPersonButtonItem
             // 
@@ -321,7 +203,8 @@ namespace InfoTrucker.UI
             this.DocumentRibbonPage.Appearance.Options.UseTextOptions = true;
             this.DocumentRibbonPage.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.Yes;
             this.DocumentRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.PersonPageGroup});
+            this.PersonPageGroup,
+            this.ribbonPageGroup1});
             this.DocumentRibbonPage.Name = "DocumentRibbonPage";
             this.DocumentRibbonPage.Text = "اسناد";
             // 
@@ -329,8 +212,9 @@ namespace InfoTrucker.UI
             // 
             this.PersonPageGroup.ItemLinks.Add(this.NewPersonButtonItem);
             this.PersonPageGroup.ItemLinks.Add(this.EditButtonItem);
+            this.PersonPageGroup.ItemLinks.Add(this.PersonReportBottonItem);
             this.PersonPageGroup.Name = "PersonPageGroup";
-            this.PersonPageGroup.Text = "رانندگان";
+            this.PersonPageGroup.Text = "رانندگان انجمن ";
             // 
             // ReportRibbonPage
             // 
@@ -342,7 +226,6 @@ namespace InfoTrucker.UI
             // 
             // ReportsRibbonPageGroup
             // 
-            this.ReportsRibbonPageGroup.ItemLinks.Add(this.PersonReportBottonItem);
             this.ReportsRibbonPageGroup.ItemLinks.Add(this.HoshmandReportButtonItem);
             this.ReportsRibbonPageGroup.Name = "ReportsRibbonPageGroup";
             this.ReportsRibbonPageGroup.Text = "گزارشات";
@@ -377,20 +260,24 @@ namespace InfoTrucker.UI
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 535);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(800, 35);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(894, 35);
             // 
             // SplashScreenManager
             // 
             this.SplashScreenManager.ClosingDelay = 500;
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "رانندگان";
             // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 570);
+            this.ClientSize = new System.Drawing.Size(894, 570);
             this.Controls.Add(this.ribbonStatusBar1);
-            this.Controls.Add(this.backstageViewControl1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "MainForm";
@@ -399,12 +286,6 @@ namespace InfoTrucker.UI
             this.StatusBar = this.ribbonStatusBar1;
             this.Text = "مرکز اسناد انجمن صنفی رانندگان";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).EndInit();
-            this.backstageViewControl1.ResumeLayout(false);
-            this.backstageViewClientControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,13 +317,6 @@ namespace InfoTrucker.UI
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup BillReportsRibbonPageGroup;
         private DevExpress.XtraBars.BarButtonItem ReceiverButtonItem;
         private DevExpress.XtraSplashScreen.SplashScreenManager SplashScreenManager;
-        private DevExpress.XtraBars.Ribbon.BackstageViewControl backstageViewControl1;
-        private DevExpress.XtraBars.Ribbon.BackstageViewClientControl backstageViewClientControl1;
-        private DevExpress.XtraBars.Ribbon.BackstageViewTabItem backstageViewTabItem1;
-        private DevExpress.XtraEditors.SimpleButton btnBackup;
-        private DevExpress.XtraEditors.SimpleButton btnRestore;
-        private DevExpress.XtraEditors.MemoEdit textEdit1;
-        private DevExpress.XtraEditors.MemoEdit memoEdit2;
-        private DevExpress.XtraEditors.MemoEdit memoEdit1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
     }
 }

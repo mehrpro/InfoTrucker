@@ -59,13 +59,13 @@ namespace InfoTrucker.Infrastructure
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.امکاناتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnBackup = new System.Windows.Forms.ToolStripMenuItem();
-            this.بازگردانیبانکاطلاعاتیToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRestore = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNewDatabase = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuConnectonNow = new System.Windows.Forms.ToolStripMenuItem();
             this.خروجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.راهنماToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.دربارهنرمافزارToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.راهنماToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.dx = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxServer.Properties)).BeginInit();
@@ -204,7 +204,7 @@ namespace InfoTrucker.Infrastructure
             // btnConnecting
             // 
             this.btnConnecting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConnecting.Location = new System.Drawing.Point(34, 202);
+            this.btnConnecting.Location = new System.Drawing.Point(35, 198);
             this.btnConnecting.Name = "btnConnecting";
             this.btnConnecting.Size = new System.Drawing.Size(74, 23);
             this.btnConnecting.TabIndex = 30;
@@ -342,7 +342,7 @@ namespace InfoTrucker.Infrastructure
             // 
             this.امکاناتToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnBackup,
-            this.بازگردانیبانکاطلاعاتیToolStripMenuItem,
+            this.btnRestore,
             this.btnNewDatabase,
             this.mnuConnectonNow,
             this.خروجToolStripMenuItem});
@@ -357,11 +357,12 @@ namespace InfoTrucker.Infrastructure
             this.btnBackup.Text = "پشتیبان گیری بانک اطلاعاتی";
             this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
-            // بازگردانیبانکاطلاعاتیToolStripMenuItem
+            // btnRestore
             // 
-            this.بازگردانیبانکاطلاعاتیToolStripMenuItem.Name = "بازگردانیبانکاطلاعاتیToolStripMenuItem";
-            this.بازگردانیبانکاطلاعاتیToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.بازگردانیبانکاطلاعاتیToolStripMenuItem.Text = "بازگردانی بانک اطلاعاتی";
+            this.btnRestore.Enabled = false;
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(209, 22);
+            this.btnRestore.Text = "بازگردانی بانک اطلاعاتی";
             // 
             // btnNewDatabase
             // 
@@ -386,23 +387,23 @@ namespace InfoTrucker.Infrastructure
             // راهنماToolStripMenuItem
             // 
             this.راهنماToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.دربارهنرمافزارToolStripMenuItem,
-            this.راهنماToolStripMenuItem1});
+            this.btnAbout,
+            this.btnHelp});
             this.راهنماToolStripMenuItem.Name = "راهنماToolStripMenuItem";
             this.راهنماToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.راهنماToolStripMenuItem.Text = "راهنما";
             // 
-            // دربارهنرمافزارToolStripMenuItem
+            // btnAbout
             // 
-            this.دربارهنرمافزارToolStripMenuItem.Name = "دربارهنرمافزارToolStripMenuItem";
-            this.دربارهنرمافزارToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.دربارهنرمافزارToolStripMenuItem.Text = "درباره نرم افزار";
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(180, 22);
+            this.btnAbout.Text = "درباره نرم افزار";
             // 
-            // راهنماToolStripMenuItem1
+            // btnHelp
             // 
-            this.راهنماToolStripMenuItem1.Name = "راهنماToolStripMenuItem1";
-            this.راهنماToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
-            this.راهنماToolStripMenuItem1.Text = "راهنما";
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(180, 22);
+            this.btnHelp.Text = "راهنما";
             // 
             // SettingForm
             // 
@@ -465,13 +466,13 @@ namespace InfoTrucker.Infrastructure
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem امکاناتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnBackup;
-        private System.Windows.Forms.ToolStripMenuItem بازگردانیبانکاطلاعاتیToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnRestore;
         private System.Windows.Forms.ToolStripMenuItem btnNewDatabase;
         private System.Windows.Forms.ToolStripMenuItem mnuConnectonNow;
         private System.Windows.Forms.ToolStripMenuItem خروجToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem راهنماToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem دربارهنرمافزارToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem راهنماToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem btnAbout;
+        private System.Windows.Forms.ToolStripMenuItem btnHelp;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dx;
     }
 }

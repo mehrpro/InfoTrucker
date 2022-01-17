@@ -33,6 +33,7 @@ namespace InfoTrucker.Configure
             Property(x => x.MahelTavalod).HasMaxLength(100);
             Property(x => x.Tavalod).HasColumnType("datetime").IsRequired();
             Property(x => x.UserID_FK).IsRequired();
+            Property(x => x.PersonImg).IsMaxLength();
 
 
 

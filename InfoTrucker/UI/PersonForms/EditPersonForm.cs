@@ -7,6 +7,9 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using InfoTrucker.Services;
 using WIA;
+using System.IO;
+using System.Windows.Forms;
+using System.Linq;
 
 namespace InfoTrucker.UI.PersonForms
 {
@@ -45,6 +48,9 @@ namespace InfoTrucker.UI.PersonForms
         private void PlackTextbox_TextChanged(object sender, EventArgs e)
         {
             var obj = (TextEdit)sender;
+
+            
+
             if (obj.Text.Length < 19)
             {
                 PlackErrorTextbox.Text = null;
@@ -175,12 +181,22 @@ namespace InfoTrucker.UI.PersonForms
             TakalofSpanEdit.EditValue = person.Takalof;
             TelTextbox.Text = person.Tel;
             BirthDatePicker.DateTime = person.Tavalod.Date;
+            if (person.PersonImg != null)
+            {
+                MemoryStream ms = new MemoryStream(person.PersonImg);
+                picPerson.Image = Image.FromStream(ms);
+            }
+
         }
 
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            if (Person_dxProvider.Validate() && _mobileValidate && _codeMelieiValidate && _plackValidate && _hoshmandValidate)
+            if (Person_dxProvider.Validate()
+                && _mobileValidate
+                && _codeMelieiValidate
+                && _plackValidate
+                && _hoshmandValidate)
             {
 
                 person.FName = FNameTextbox.Text.Trim();
@@ -205,6 +221,11 @@ namespace InfoTrucker.UI.PersonForms
                 person.Tel = TelTextbox.Text.Trim();
                 person.UserID_FK = PublicValue.UserID;
                 person.Tavalod = BirthDatePicker.DateTime.Date;
+                person.Tavalod = BirthDatePicker.DateTime.Date;
+                if (picPerson.Image != null)
+                    person.PersonImg = picPerson.Image.ImageToByte();
+                else
+                    person.PersonImg = null;
                 ///////////////////////////////
                 //var resultMap = _mapper.Map<Person>(person);
 
@@ -229,17 +250,22 @@ namespace InfoTrucker.UI.PersonForms
 
         private void ScanButton_Click(object sender, EventArgs e)
         {
-
-            return;
-            var dlg = new WIA.CommonDialog();
-            ImageFile image = dlg.ShowAcquireImage(
-                DeviceType: WiaDeviceType.ScannerDeviceType,
-                Intent: WiaImageIntent.ColorIntent,
-                Bias: WiaImageBias.MinimizeSize,
-                FormatID: ImageFormat.Jpeg.Guid.ToString("B"),
-                AlwaysSelectDevice: true,
-                UseCommonUI: true,
-                CancelError: false);
+            var ofd = new OpenFileDialog();
+            ofd.Filter = "jpg Files |*.jpg|PNG FIles |*.png";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                picPerson.Image = Image.FromFile(ofd.FileName);
+            }
+            //return;
+            //var dlg = new WIA.CommonDialog();
+            //ImageFile image = dlg.ShowAcquireImage(
+            //    DeviceType: WiaDeviceType.ScannerDeviceType,
+            //    Intent: WiaImageIntent.ColorIntent,
+            //    Bias: WiaImageBias.MinimizeSize,
+            //    FormatID: ImageFormat.Jpeg.Guid.ToString("B"),
+            //    AlwaysSelectDevice: true,
+            //    UseCommonUI: true,
+            //    CancelError: false);
         }
 
         private void NationalCodeTextbox_TextChanged(object sender, EventArgs e)

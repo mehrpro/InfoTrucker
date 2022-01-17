@@ -9,6 +9,7 @@ using InfoTrucker.Entities;
 using WIA;
 using System.Drawing.Imaging;
 using InfoTrucker.Services;
+using System.Windows.Forms;
 
 namespace InfoTrucker.UI.PersonForms
 {
@@ -22,6 +23,8 @@ namespace InfoTrucker.UI.PersonForms
         private bool _codeMelieiValidate;
         private bool _hoshmandValidate;
         private bool _plackValidate;
+        //private OpenFileDialog ofd;
+        //private byte[] img;
 
         public NewPersonForm(IUnitofWork unitofWork, IMapper mapper, IPersonRepository personRepository)
         {
@@ -37,6 +40,7 @@ namespace InfoTrucker.UI.PersonForms
             Mobile1Textbox.TextChanged += Mobile1Textbox_TextChanged;
             Mobile1Textbox.LostFocus += Mobile1Textbox_LostFocus;
             PlackTextbox.TextChanged += PlackTextbox_TextChanged;
+
 
 
         }
@@ -169,6 +173,10 @@ namespace InfoTrucker.UI.PersonForms
                 newPerson.Tel = TelTextbox.Text.Trim();
                 newPerson.UserID_FK = PublicValue.UserID;
                 newPerson.Tavalod = BirthDatePicker.DateTime.Date;
+                if (picPerson.Image != null)
+                    newPerson.PersonImg = picPerson.Image.ImageToByte();
+                else
+                    newPerson.PersonImg = null;
                 ///////////////////////////////
                 var resultMap = _mapper.Map<Person>(newPerson);
                 resultMap.IsActive = true;
@@ -179,6 +187,7 @@ namespace InfoTrucker.UI.PersonForms
                     _personRepository.Insert(resultMap);
                     _unitofWork.SaveChanges();
                     PublicValue.SaveMessage();
+                    this.Close();
                 }
                 catch (Exception exception)
                 {
@@ -195,16 +204,27 @@ namespace InfoTrucker.UI.PersonForms
         private void ScanButton_Click(object sender, EventArgs e)
         {
 
-            return;
-            var dlg = new WIA.CommonDialog();
-            ImageFile image = dlg.ShowAcquireImage(
-                DeviceType: WiaDeviceType.ScannerDeviceType,
-                Intent: WiaImageIntent.ColorIntent,
-                Bias: WiaImageBias.MinimizeSize,
-                FormatID: ImageFormat.Jpeg.Guid.ToString("B"),
-                AlwaysSelectDevice: true,
-                UseCommonUI: true,
-                CancelError: false);
+            var ofd = new OpenFileDialog();
+            ofd.Filter = "jpg Files |*.jpg|PNG FIles |*.png";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                picPerson.Image = Image.FromFile(ofd.FileName);
+            }
+
+
+
+
+
+            //return;
+            //var dlg = new WIA.CommonDialog();
+            //ImageFile image = dlg.ShowAcquireImage(
+            //    DeviceType: WiaDeviceType.ScannerDeviceType,
+            //    Intent: WiaImageIntent.ColorIntent,
+            //    Bias: WiaImageBias.MinimizeSize,
+            //    FormatID: ImageFormat.Jpeg.Guid.ToString("B"),
+            //    AlwaysSelectDevice: true,
+            //    UseCommonUI: true,
+            //    CancelError: false);
         }
 
         private void NationalCodeTextbox_TextChanged(object sender, EventArgs e)

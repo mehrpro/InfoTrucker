@@ -31,5 +31,7 @@ namespace InfoTrucker.DTO
         public string CodePosti { get; set; }
         public string Address { get; set; }
         public int UserID_FK { get; set; }
+
+        public byte[] PersonImg { get; set; }
     }
 }

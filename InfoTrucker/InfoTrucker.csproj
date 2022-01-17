@@ -268,15 +268,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configure\ApplicationUserConfigure.cs" />
+    <Compile Include="Configure\BankAccNumConfigure.cs" />
+    <Compile Include="Configure\CachConfigure.cs" />
+    <Compile Include="Configure\CenterConfigure.cs" />
     <Compile Include="Configure\CleamConfigure.cs" />
+    <Compile Include="Configure\CommissionConfigure.cs" />
+    <Compile Include="Configure\DriverConfigure.cs" />
+    <Compile Include="Configure\LoadTypeConfigure.cs" />
     <Compile Include="Configure\MenuGroupConfigure.cs" />
     <Compile Include="Configure\MenuItemConfigure.cs" />
     <Compile Include="Configure\MessageGroupSubjectConfigure.cs" />
     <Compile Include="Configure\PersonConfigure.cs" />
+    <Compile Include="Configure\PhoneBookConfigure.cs" />
     <Compile Include="Configure\PublicTypeConfigure.cs" />
+    <Compile Include="Configure\QueueConfigure.cs" />
     <Compile Include="Configure\ResultCodeMessageConfigure.cs" />
     <Compile Include="Configure\SendMessageConfigure.cs" />
+    <Compile Include="Configure\SeriesPriceConfigure.cs" />
     <Compile Include="Configure\SmsPanelConfigure.cs" />
+    <Compile Include="Configure\UserConfigure.cs" />
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -293,15 +303,25 @@
     <Compile Include="DTO\PersonListForSmsDTO.cs" />
     <Compile Include="DTO\PersonListReportDTO.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
+    <Compile Include="Entities\BankAccNum.cs" />
+    <Compile Include="Entities\Cash.cs" />
+    <Compile Include="Entities\Center.cs" />
     <Compile Include="Entities\Cleam.cs" />
+    <Compile Include="Entities\Commission.cs" />
+    <Compile Include="Entities\Driver.cs" />
+    <Compile Include="Entities\LoadType.cs" />
     <Compile Include="Entities\MenuGroup.cs" />
     <Compile Include="Entities\MenuItem.cs" />
     <Compile Include="Entities\MessageGroupSubject.cs" />
     <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\PhoneBook.cs" />
     <Compile Include="Entities\PublicType.cs" />
+    <Compile Include="Entities\Queue.cs" />
     <Compile Include="Entities\ResultCodeMessage.cs" />
     <Compile Include="Entities\SendMessages.cs" />
+    <Compile Include="Entities\SeriesPrice.cs" />
     <Compile Include="Entities\SmsConfigure.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Infrastructure\AutoMappingClass.cs" />
     <Compile Include="Infrastructure\ImageResizer.cs" />
     <Compile Include="Infrastructure\IRepositoryBase.cs" />
@@ -321,9 +341,13 @@
     </Compile>
     <Compile Include="Infrastructure\TypeRegistery.cs" />
     <Compile Include="Infrastructure\WIAScanner.cs" />
-    <Compile Include="Migrations\202112312029191_CreateDB.cs" />
-    <Compile Include="Migrations\202112312029191_CreateDB.designer.cs">
-      <DependentUpon>202112312029191_CreateDB.cs</DependentUpon>
+    <Compile Include="Migrations\202201170836409_14001027.cs" />
+    <Compile Include="Migrations\202201170836409_14001027.designer.cs">
+      <DependentUpon>202201170836409_14001027.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201171825292_14001028.cs" />
+    <Compile Include="Migrations\202201171825292_14001028.designer.cs">
+      <DependentUpon>202201171825292_14001028.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
@@ -344,7 +368,6 @@
     <Compile Include="Services\ISmsConfigureRepository.cs" />
     <Compile Include="Infrastructure\AppSetting.cs" />
     <Compile Include="Infrastructure\EnCoding.cs" />
-    <Compile Include="UI\Admin\InitialDatabase.cs" />
     <Compile Include="Infrastructure\SqlHelper.cs" />
     <Compile Include="UI\LoginForm.cs">
       <SubType>Form</SubType>
@@ -424,8 +447,11 @@
     <EmbeddedResource Include="Infrastructure\SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112312029191_CreateDB.resx">
-      <DependentUpon>202112312029191_CreateDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202201170836409_14001027.resx">
+      <DependentUpon>202201170836409_14001027.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201171825292_14001028.resx">
+      <DependentUpon>202201171825292_14001028.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

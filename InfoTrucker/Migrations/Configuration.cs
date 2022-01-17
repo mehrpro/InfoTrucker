@@ -92,7 +92,7 @@ namespace InfoTrucker.Migrations
                 HoshmandNavgan = "123456789",
                 Shenasnameh = "1354",
                 Sh_Bimeh = "123456789",
-                Sh_Plak = "ایران22ج33261",
+                Sh_Plak = "ایران 61 | 121 ع 32",
                 Sh_Goyahinameh = "123456789",
                 Sh_Sokht = "123456789",
                 Takalof = 2,
