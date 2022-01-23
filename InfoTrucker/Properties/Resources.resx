@@ -140,18 +140,832 @@
     <value>..\Resources\icons8-database-restore-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sqlScriptForNewDatabase" xml:space="preserve">
-    <value />
+    <value>/****** Object:  Database [95]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE DATABASE [95]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'95', FILENAME = N'AddressFileForSave\95.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'95_log', FILENAME = N'AddressFileForSave\95_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+GO
+ALTER DATABASE [95] SET COMPATIBILITY_LEVEL = 140
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [95].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [95] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [95] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [95] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [95] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [95] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [95] SET AUTO_CLOSE ON 
+GO
+ALTER DATABASE [95] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [95] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [95] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [95] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [95] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [95] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [95] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [95] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [95] SET  ENABLE_BROKER 
+GO
+ALTER DATABASE [95] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [95] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [95] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [95] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [95] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [95] SET READ_COMMITTED_SNAPSHOT ON 
+GO
+ALTER DATABASE [95] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [95] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [95] SET  MULTI_USER 
+GO
+ALTER DATABASE [95] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [95] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [95] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [95] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [95] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [95] SET QUERY_STORE = OFF
+GO
+USE [95]
+GO
+/****** Object:  Table [dbo].[__MigrationHistory]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[__MigrationHistory](
+	[MigrationId] [nvarchar](150) NOT NULL,
+	[ContextKey] [nvarchar](300) NOT NULL,
+	[Model] [varbinary](max) NOT NULL,
+	[ProductVersion] [nvarchar](32) NOT NULL,
+ CONSTRAINT [PK_dbo.__MigrationHistory] PRIMARY KEY CLUSTERED 
+(
+	[MigrationId] ASC,
+	[ContextKey] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ApplicationUsers]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ApplicationUsers](
+	[UserId] [int] IDENTITY(1,1) NOT NULL,
+	[UserName] [nvarchar](100) NOT NULL,
+	[UserPassword] [nvarchar](100) NOT NULL,
+	[FullName] [nvarchar](200) NOT NULL,
+	[Editor] [nvarchar](10) NOT NULL,
+	[LimetedCompany] [bit] NOT NULL,
+	[Enabled] [bit] NOT NULL,
+ CONSTRAINT [PK_dbo.ApplicationUsers] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[BankAccNums]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[BankAccNums](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[FullName] [nvarchar](150) NOT NULL,
+	[BankName] [nvarchar](100) NOT NULL,
+	[AccNumber] [nvarchar](15) NULL,
+	[AccCart] [nvarchar](19) NULL,
+	[AccISBN] [nvarchar](26) NULL,
+	[Editor] [nvarchar](150) NULL,
+	[CenterID_FK] [int] NOT NULL,
+ CONSTRAINT [PK_dbo.BankAccNums] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Cashes]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Cashes](
+	[CashID] [int] IDENTITY(1,1) NOT NULL,
+	[QueueID_FK] [int] NOT NULL,
+	[Pos] [int] NULL,
+	[CashDesk] [int] NULL,
+	[userID] [tinyint] NOT NULL,
+	[seriesID_FK] [int] NOT NULL,
+	[CenterID_FK] [int] NOT NULL,
+ CONSTRAINT [PK_dbo.Cashes] PRIMARY KEY CLUSTERED 
+(
+	[CashID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Centers]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Centers](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[CenterTitle] [nvarchar](300) NOT NULL,
+	[TokenKey] [nvarchar](450) NOT NULL,
+	[Description] [nvarchar](300) NULL,
+ CONSTRAINT [PK_dbo.Centers] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Cleams]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Cleams](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[UserID_FK] [int] NOT NULL,
+	[GroupID_FK] [int] NOT NULL,
+	[MenuItemID_FK] [int] NOT NULL,
+	[IsDelete] [bit] NOT NULL,
+ CONSTRAINT [PK_dbo.Cleams] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Commissions]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Commissions](
+	[CommissionID] [smallint] IDENTITY(1,1) NOT NULL,
+	[CommissionPrice] [int] NOT NULL,
+	[DataRegister] [datetime] NOT NULL,
+	[enabled] [bit] NOT NULL,
+	[Groups_FK] [tinyint] NOT NULL,
+	[GroupID] [tinyint] NOT NULL,
+	[CenterID_FK] [int] NOT NULL,
+ CONSTRAINT [PK_dbo.Commissions] PRIMARY KEY CLUSTERED 
+(
+	[CommissionID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Drivers]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Drivers](
+	[DriverID] [int] IDENTITY(1,1) NOT NULL,
+	[FirstName] [nvarchar](50) NOT NULL,
+	[LastName] [nvarchar](50) NOT NULL,
+	[PhoneNumber] [nvarchar](10) NULL,
+	[SmartCart] [int] NOT NULL,
+	[TagNumber] [nvarchar](15) NOT NULL,
+	[Tag] [nvarchar](15) NOT NULL,
+	[editor_FK] [tinyint] NULL,
+	[driver_code] [int] NULL,
+	[GroupID] [tinyint] NOT NULL,
+	[userID_FK] [tinyint] NOT NULL,
+	[CenterID_FK] [int] NOT NULL,
+ CONSTRAINT [PK_dbo.Drivers] PRIMARY KEY CLUSTERED 
+(
+	[DriverID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[LoadTypes]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[LoadTypes](
+	[TypeID] [tinyint] NOT NULL,
+	[Type] [nvarchar](50) NULL,
+ CONSTRAINT [PK_dbo.LoadTypes] PRIMARY KEY CLUSTERED 
+(
+	[TypeID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[MenuGroups]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[MenuGroups](
+	[GroupID] [int] IDENTITY(1,1) NOT NULL,
+	[MenuGroupTitle] [nvarchar](100) NOT NULL,
+	[Description] [nvarchar](250) NOT NULL,
+ CONSTRAINT [PK_dbo.MenuGroups] PRIMARY KEY CLUSTERED 
+(
+	[GroupID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[MenuItems]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[MenuItems](
+	[ItemID] [int] IDENTITY(1,1) NOT NULL,
+	[GroupID_FK] [int] NOT NULL,
+	[ItemTitel] [nvarchar](150) NOT NULL,
+	[Description] [nvarchar](250) NOT NULL,
+ CONSTRAINT [PK_dbo.MenuItems] PRIMARY KEY CLUSTERED 
+(
+	[ItemID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[MessageGroupSubjects]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[MessageGroupSubjects](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Subject] [nvarchar](250) NOT NULL,
+	[Message] [nvarchar](700) NULL,
+	[SendGroup] [bit] NOT NULL,
+	[CreateTime] [datetime] NOT NULL,
+	[WsdlString] [nvarchar](10) NOT NULL,
+	[WsdlCheckSend] [int] NOT NULL,
+ CONSTRAINT [PK_dbo.MessageGroupSubjects] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[People]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[People](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[PersonID] [int] NOT NULL,
+	[FName] [nvarchar](150) NOT NULL,
+	[LName] [nvarchar](250) NOT NULL,
+	[FatherName] [nvarchar](100) NULL,
+	[Tavalod] [datetime] NOT NULL,
+	[CodeMelei] [nvarchar](11) NOT NULL,
+	[Takalof] [tinyint] NOT NULL,
+	[SerialShenasnameh] [nvarchar](20) NULL,
+	[Shenasnameh] [nvarchar](11) NULL,
+	[MahelTavalod] [nvarchar](100) NULL,
+	[Hoshmand] [nvarchar](20) NULL,
+	[Sh_Bimeh] [nvarchar](20) NULL,
+	[Sh_Goyahinameh] [nvarchar](20) NULL,
+	[HoshmandNavgan] [nvarchar](20) NULL,
+	[Sh_Plak] [nvarchar](50) NULL,
+	[Kamion] [nvarchar](50) NULL,
+	[Sh_Sokht] [nvarchar](20) NULL,
+	[Tel] [nvarchar](11) NULL,
+	[Mobile1] [nvarchar](11) NULL,
+	[Mobile2] [nvarchar](11) NULL,
+	[CodePosti] [nvarchar](10) NULL,
+	[Address] [nvarchar](250) NULL,
+	[IsActive] [bit] NOT NULL,
+	[IsDelete] [bit] NOT NULL,
+	[DateRegister] [datetime] NOT NULL,
+	[UserID_FK] [int] NOT NULL,
+	[PersonImg] [varbinary](max) NULL,
+ CONSTRAINT [PK_dbo.People] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PhoneBooks]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PhoneBooks](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Fname] [nvarchar](50) NOT NULL,
+	[LName] [nvarchar](50) NOT NULL,
+	[Mobile] [nvarchar](10) NOT NULL,
+	[Mobile2] [nvarchar](10) NULL,
+	[Phone] [nvarchar](10) NULL,
+	[Addres] [nvarchar](150) NULL,
+	[postalCode] [nvarchar](10) NULL,
+	[Jobs] [nvarchar](50) NOT NULL,
+	[Description] [nvarchar](150) NULL,
+	[DriverID_FK] [int] NULL,
+	[CenterID_FK] [int] NOT NULL,
+ CONSTRAINT [PK_dbo.PhoneBooks] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PublicTypes]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PublicTypes](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Group] [int] NOT NULL,
+	[Title] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_dbo.PublicTypes] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Queues]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Queues](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Number] [smallint] NOT NULL,
+	[GroupCommission] [tinyint] NOT NULL,
+	[ComosiunID_FK] [smallint] NOT NULL,
+	[Type_FK] [tinyint] NOT NULL,
+	[DateTimeRegister] [datetime] NOT NULL,
+	[DriverID_FK] [int] NOT NULL,
+	[Status_FK] [tinyint] NOT NULL,
+	[SeriesID_FK] [int] NOT NULL,
+	[mandeh] [bit] NULL,
+	[CenterID_FK] [int] NOT NULL,
+ CONSTRAINT [PK_dbo.Queues] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ResultCodeMessages]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ResultCodeMessages](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[ResultCode] [int] NOT NULL,
+	[ResultMessage] [nvarchar](250) NULL,
+ CONSTRAINT [PK_dbo.ResultCodeMessages] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SendMessages]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SendMessages](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[PersonID_FK] [int] NOT NULL,
+	[CheckedStatusFromWenService] [bit] NOT NULL,
+	[ResultSend] [int] NOT NULL,
+	[MessageSubjectID_FK] [int] NOT NULL,
+ CONSTRAINT [PK_dbo.SendMessages] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SeriesPrices]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SeriesPrices](
+	[SereisID] [int] IDENTITY(1,1) NOT NULL,
+	[SeriesName] [int] NOT NULL,
+	[SeriesCount] [int] NULL,
+	[SeriesDateStart] [datetime] NOT NULL,
+	[SeriesDateEnd] [datetime] NULL,
+	[Faleh] [int] NULL,
+	[Packet] [int] NULL,
+	[Gandom] [int] NULL,
+	[Clinker] [int] NULL,
+	[closing] [bit] NULL,
+	[Member] [smallint] NULL,
+	[Native] [smallint] NULL,
+	[Other] [smallint] NULL,
+	[enabeled] [bit] NULL,
+	[userCreator] [tinyint] NOT NULL,
+	[CenterID_FK] [int] NOT NULL,
+ CONSTRAINT [PK_dbo.SeriesPrices] PRIMARY KEY CLUSTERED 
+(
+	[SereisID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SmsConfigures]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SmsConfigures](
+	[ID] [nvarchar](128) NOT NULL,
+	[Username] [nvarchar](max) NULL,
+	[Password] [nvarchar](max) NULL,
+	[Sender] [nvarchar](max) NULL,
+	[Price] [int] NOT NULL,
+ CONSTRAINT [PK_dbo.SmsConfigures] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Users]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Users](
+	[userID] [tinyint] NOT NULL,
+	[FirstName] [nvarchar](50) NULL,
+	[LastName] [nvarchar](50) NULL,
+	[Phone] [nvarchar](10) NULL,
+	[Roul] [nvarchar](10) NULL,
+	[username] [nvarchar](240) NOT NULL,
+	[password] [nvarchar](240) NOT NULL,
+	[CenterID_FK] [int] NOT NULL,
+ CONSTRAINT [PK_dbo.Users] PRIMARY KEY CLUSTERED 
+(
+	[userID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_CenterID_FK] ON [dbo].[BankAccNums]
+(
+	[CenterID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_CenterID_FK] ON [dbo].[Cashes]
+(
+	[CenterID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_QueueID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_QueueID_FK] ON [dbo].[Cashes]
+(
+	[QueueID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_seriesID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_seriesID_FK] ON [dbo].[Cashes]
+(
+	[seriesID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_userID]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_userID] ON [dbo].[Cashes]
+(
+	[userID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_GroupID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_GroupID_FK] ON [dbo].[Cleams]
+(
+	[GroupID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_MenuItemID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_MenuItemID_FK] ON [dbo].[Cleams]
+(
+	[MenuItemID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_UserID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_UserID_FK] ON [dbo].[Cleams]
+(
+	[UserID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_CenterID_FK] ON [dbo].[Commissions]
+(
+	[CenterID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_GroupID]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_GroupID] ON [dbo].[Commissions]
+(
+	[GroupID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_Groups_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_Groups_FK] ON [dbo].[Commissions]
+(
+	[Groups_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_CenterID_FK] ON [dbo].[Drivers]
+(
+	[CenterID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_GroupID]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_GroupID] ON [dbo].[Drivers]
+(
+	[GroupID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_userID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_userID_FK] ON [dbo].[Drivers]
+(
+	[userID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_GroupID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_GroupID_FK] ON [dbo].[MenuItems]
+(
+	[GroupID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_UserID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_UserID_FK] ON [dbo].[People]
+(
+	[UserID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_CenterID_FK] ON [dbo].[PhoneBooks]
+(
+	[CenterID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_CenterID_FK] ON [dbo].[Queues]
+(
+	[CenterID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_ComosiunID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_ComosiunID_FK] ON [dbo].[Queues]
+(
+	[ComosiunID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_DriverID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_DriverID_FK] ON [dbo].[Queues]
+(
+	[DriverID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_SeriesID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_SeriesID_FK] ON [dbo].[Queues]
+(
+	[SeriesID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_Status_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_Status_FK] ON [dbo].[Queues]
+(
+	[Status_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_Type_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_Type_FK] ON [dbo].[Queues]
+(
+	[Type_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_MessageSubjectID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_MessageSubjectID_FK] ON [dbo].[SendMessages]
+(
+	[MessageSubjectID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_PersonID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_PersonID_FK] ON [dbo].[SendMessages]
+(
+	[PersonID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_CenterID_FK] ON [dbo].[SeriesPrices]
+(
+	[CenterID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_userCreator]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_userCreator] ON [dbo].[SeriesPrices]
+(
+	[userCreator] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+CREATE NONCLUSTERED INDEX [IX_CenterID_FK] ON [dbo].[Users]
+(
+	[CenterID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[BankAccNums]  WITH CHECK ADD  CONSTRAINT [FK_dbo.BankAccNums_dbo.Centers_CenterID_FK] FOREIGN KEY([CenterID_FK])
+REFERENCES [dbo].[Centers] ([ID])
+GO
+ALTER TABLE [dbo].[BankAccNums] CHECK CONSTRAINT [FK_dbo.BankAccNums_dbo.Centers_CenterID_FK]
+GO
+ALTER TABLE [dbo].[Cashes]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Cashes_dbo.Centers_CenterID_FK] FOREIGN KEY([CenterID_FK])
+REFERENCES [dbo].[Centers] ([ID])
+GO
+ALTER TABLE [dbo].[Cashes] CHECK CONSTRAINT [FK_dbo.Cashes_dbo.Centers_CenterID_FK]
+GO
+ALTER TABLE [dbo].[Cashes]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Cashes_dbo.Queues_QueueID_FK] FOREIGN KEY([QueueID_FK])
+REFERENCES [dbo].[Queues] ([ID])
+GO
+ALTER TABLE [dbo].[Cashes] CHECK CONSTRAINT [FK_dbo.Cashes_dbo.Queues_QueueID_FK]
+GO
+ALTER TABLE [dbo].[Cashes]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Cashes_dbo.SeriesPrices_seriesID_FK] FOREIGN KEY([seriesID_FK])
+REFERENCES [dbo].[SeriesPrices] ([SereisID])
+GO
+ALTER TABLE [dbo].[Cashes] CHECK CONSTRAINT [FK_dbo.Cashes_dbo.SeriesPrices_seriesID_FK]
+GO
+ALTER TABLE [dbo].[Cashes]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Cashes_dbo.Users_userID] FOREIGN KEY([userID])
+REFERENCES [dbo].[Users] ([userID])
+GO
+ALTER TABLE [dbo].[Cashes] CHECK CONSTRAINT [FK_dbo.Cashes_dbo.Users_userID]
+GO
+ALTER TABLE [dbo].[Cleams]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Cleams_dbo.ApplicationUsers_UserID_FK] FOREIGN KEY([UserID_FK])
+REFERENCES [dbo].[ApplicationUsers] ([UserId])
+GO
+ALTER TABLE [dbo].[Cleams] CHECK CONSTRAINT [FK_dbo.Cleams_dbo.ApplicationUsers_UserID_FK]
+GO
+ALTER TABLE [dbo].[Cleams]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Cleams_dbo.MenuGroups_GroupID_FK] FOREIGN KEY([GroupID_FK])
+REFERENCES [dbo].[MenuGroups] ([GroupID])
+GO
+ALTER TABLE [dbo].[Cleams] CHECK CONSTRAINT [FK_dbo.Cleams_dbo.MenuGroups_GroupID_FK]
+GO
+ALTER TABLE [dbo].[Cleams]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Cleams_dbo.MenuItems_MenuItemID_FK] FOREIGN KEY([MenuItemID_FK])
+REFERENCES [dbo].[MenuItems] ([ItemID])
+GO
+ALTER TABLE [dbo].[Cleams] CHECK CONSTRAINT [FK_dbo.Cleams_dbo.MenuItems_MenuItemID_FK]
+GO
+ALTER TABLE [dbo].[Commissions]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Commissions_dbo.Centers_CenterID_FK] FOREIGN KEY([CenterID_FK])
+REFERENCES [dbo].[Centers] ([ID])
+GO
+ALTER TABLE [dbo].[Commissions] CHECK CONSTRAINT [FK_dbo.Commissions_dbo.Centers_CenterID_FK]
+GO
+ALTER TABLE [dbo].[Commissions]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Commissions_dbo.LoadTypes_GroupID] FOREIGN KEY([GroupID])
+REFERENCES [dbo].[LoadTypes] ([TypeID])
+GO
+ALTER TABLE [dbo].[Commissions] CHECK CONSTRAINT [FK_dbo.Commissions_dbo.LoadTypes_GroupID]
+GO
+ALTER TABLE [dbo].[Commissions]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Commissions_dbo.LoadTypes_Groups_FK] FOREIGN KEY([Groups_FK])
+REFERENCES [dbo].[LoadTypes] ([TypeID])
+GO
+ALTER TABLE [dbo].[Commissions] CHECK CONSTRAINT [FK_dbo.Commissions_dbo.LoadTypes_Groups_FK]
+GO
+ALTER TABLE [dbo].[Drivers]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Drivers_dbo.Centers_CenterID_FK] FOREIGN KEY([CenterID_FK])
+REFERENCES [dbo].[Centers] ([ID])
+GO
+ALTER TABLE [dbo].[Drivers] CHECK CONSTRAINT [FK_dbo.Drivers_dbo.Centers_CenterID_FK]
+GO
+ALTER TABLE [dbo].[Drivers]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Drivers_dbo.LoadTypes_GroupID] FOREIGN KEY([GroupID])
+REFERENCES [dbo].[LoadTypes] ([TypeID])
+GO
+ALTER TABLE [dbo].[Drivers] CHECK CONSTRAINT [FK_dbo.Drivers_dbo.LoadTypes_GroupID]
+GO
+ALTER TABLE [dbo].[Drivers]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Drivers_dbo.Users_userID_FK] FOREIGN KEY([userID_FK])
+REFERENCES [dbo].[Users] ([userID])
+GO
+ALTER TABLE [dbo].[Drivers] CHECK CONSTRAINT [FK_dbo.Drivers_dbo.Users_userID_FK]
+GO
+ALTER TABLE [dbo].[MenuItems]  WITH CHECK ADD  CONSTRAINT [FK_dbo.MenuItems_dbo.MenuGroups_GroupID_FK] FOREIGN KEY([GroupID_FK])
+REFERENCES [dbo].[MenuGroups] ([GroupID])
+GO
+ALTER TABLE [dbo].[MenuItems] CHECK CONSTRAINT [FK_dbo.MenuItems_dbo.MenuGroups_GroupID_FK]
+GO
+ALTER TABLE [dbo].[People]  WITH CHECK ADD  CONSTRAINT [FK_dbo.People_dbo.ApplicationUsers_UserID_FK] FOREIGN KEY([UserID_FK])
+REFERENCES [dbo].[ApplicationUsers] ([UserId])
+GO
+ALTER TABLE [dbo].[People] CHECK CONSTRAINT [FK_dbo.People_dbo.ApplicationUsers_UserID_FK]
+GO
+ALTER TABLE [dbo].[PhoneBooks]  WITH CHECK ADD  CONSTRAINT [FK_dbo.PhoneBooks_dbo.Centers_CenterID_FK] FOREIGN KEY([CenterID_FK])
+REFERENCES [dbo].[Centers] ([ID])
+GO
+ALTER TABLE [dbo].[PhoneBooks] CHECK CONSTRAINT [FK_dbo.PhoneBooks_dbo.Centers_CenterID_FK]
+GO
+ALTER TABLE [dbo].[Queues]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Queues_dbo.Centers_CenterID_FK] FOREIGN KEY([CenterID_FK])
+REFERENCES [dbo].[Centers] ([ID])
+GO
+ALTER TABLE [dbo].[Queues] CHECK CONSTRAINT [FK_dbo.Queues_dbo.Centers_CenterID_FK]
+GO
+ALTER TABLE [dbo].[Queues]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Queues_dbo.Commissions_ComosiunID_FK] FOREIGN KEY([ComosiunID_FK])
+REFERENCES [dbo].[Commissions] ([CommissionID])
+GO
+ALTER TABLE [dbo].[Queues] CHECK CONSTRAINT [FK_dbo.Queues_dbo.Commissions_ComosiunID_FK]
+GO
+ALTER TABLE [dbo].[Queues]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Queues_dbo.Drivers_DriverID_FK] FOREIGN KEY([DriverID_FK])
+REFERENCES [dbo].[Drivers] ([DriverID])
+GO
+ALTER TABLE [dbo].[Queues] CHECK CONSTRAINT [FK_dbo.Queues_dbo.Drivers_DriverID_FK]
+GO
+ALTER TABLE [dbo].[Queues]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Queues_dbo.LoadTypes_Status_FK] FOREIGN KEY([Status_FK])
+REFERENCES [dbo].[LoadTypes] ([TypeID])
+GO
+ALTER TABLE [dbo].[Queues] CHECK CONSTRAINT [FK_dbo.Queues_dbo.LoadTypes_Status_FK]
+GO
+ALTER TABLE [dbo].[Queues]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Queues_dbo.LoadTypes_Type_FK] FOREIGN KEY([Type_FK])
+REFERENCES [dbo].[LoadTypes] ([TypeID])
+GO
+ALTER TABLE [dbo].[Queues] CHECK CONSTRAINT [FK_dbo.Queues_dbo.LoadTypes_Type_FK]
+GO
+ALTER TABLE [dbo].[Queues]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Queues_dbo.SeriesPrices_SeriesID_FK] FOREIGN KEY([SeriesID_FK])
+REFERENCES [dbo].[SeriesPrices] ([SereisID])
+GO
+ALTER TABLE [dbo].[Queues] CHECK CONSTRAINT [FK_dbo.Queues_dbo.SeriesPrices_SeriesID_FK]
+GO
+ALTER TABLE [dbo].[SendMessages]  WITH CHECK ADD  CONSTRAINT [FK_dbo.SendMessages_dbo.MessageGroupSubjects_MessageSubjectID_FK] FOREIGN KEY([MessageSubjectID_FK])
+REFERENCES [dbo].[MessageGroupSubjects] ([ID])
+GO
+ALTER TABLE [dbo].[SendMessages] CHECK CONSTRAINT [FK_dbo.SendMessages_dbo.MessageGroupSubjects_MessageSubjectID_FK]
+GO
+ALTER TABLE [dbo].[SendMessages]  WITH CHECK ADD  CONSTRAINT [FK_dbo.SendMessages_dbo.People_PersonID_FK] FOREIGN KEY([PersonID_FK])
+REFERENCES [dbo].[People] ([ID])
+GO
+ALTER TABLE [dbo].[SendMessages] CHECK CONSTRAINT [FK_dbo.SendMessages_dbo.People_PersonID_FK]
+GO
+ALTER TABLE [dbo].[SeriesPrices]  WITH CHECK ADD  CONSTRAINT [FK_dbo.SeriesPrices_dbo.Centers_CenterID_FK] FOREIGN KEY([CenterID_FK])
+REFERENCES [dbo].[Centers] ([ID])
+GO
+ALTER TABLE [dbo].[SeriesPrices] CHECK CONSTRAINT [FK_dbo.SeriesPrices_dbo.Centers_CenterID_FK]
+GO
+ALTER TABLE [dbo].[SeriesPrices]  WITH CHECK ADD  CONSTRAINT [FK_dbo.SeriesPrices_dbo.Users_userCreator] FOREIGN KEY([userCreator])
+REFERENCES [dbo].[Users] ([userID])
+GO
+ALTER TABLE [dbo].[SeriesPrices] CHECK CONSTRAINT [FK_dbo.SeriesPrices_dbo.Users_userCreator]
+GO
+ALTER TABLE [dbo].[Users]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Users_dbo.Centers_CenterID_FK] FOREIGN KEY([CenterID_FK])
+REFERENCES [dbo].[Centers] ([ID])
+GO
+ALTER TABLE [dbo].[Users] CHECK CONSTRAINT [FK_dbo.Users_dbo.Centers_CenterID_FK]
+GO
+USE [master]
+GO
+ALTER DATABASE [95] SET  READ_WRITE 
+GO</value>
   </data>
   <data name="ScriptApplicationUser" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ScriptCompany" xml:space="preserve">
-    <value />
+    <value>use 95 insert into ApplicationUsers (UserId ,Editor,Enabled,FullName,LimetedCompany,UserName,UserPassword) 
+Values (1,'Admin',1,'مدیرسیستم',0,'o2DUeeUN//chNK6u9APQdw==','r1iuHVzwh0BHzDa+rauWxg==')</value>
   </data>
   <data name="ScriptMenu" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ScriptUnitOfMa" xml:space="preserve">
-    <value />
+    <value>use 95
+
+insert into MenuGroups (MenuGroupTitle,Description) Values('DocumentRibbonPage','اسناد')
+insert into MenuGroups (MenuGroupTitle,Description) Values('ReportRibbonPage','گزارشات')
+insert into MenuGroups (MenuGroupTitle,Description) Values('SmsRibbonPage','سامانه پیام کوتاه')
+insert into MenuGroups (MenuGroupTitle,Description) Values('ManageRibbonPage','مدیریت نرم افزار')
+
+insert into MenuItems (GroupID_FK,ItemTitel,Description) Values (1,'PersonPageGroup','رانندگان انجمن')
+insert into MenuItems (GroupID_FK,ItemTitel,Description) Values (1,'Person2PageGroup','رانندگان')
+insert into MenuItems (GroupID_FK,ItemTitel,Description) Values (2,'ReportsRibbonPageGroup','گزارشات')
+insert into MenuItems (GroupID_FK,ItemTitel,Description) Values (2,'BillReportsRibbonPageGroup','نوبت دهی')
+insert into MenuItems (GroupID_FK,ItemTitel,Description) Values (3,'SendSmsRibbonPageGroup','پیام کوتاه')
+
+insert into Cleams (GroupID_FK,IsDelete,UserID_FK,MenuItemID_FK) values (1,0,1,1)
+insert into Cleams (GroupID_FK,IsDelete,UserID_FK,MenuItemID_FK) values (1,0,1,2)
+insert into Cleams (GroupID_FK,IsDelete,UserID_FK,MenuItemID_FK) values (2,0,1,3)
+insert into Cleams (GroupID_FK,IsDelete,UserID_FK,MenuItemID_FK) values (2,0,1,4)
+insert into Cleams (GroupID_FK,IsDelete,UserID_FK,MenuItemID_FK) values (3,0,1,5)</value>
   </data>
 </root>

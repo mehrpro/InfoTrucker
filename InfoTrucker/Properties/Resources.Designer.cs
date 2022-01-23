@@ -131,7 +131,8 @@ namespace InfoTrucker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to use 95 insert into ApplicationUsers (UserId ,Editor,Enabled,FullName,LimetedCompany,UserName,UserPassword) 
+        ///Values (1,&apos;Admin&apos;,1,&apos;مدیرسیستم&apos;,0,&apos;o2DUeeUN//chNK6u9APQdw==&apos;,&apos;r1iuHVzwh0BHzDa+rauWxg==&apos;).
         /// </summary>
         internal static string ScriptApplicationUser {
             get {
@@ -140,16 +141,15 @@ namespace InfoTrucker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string ScriptCompany {
-            get {
-                return ResourceManager.GetString("ScriptCompany", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to use 95
+        ///
+        ///insert into MenuGroups (MenuGroupTitle,Description) Values(&apos;DocumentRibbonPage&apos;,&apos;اسناد&apos;)
+        ///insert into MenuGroups (MenuGroupTitle,Description) Values(&apos;ReportRibbonPage&apos;,&apos;گزارشات&apos;)
+        ///insert into MenuGroups (MenuGroupTitle,Description) Values(&apos;SmsRibbonPage&apos;,&apos;سامانه پیام کوتاه&apos;)
+        ///insert into MenuGroups (MenuGroupTitle,Description) Values(&apos;ManageRibbonPage&apos;,&apos;مدیریت نرم افزار&apos;)
+        ///
+        ///insert into MenuItems (GroupID_FK,ItemTitel,Description) Values (1,&apos;PersonPageGroup&apos;,&apos;رانندگان انجمن&apos;)
+        ///insert into MenuItem [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ScriptMenu {
             get {
@@ -158,16 +158,19 @@ namespace InfoTrucker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string ScriptUnitOfMa {
-            get {
-                return ResourceManager.GetString("ScriptUnitOfMa", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to /****** Object:  Database [95]    Script Date: 1/18/2022 8:36:02 AM ******/
+        ///CREATE DATABASE [95]
+        /// CONTAINMENT = NONE
+        /// ON  PRIMARY 
+        ///( NAME = N&apos;95&apos;, FILENAME = N&apos;AddressFileForSave\95.mdf&apos; , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+        /// LOG ON 
+        ///( NAME = N&apos;95_log&apos;, FILENAME = N&apos;AddressFileForSave\95_log.ldf&apos; , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+        ///GO
+        ///ALTER DATABASE [95] SET COMPATIBILITY_LEVEL = 140
+        ///GO
+        ///IF (1 = FULLTEXTSERVICEPROPERTY(&apos;IsFullTextInstalled&apos;))
+        ///begin
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string sqlScriptForNewDatabase {
             get {

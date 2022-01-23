@@ -54,10 +54,19 @@ namespace InfoTrucker.UI
 
         private void pictureEdit1_DoubleClick(object sender, EventArgs e)
         {
-            this.Hide();
-            var frm = _container.GetInstance<SettingForm>();
-            frm.ShowDialog();
-            this.Show();
+
+            if (UsernameTextbox.Text == "admin" && PasswordTextbox.Text == "Admin708801298")
+            {
+                this.Hide();
+                var frm = _container.GetInstance<SettingForm>();
+                frm.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                PublicValue.ValidationProviderFaultMessage();
+            }
+
         }
     }
 }

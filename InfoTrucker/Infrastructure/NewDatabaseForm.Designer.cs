@@ -205,6 +205,7 @@ namespace InfoTrucker.Infrastructure
             this.Controls.Add(this.cbxDataBase);
             this.Name = "NewDatabaseForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "بانک اطلاعاتی جدید";
             this.Load += new System.EventHandler(this.NewDatabaseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).EndInit();

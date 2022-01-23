@@ -340,6 +340,12 @@
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\TypeRegistery.cs" />
+    <Compile Include="Infrastructure\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Infrastructure\WIAScanner.cs" />
     <Compile Include="Migrations\202201170836409_14001027.cs" />
     <Compile Include="Migrations\202201170836409_14001027.designer.cs">
@@ -446,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Infrastructure\SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Infrastructure\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201170836409_14001027.resx">
       <DependentUpon>202201170836409_14001027.cs</DependentUpon>

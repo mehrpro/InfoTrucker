@@ -75,7 +75,7 @@ namespace InfoTrucker.UI.SmsForms
         /// <summary>
         /// لیست پرسنل سامانه 
         /// </summary>
-        private async void PersonListForSend()
+        private void PersonListForSend()
         {
             var resultPerson = _personRepository.GetAllEnumerable();
             var result = _mapper.Map<IEnumerable<PersonListForSmsDTO>>(resultPerson);

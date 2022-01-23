@@ -396,13 +396,13 @@ namespace InfoTrucker.Infrastructure
             // btnAbout
             // 
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(180, 22);
+            this.btnAbout.Size = new System.Drawing.Size(144, 22);
             this.btnAbout.Text = "درباره نرم افزار";
             // 
             // btnHelp
             // 
             this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(180, 22);
+            this.btnHelp.Size = new System.Drawing.Size(144, 22);
             this.btnHelp.Text = "راهنما";
             // 
             // SettingForm
@@ -430,6 +430,7 @@ namespace InfoTrucker.Infrastructure
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SettingForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تنظیمات اتصال با بانک اطلاعاتی";
             this.Load += new System.EventHandler(this.SettingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).EndInit();

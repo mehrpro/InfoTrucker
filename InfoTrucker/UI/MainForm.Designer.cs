@@ -45,16 +45,25 @@ namespace InfoTrucker.UI
             this.SendGroupSmsButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.SendStatusButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.ReceiverButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.DocumentRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.PersonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.PGPerson = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.PGPerson2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ReportRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ReportsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.BillReportsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.PGReports = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.PGBillReports = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.SmsRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.SendSmsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.PGSendSms = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.SettingRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.PGUsers = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.SplashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::InfoTrucker.UI.WaitSaveSMSForm), true, true);
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,14 +85,22 @@ namespace InfoTrucker.UI
             this.SendSmsButtonItem,
             this.SendGroupSmsButtonItem,
             this.SendStatusButtonItem,
-            this.ReceiverButtonItem});
+            this.ReceiverButtonItem,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.barButtonItem6,
+            this.barButtonItem7,
+            this.barButtonItem8});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 15;
+            this.ribbonControl1.MaxItemId = 22;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.DocumentRibbonPage,
             this.ReportRibbonPage,
-            this.SmsRibbonPage});
+            this.SmsRibbonPage,
+            this.SettingRibbonPage});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
             this.ribbonControl1.Size = new System.Drawing.Size(894, 174);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
@@ -184,6 +201,7 @@ namespace InfoTrucker.UI
             // SendStatusButtonItem
             // 
             this.SendStatusButtonItem.Caption = "پیام های ارسالی";
+            this.SendStatusButtonItem.Enabled = false;
             this.SendStatusButtonItem.Id = 13;
             this.SendStatusButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("SendStatusButtonItem.ImageOptions.Image")));
             this.SendStatusButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("SendStatusButtonItem.ImageOptions.LargeImage")));
@@ -197,63 +215,152 @@ namespace InfoTrucker.UI
             this.ReceiverButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ReceiverButtonItem.ImageOptions.Image")));
             this.ReceiverButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ReceiverButtonItem.ImageOptions.LargeImage")));
             this.ReceiverButtonItem.Name = "ReceiverButtonItem";
+            this.ReceiverButtonItem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "رانندگان بومی ";
+            this.barButtonItem2.Enabled = false;
+            this.barButtonItem2.Id = 15;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "مصوبات مالی رانندگان بومی";
+            this.barButtonItem3.Enabled = false;
+            this.barButtonItem3.Id = 16;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "مصوبات مالی اعضا انجمن";
+            this.barButtonItem4.Enabled = false;
+            this.barButtonItem4.Id = 17;
+            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "مصوبات مالی اعضا غیر بومی";
+            this.barButtonItem5.Enabled = false;
+            this.barButtonItem5.Id = 18;
+            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.barButtonItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "رانندگان غیربومی";
+            this.barButtonItem6.Enabled = false;
+            this.barButtonItem6.Id = 19;
+            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = " کاربران";
+            this.barButtonItem7.Id = 20;
+            this.barButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
+            this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "مجوز دسترسی";
+            this.barButtonItem8.Id = 21;
+            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
+            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.barButtonItem8.Name = "barButtonItem8";
             // 
             // DocumentRibbonPage
             // 
             this.DocumentRibbonPage.Appearance.Options.UseTextOptions = true;
             this.DocumentRibbonPage.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.Yes;
             this.DocumentRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.PersonPageGroup,
-            this.ribbonPageGroup1});
+            this.PGPerson,
+            this.PGPerson2});
             this.DocumentRibbonPage.Name = "DocumentRibbonPage";
             this.DocumentRibbonPage.Text = "اسناد";
             // 
-            // PersonPageGroup
+            // PGPerson
             // 
-            this.PersonPageGroup.ItemLinks.Add(this.NewPersonButtonItem);
-            this.PersonPageGroup.ItemLinks.Add(this.EditButtonItem);
-            this.PersonPageGroup.ItemLinks.Add(this.PersonReportBottonItem);
-            this.PersonPageGroup.Name = "PersonPageGroup";
-            this.PersonPageGroup.Text = "رانندگان انجمن ";
+            this.PGPerson.ItemLinks.Add(this.NewPersonButtonItem);
+            this.PGPerson.ItemLinks.Add(this.EditButtonItem);
+            this.PGPerson.ItemLinks.Add(this.PersonReportBottonItem);
+            this.PGPerson.Name = "PGPerson";
+            this.PGPerson.Text = "رانندگان انجمن";
+            // 
+            // PGPerson2
+            // 
+            this.PGPerson2.ItemLinks.Add(this.barButtonItem2);
+            this.PGPerson2.ItemLinks.Add(this.barButtonItem6);
+            this.PGPerson2.ItemLinks.Add(this.barButtonItem3);
+            this.PGPerson2.ItemLinks.Add(this.barButtonItem4);
+            this.PGPerson2.ItemLinks.Add(this.barButtonItem5);
+            this.PGPerson2.Name = "PGPerson2";
+            this.PGPerson2.Text = "پایانه های نوبت دهی";
             // 
             // ReportRibbonPage
             // 
             this.ReportRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ReportsRibbonPageGroup,
-            this.BillReportsRibbonPageGroup});
+            this.PGReports,
+            this.PGBillReports});
             this.ReportRibbonPage.Name = "ReportRibbonPage";
             this.ReportRibbonPage.Text = "گزارشات";
             // 
-            // ReportsRibbonPageGroup
+            // PGReports
             // 
-            this.ReportsRibbonPageGroup.ItemLinks.Add(this.HoshmandReportButtonItem);
-            this.ReportsRibbonPageGroup.Name = "ReportsRibbonPageGroup";
-            this.ReportsRibbonPageGroup.Text = "گزارشات";
+            this.PGReports.ItemLinks.Add(this.HoshmandReportButtonItem);
+            this.PGReports.Name = "PGReports";
+            this.PGReports.Text = "گزارشات";
+            this.PGReports.Visible = false;
             // 
-            // BillReportsRibbonPageGroup
+            // PGBillReports
             // 
-            this.BillReportsRibbonPageGroup.ItemLinks.Add(this.MonthReportButtonItem);
-            this.BillReportsRibbonPageGroup.ItemLinks.Add(this.ThreeMonthReportButtonItem);
-            this.BillReportsRibbonPageGroup.ItemLinks.Add(this.SixMonthReportButtonItem);
-            this.BillReportsRibbonPageGroup.ItemLinks.Add(this.YearReportButtonItem);
-            this.BillReportsRibbonPageGroup.Name = "BillReportsRibbonPageGroup";
-            this.BillReportsRibbonPageGroup.Text = "نوبت دهی";
+            this.PGBillReports.Enabled = false;
+            this.PGBillReports.ItemLinks.Add(this.MonthReportButtonItem);
+            this.PGBillReports.ItemLinks.Add(this.ThreeMonthReportButtonItem);
+            this.PGBillReports.ItemLinks.Add(this.SixMonthReportButtonItem);
+            this.PGBillReports.ItemLinks.Add(this.YearReportButtonItem);
+            this.PGBillReports.Name = "PGBillReports";
+            this.PGBillReports.Text = "نوبت دهی";
             // 
             // SmsRibbonPage
             // 
             this.SmsRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.SendSmsRibbonPageGroup});
+            this.PGSendSms});
             this.SmsRibbonPage.Name = "SmsRibbonPage";
             this.SmsRibbonPage.Text = "سامانه پیام کوتاه";
             // 
-            // SendSmsRibbonPageGroup
+            // PGSendSms
             // 
-            this.SendSmsRibbonPageGroup.ItemLinks.Add(this.SendSmsButtonItem);
-            this.SendSmsRibbonPageGroup.ItemLinks.Add(this.SendGroupSmsButtonItem);
-            this.SendSmsRibbonPageGroup.ItemLinks.Add(this.SendStatusButtonItem);
-            this.SendSmsRibbonPageGroup.ItemLinks.Add(this.ReceiverButtonItem);
-            this.SendSmsRibbonPageGroup.Name = "SendSmsRibbonPageGroup";
-            this.SendSmsRibbonPageGroup.Text = "پیام کوتاه";
+            this.PGSendSms.ItemLinks.Add(this.SendSmsButtonItem);
+            this.PGSendSms.ItemLinks.Add(this.SendGroupSmsButtonItem);
+            this.PGSendSms.ItemLinks.Add(this.SendStatusButtonItem);
+            this.PGSendSms.ItemLinks.Add(this.ReceiverButtonItem);
+            this.PGSendSms.Name = "PGSendSms";
+            this.PGSendSms.Text = "پیام کوتاه";
+            // 
+            // SettingRibbonPage
+            // 
+            this.SettingRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.PGUsers});
+            this.SettingRibbonPage.Name = "SettingRibbonPage";
+            this.SettingRibbonPage.Text = "مدیریت نرم افزار";
+            this.SettingRibbonPage.Visible = false;
+            // 
+            // PGUsers
+            // 
+            this.PGUsers.ItemLinks.Add(this.barButtonItem7);
+            this.PGUsers.ItemLinks.Add(this.barButtonItem8);
+            this.PGUsers.Name = "PGUsers";
+            this.PGUsers.Text = "مدیریت کاربران";
             // 
             // ribbonStatusBar1
             // 
@@ -265,11 +372,6 @@ namespace InfoTrucker.UI
             // SplashScreenManager
             // 
             this.SplashScreenManager.ClosingDelay = 500;
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "رانندگان";
             // 
             // MainForm
             // 
@@ -295,7 +397,7 @@ namespace InfoTrucker.UI
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage DocumentRibbonPage;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup PersonPageGroup;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup PGPerson;
         private DevExpress.XtraBars.BarButtonItem NewPersonButtonItem;
         private DevExpress.XtraBars.BarButtonItem EditButtonItem;
         private DevExpress.XtraBars.BarButtonItem PersonReportBottonItem;
@@ -305,18 +407,27 @@ namespace InfoTrucker.UI
         private DevExpress.XtraBars.BarButtonItem SixMonthReportButtonItem;
         private DevExpress.XtraBars.BarButtonItem YearReportButtonItem;
         private DevExpress.XtraBars.Ribbon.RibbonPage ReportRibbonPage;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ReportsRibbonPageGroup;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup PGReports;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraBars.BarButtonItem SendSmsButtonItem;
         private DevExpress.XtraBars.BarButtonItem SendGroupSmsButtonItem;
         private DevExpress.XtraBars.BarButtonItem SendStatusButtonItem;
         private DevExpress.XtraBars.Ribbon.RibbonPage SmsRibbonPage;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup SendSmsRibbonPageGroup;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup PGSendSms;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup BillReportsRibbonPageGroup;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup PGBillReports;
         private DevExpress.XtraBars.BarButtonItem ReceiverButtonItem;
         private DevExpress.XtraSplashScreen.SplashScreenManager SplashScreenManager;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup PGPerson2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.Ribbon.RibbonPage SettingRibbonPage;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup PGUsers;
     }
 }
