@@ -62,9 +62,9 @@ namespace InfoTrucker.Infrastructure
                             var srv = new Server(srvConn);
                             srv.ConnectionContext.ExecuteNonQuery(scriptNew);
                             //srv.ConnectionContext.ExecuteNonQuery(Properties.Resources.ScriptCompany.Replace("95", cbxDataBase.Text.Trim()));
-                            srv.ConnectionContext.ExecuteNonQuery(Properties.Resources.ScriptApplicationUser.Replace("95", cbxDataBase.Text.Trim()));
+                            //srv.ConnectionContext.ExecuteNonQuery(Properties.Resources.ScriptApplicationUser.Replace("95", cbxDataBase.Text.Trim()));
                             //srv.ConnectionContext.ExecuteNonQuery(Properties.Resources.ScriptUnitOfMa.Replace("95", cbxDataBase.Text.Trim()));
-                            srv.ConnectionContext.ExecuteNonQuery(Properties.Resources.ScriptMenu.Replace("95", cbxDataBase.Text.Trim()));
+                            //srv.ConnectionContext.ExecuteNonQuery(Properties.Resources.ScriptMenu.Replace("95", cbxDataBase.Text.Trim()));
                             _connectionStr.DatabaseName = cbxDataBase.Text.Trim();
                             var connectionString = _setDatabase.SaveAppSetting(_connectionStr);
                             if (connectionString)

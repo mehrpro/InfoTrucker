@@ -148,8 +148,6 @@ CREATE DATABASE [95]
  LOG ON 
 ( NAME = N'95_log', FILENAME = N'AddressFileForSave\95_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
 GO
-ALTER DATABASE [95] SET COMPATIBILITY_LEVEL = 140
-GO
 IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
 begin
 EXEC [95].[dbo].[sp_fulltext_database] @action = 'enable'
@@ -211,13 +209,9 @@ ALTER DATABASE [95] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF )
 GO
 ALTER DATABASE [95] SET TARGET_RECOVERY_TIME = 60 SECONDS 
 GO
-ALTER DATABASE [95] SET DELAYED_DURABILITY = DISABLED 
-GO
-ALTER DATABASE [95] SET QUERY_STORE = OFF
-GO
 USE [95]
 GO
-/****** Object:  Table [dbo].[__MigrationHistory]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[__MigrationHistory]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -234,7 +228,7 @@ CREATE TABLE [dbo].[__MigrationHistory](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ApplicationUsers]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[ApplicationUsers]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -253,7 +247,7 @@ CREATE TABLE [dbo].[ApplicationUsers](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[BankAccNums]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[BankAccNums]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -273,7 +267,7 @@ CREATE TABLE [dbo].[BankAccNums](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Cashes]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[Cashes]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -292,7 +286,7 @@ CREATE TABLE [dbo].[Cashes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Centers]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[Centers]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -308,7 +302,7 @@ CREATE TABLE [dbo].[Centers](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Cleams]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[Cleams]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -325,7 +319,7 @@ CREATE TABLE [dbo].[Cleams](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Commissions]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[Commissions]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -344,7 +338,7 @@ CREATE TABLE [dbo].[Commissions](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Drivers]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[Drivers]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -368,7 +362,7 @@ CREATE TABLE [dbo].[Drivers](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[LoadTypes]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[LoadTypes]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -382,7 +376,7 @@ CREATE TABLE [dbo].[LoadTypes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MenuGroups]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[MenuGroups]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -397,7 +391,7 @@ CREATE TABLE [dbo].[MenuGroups](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MenuItems]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[MenuItems]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -413,7 +407,7 @@ CREATE TABLE [dbo].[MenuItems](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MessageGroupSubjects]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[MessageGroupSubjects]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -432,7 +426,7 @@ CREATE TABLE [dbo].[MessageGroupSubjects](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[People]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[People]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -472,7 +466,7 @@ CREATE TABLE [dbo].[People](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PhoneBooks]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[PhoneBooks]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -496,7 +490,7 @@ CREATE TABLE [dbo].[PhoneBooks](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PublicTypes]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[PublicTypes]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -511,7 +505,7 @@ CREATE TABLE [dbo].[PublicTypes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Queues]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[Queues]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -534,7 +528,7 @@ CREATE TABLE [dbo].[Queues](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ResultCodeMessages]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[ResultCodeMessages]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -549,7 +543,7 @@ CREATE TABLE [dbo].[ResultCodeMessages](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SendMessages]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[SendMessages]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -566,7 +560,7 @@ CREATE TABLE [dbo].[SendMessages](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SeriesPrices]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[SeriesPrices]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -594,7 +588,7 @@ CREATE TABLE [dbo].[SeriesPrices](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SmsConfigures]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[SmsConfigures]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -611,7 +605,7 @@ CREATE TABLE [dbo].[SmsConfigures](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 1/24/2022 9:51:28 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -631,169 +625,299 @@ CREATE TABLE [dbo].[Users](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+SET IDENTITY_INSERT [dbo].[ApplicationUsers] ON 
+GO
+INSERT [dbo].[ApplicationUsers] ([UserId], [UserName], [UserPassword], [FullName], [Editor], [LimetedCompany], [Enabled]) VALUES (1, N'o2DUeeUN//chNK6u9APQdw==', N'r1iuHVzwh0BHzDa+rauWxg==', N'مدیرسیستم', N'Admin', 0, 1)
+GO
+SET IDENTITY_INSERT [dbo].[ApplicationUsers] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Cleams] ON 
+GO
+INSERT [dbo].[Cleams] ([ID], [UserID_FK], [GroupID_FK], [MenuItemID_FK], [IsDelete]) VALUES (1, 1, 1, 1, 0)
+GO
+INSERT [dbo].[Cleams] ([ID], [UserID_FK], [GroupID_FK], [MenuItemID_FK], [IsDelete]) VALUES (2, 1, 1, 2, 0)
+GO
+INSERT [dbo].[Cleams] ([ID], [UserID_FK], [GroupID_FK], [MenuItemID_FK], [IsDelete]) VALUES (3, 1, 2, 3, 0)
+GO
+INSERT [dbo].[Cleams] ([ID], [UserID_FK], [GroupID_FK], [MenuItemID_FK], [IsDelete]) VALUES (4, 1, 2, 4, 0)
+GO
+INSERT [dbo].[Cleams] ([ID], [UserID_FK], [GroupID_FK], [MenuItemID_FK], [IsDelete]) VALUES (5, 1, 3, 5, 0)
+GO
+INSERT [dbo].[Cleams] ([ID], [UserID_FK], [GroupID_FK], [MenuItemID_FK], [IsDelete]) VALUES (6, 1, 4, 6, 0)
+GO
+SET IDENTITY_INSERT [dbo].[Cleams] OFF
+GO
+SET IDENTITY_INSERT [dbo].[MenuGroups] ON 
+GO
+INSERT [dbo].[MenuGroups] ([GroupID], [MenuGroupTitle], [Description]) VALUES (1, N'DocumentRibbonPage', N'اسناد')
+GO
+INSERT [dbo].[MenuGroups] ([GroupID], [MenuGroupTitle], [Description]) VALUES (2, N'ReportRibbonPage', N'گزارشات')
+GO
+INSERT [dbo].[MenuGroups] ([GroupID], [MenuGroupTitle], [Description]) VALUES (3, N'SmsRibbonPage', N'سامانه پیام کوتاه')
+GO
+INSERT [dbo].[MenuGroups] ([GroupID], [MenuGroupTitle], [Description]) VALUES (4, N'SettingRibbonPage', N'مدیریت نرم افزار')
+GO
+SET IDENTITY_INSERT [dbo].[MenuGroups] OFF
+GO
+SET IDENTITY_INSERT [dbo].[MenuItems] ON 
+GO
+INSERT [dbo].[MenuItems] ([ItemID], [GroupID_FK], [ItemTitel], [Description]) VALUES (1, 1, N'PGPerson', N'رانندگان انجمن')
+GO
+INSERT [dbo].[MenuItems] ([ItemID], [GroupID_FK], [ItemTitel], [Description]) VALUES (2, 1, N'PGPerson2', N'پایانه های نوبت دهی')
+GO
+INSERT [dbo].[MenuItems] ([ItemID], [GroupID_FK], [ItemTitel], [Description]) VALUES (3, 2, N'PGReports', N'گزارشات')
+GO
+INSERT [dbo].[MenuItems] ([ItemID], [GroupID_FK], [ItemTitel], [Description]) VALUES (4, 2, N'PGBillReports', N'نوبت دهی')
+GO
+INSERT [dbo].[MenuItems] ([ItemID], [GroupID_FK], [ItemTitel], [Description]) VALUES (5, 3, N'PGSendSms', N'پیام کوتاه')
+GO
+INSERT [dbo].[MenuItems] ([ItemID], [GroupID_FK], [ItemTitel], [Description]) VALUES (6, 4, N'PGUsers', N'مدیریت کاربران')
+GO
+SET IDENTITY_INSERT [dbo].[MenuItems] OFF
+GO
+SET IDENTITY_INSERT [dbo].[People] ON 
+GO
+INSERT [dbo].[People] ([ID], [PersonID], [FName], [LName], [FatherName], [Tavalod], [CodeMelei], [Takalof], [SerialShenasnameh], [Shenasnameh], [MahelTavalod], [Hoshmand], [Sh_Bimeh], [Sh_Goyahinameh], [HoshmandNavgan], [Sh_Plak], [Kamion], [Sh_Sokht], [Tel], [Mobile1], [Mobile2], [CodePosti], [Address], [IsActive], [IsDelete], [DateRegister], [UserID_FK], [PersonImg]) VALUES (1, 1220001, N'فرشید', N'محمدی', N'یدالله', CAST(N'2022-01-23T23:25:52.283' AS DateTime), N'3782428218', 2, N'الف-12-123456', N'1354', N'بیجار', N'123456789', N'123456789', N'123456789', N'123456789', N'ایران 61 | 121 ع 32', N'اپل آسترا', N'123456789', N'08738238022', N'09186620474', N'09186620474', N'6651848965', N'کردستان بیجار سیمان کردستان اتحادیه صنفی رانندگان', 1, 0, CAST(N'2022-01-23T23:25:52.283' AS DateTime), 1, NULL)
+GO
+SET IDENTITY_INSERT [dbo].[People] OFF
+GO
+SET IDENTITY_INSERT [dbo].[ResultCodeMessages] ON 
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (1, -1, N'خطاي ناشناخته دوباره تلاش نمایید')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (2, -3, N'خطاي ناشناخته دوباره تلاش نمایید')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (3, -5, N'متنی جهت ارسال وجود ندارد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (4, -6, N'تلفن همراه ناصحیح می باشد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (5, -8, N'نام کاربري و یا کلمه عبور نادرست می باشد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (6, -10, N'امکان ارسال از وب سرویس براي این کاربر وجود ندارد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (7, -11, N'عدم وجود شماره پیامک')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (8, -12, N'تعداد درخواستی بیش از حد مجاز')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (9, -13, N'ورودي نا معتبر')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (10, -14, N'اعتبار کافی نمی باشد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (11, -15, N'ورودي نا معتبر')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (12, -16, N'آرایه هاي ارسال پیام متناظر نمی باشد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (13, -17, N'تعداد ارسال پیامک بیشتر از حد مجاز می باشد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (14, -24, N'پیامی به سرور ارسال نشده است')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (15, -30, N'کد صداي آرشیوي نادرست ارسال شده است')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (16, -31, N'تلفن ورودي ناصحیح است')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (17, -32, N'عنوان ارسال خالی است')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (18, -33, N'چنین صوتی در آرشیو وجود ندارد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (19, -34, N'فرمت صداي آپلود شده ندرست می باشد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (20, -35, N'سایز فایل آپلود شده بیشتر از حد مجاز می باشد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (21, -36, N'خطاي ناشناخته در ورود اطلاعات')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (22, -37, N'تعداد تلفنها بیشتر از حد مجاز ارسال گروهی می باشد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (23, -38, N'تعداد تلفنها براي دریافت دلیوري بیشتر از 100 عدد می باشد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (24, -39, N'چنین کدي وجود ندارد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (25, -40, N'پیام در صف ارسال می باشد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (26, -41, N'چنین شناسه اي وجود ندارد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (27, -42, N'موبایل وجود ندارد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (28, -43, N'پیامی براي دریافت وجود ندارد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (29, -44, N'خطا در کد الگوي صدا')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (30, -45, N'خطا در الگوي سایت الگو دوبار ست شود')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (31, -46, N'خطا در ارسال متغیر شماره')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (32, -47, N'خطا در ارسال تعداد متغیر ها - کمتر از میزان لازم است')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (33, -48, N'فرمت تاریخ صحیح نمی باشد')
+GO
+INSERT [dbo].[ResultCodeMessages] ([ID], [ResultCode], [ResultMessage]) VALUES (34, -49, N'فرمت ساعت ارسالی اشتباه است')
+GO
+SET IDENTITY_INSERT [dbo].[ResultCodeMessages] OFF
+GO
+INSERT [dbo].[SmsConfigures] ([ID], [Username], [Password], [Sender], [Price]) VALUES (N'aec60a14-946c-4428-9151-7e7dfca6b31e', N'yU6k4ImZAln1bwoUMOmwIA==', N'bSkuzdmotZ/mpsw9SG0PXA==', N'6q/oN0NY6evOItSS30aZBw==', 280)
+GO
+/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_CenterID_FK] ON [dbo].[BankAccNums]
 (
 	[CenterID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_CenterID_FK] ON [dbo].[Cashes]
 (
 	[CenterID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_QueueID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_QueueID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_QueueID_FK] ON [dbo].[Cashes]
 (
 	[QueueID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_seriesID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_seriesID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_seriesID_FK] ON [dbo].[Cashes]
 (
 	[seriesID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_userID]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_userID]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_userID] ON [dbo].[Cashes]
 (
 	[userID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_GroupID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_GroupID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_GroupID_FK] ON [dbo].[Cleams]
 (
 	[GroupID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_MenuItemID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_MenuItemID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_MenuItemID_FK] ON [dbo].[Cleams]
 (
 	[MenuItemID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_UserID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_UserID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_UserID_FK] ON [dbo].[Cleams]
 (
 	[UserID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_CenterID_FK] ON [dbo].[Commissions]
 (
 	[CenterID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_GroupID]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_GroupID]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_GroupID] ON [dbo].[Commissions]
 (
 	[GroupID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Groups_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_Groups_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_Groups_FK] ON [dbo].[Commissions]
 (
 	[Groups_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_CenterID_FK] ON [dbo].[Drivers]
 (
 	[CenterID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_GroupID]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_GroupID]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_GroupID] ON [dbo].[Drivers]
 (
 	[GroupID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_userID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_userID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_userID_FK] ON [dbo].[Drivers]
 (
 	[userID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_GroupID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_GroupID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_GroupID_FK] ON [dbo].[MenuItems]
 (
 	[GroupID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_UserID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_UserID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_UserID_FK] ON [dbo].[People]
 (
 	[UserID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_CenterID_FK] ON [dbo].[PhoneBooks]
 (
 	[CenterID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_CenterID_FK] ON [dbo].[Queues]
 (
 	[CenterID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ComosiunID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_ComosiunID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_ComosiunID_FK] ON [dbo].[Queues]
 (
 	[ComosiunID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_DriverID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_DriverID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_DriverID_FK] ON [dbo].[Queues]
 (
 	[DriverID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_SeriesID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_SeriesID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_SeriesID_FK] ON [dbo].[Queues]
 (
 	[SeriesID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Status_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_Status_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_Status_FK] ON [dbo].[Queues]
 (
 	[Status_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Type_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_Type_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_Type_FK] ON [dbo].[Queues]
 (
 	[Type_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_MessageSubjectID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_MessageSubjectID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_MessageSubjectID_FK] ON [dbo].[SendMessages]
 (
 	[MessageSubjectID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_PersonID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_PersonID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_PersonID_FK] ON [dbo].[SendMessages]
 (
 	[PersonID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_CenterID_FK] ON [dbo].[SeriesPrices]
 (
 	[CenterID_FK] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_userCreator]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_userCreator]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_userCreator] ON [dbo].[SeriesPrices]
 (
 	[userCreator] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/18/2022 8:36:02 AM ******/
+/****** Object:  Index [IX_CenterID_FK]    Script Date: 1/24/2022 9:51:28 AM ******/
 CREATE NONCLUSTERED INDEX [IX_CenterID_FK] ON [dbo].[Users]
 (
 	[CenterID_FK] ASC
@@ -943,29 +1067,5 @@ USE [master]
 GO
 ALTER DATABASE [95] SET  READ_WRITE 
 GO</value>
-  </data>
-  <data name="ScriptApplicationUser" xml:space="preserve">
-    <value>use 95 insert into ApplicationUsers (UserId ,Editor,Enabled,FullName,LimetedCompany,UserName,UserPassword) 
-Values (1,'Admin',1,'مدیرسیستم',0,'o2DUeeUN//chNK6u9APQdw==','r1iuHVzwh0BHzDa+rauWxg==')</value>
-  </data>
-  <data name="ScriptMenu" xml:space="preserve">
-    <value>use 95
-
-insert into MenuGroups (MenuGroupTitle,Description) Values('DocumentRibbonPage','اسناد')
-insert into MenuGroups (MenuGroupTitle,Description) Values('ReportRibbonPage','گزارشات')
-insert into MenuGroups (MenuGroupTitle,Description) Values('SmsRibbonPage','سامانه پیام کوتاه')
-insert into MenuGroups (MenuGroupTitle,Description) Values('ManageRibbonPage','مدیریت نرم افزار')
-
-insert into MenuItems (GroupID_FK,ItemTitel,Description) Values (1,'PersonPageGroup','رانندگان انجمن')
-insert into MenuItems (GroupID_FK,ItemTitel,Description) Values (1,'Person2PageGroup','رانندگان')
-insert into MenuItems (GroupID_FK,ItemTitel,Description) Values (2,'ReportsRibbonPageGroup','گزارشات')
-insert into MenuItems (GroupID_FK,ItemTitel,Description) Values (2,'BillReportsRibbonPageGroup','نوبت دهی')
-insert into MenuItems (GroupID_FK,ItemTitel,Description) Values (3,'SendSmsRibbonPageGroup','پیام کوتاه')
-
-insert into Cleams (GroupID_FK,IsDelete,UserID_FK,MenuItemID_FK) values (1,0,1,1)
-insert into Cleams (GroupID_FK,IsDelete,UserID_FK,MenuItemID_FK) values (1,0,1,2)
-insert into Cleams (GroupID_FK,IsDelete,UserID_FK,MenuItemID_FK) values (2,0,1,3)
-insert into Cleams (GroupID_FK,IsDelete,UserID_FK,MenuItemID_FK) values (2,0,1,4)
-insert into Cleams (GroupID_FK,IsDelete,UserID_FK,MenuItemID_FK) values (3,0,1,5)</value>
   </data>
 </root>
